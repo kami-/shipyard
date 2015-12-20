@@ -1,0 +1,8 @@
+*.js
+/src/js
+!run.js
+/addon
+/workingDir
+/node_modules
+/src/elm/elm-stuff
+/src/elm/test/elm-stuff
