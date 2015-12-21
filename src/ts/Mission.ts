@@ -28,8 +28,8 @@ export interface Terrain {
 export interface Faction {
     side: Side;
     faction: Hull3.Faction;
-    gear: string;
-    uniform: string;
+    gearTemplateId: string;
+    uniformTemplateId: string;
 }
 
 export interface Addons {
@@ -49,22 +49,23 @@ export interface Mission {
     addons: Addons;
 }
 
-export interface Hull3Configuration {
+export interface Hull3Config {
     factions: Hull3.Faction[];
-    gearTemplateNames: string[];
-    uniformTemplateNames: string[];
+    gearTemplates: Hull3.Template[];
+    uniformTemplates: Hull3.Template[];
 }
 
 export interface MissionConfig {
     missionTypeNames: string[];
     terrains: Terrain[];
-    Hull3: Hull3Configuration;
+    Hull3: Hull3Config;
 }
 
 export interface GeneratedMission {
     missionId: number;
-    missionDir: string;
     missionWorkingDir: string;
+    missionDirName: string;
+    missionDir: string;
 }
 
 function nextMissionId(): number {
@@ -97,8 +98,8 @@ export function getMissionConfig(): MissionConfig {
         terrains: getTerrains(),
         Hull3: {
             factions: Hull3.getFactions(),
-            gearTemplateNames: Hull3.getGearTemplates(),
-            uniformTemplateNames: Hull3.getUniformTemplates()
+            gearTemplates: Hull3.getGearTemplates(),
+            uniformTemplates: Hull3.getUniformTemplates()
         }
     }
 }
@@ -107,13 +108,15 @@ export function getMissionConfig(): MissionConfig {
 export function generateMission(mission: Mission): GeneratedMission {
     var missionId = nextMissionId();
     // ark_co60_oh_its_this_mission.Altis
-    var missionDir = `ark_${mission.missionTypeName.toLowerCase()}${mission.maxPlayers}_${mission.briefingName.toLowerCase()}.${mission.terrain.name}`;
-    var missionWorkingDir = `${Settings.PATH.Mission.workingDir}/${missionId}/${missionDir}`;
-    fs.copySync(Hull3.getSampleMissionPath(), missionWorkingDir);
+    var missionDirName = `ark_${mission.missionTypeName.toLowerCase()}${mission.maxPlayers}_${mission.briefingName.toLowerCase()}.${mission.terrain.name}`;
+    var missionWorkingDir = `${Settings.PATH.Mission.workingDir}/${missionId}`;
+    var missionDir = `${missionDir}/${missionDirName}`;
+    fs.copySync(Hull3.getSampleMissionPath(), missionDir);
     return {
         missionId: missionId,
-        missionDir: missionDir,
-        missionWorkingDir: missionWorkingDir
+        missionWorkingDir: missionWorkingDir,
+        missionDirName: missionDirName,
+        missionDir: missionDir
     }
 }
 

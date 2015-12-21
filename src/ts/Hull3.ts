@@ -15,13 +15,22 @@ var SAMPLE_MISSION_PATH = `${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.SAM
     UNIFORM_HOME_PATH = `${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.UNIFORM_HOME}`;
 
 export var factions: Faction[] = [];
-export var gearTemplates: string[] = [];
-export var uniformTemplates: string[] = [];
+export var gearTemplates: Template[] = [];
+export var uniformTemplates: Template[] = [];
+
+export interface Template {
+    id: string;
+    name: string;
+    description: string;
+}
+
+export interface GearTemplate extends Template {}
+export interface UniformTemplate extends Template {}
 
 export interface Faction {
     name: string;
-    gear: string;
-    uniform: string;
+    gearTemplateId: string;
+    uniformTemplateId: string;
 }
 
 function parseFile(path: string): Parser.Node {
@@ -32,14 +41,19 @@ function parseFile(path: string): Parser.Node {
 function factionNodeToFaction(node: Parser.Node): Faction {
     return {
         name: node.fieldName,
-        gear:  Ast.select(node, 'gear')[0].value,
-        uniform: Ast.select(node, 'uniform')[0].value
+        gearTemplateId:  Ast.select(node, 'gear')[0].value,
+        uniformTemplateId: Ast.select(node, 'uniform')[0].value
     }
 }
 
-function getTemplateName(homePath: string, filename: string) {
-    var templateAst = parseFile(`${homePath}/${filename}`);
-    return Ast.select(templateAst, '*')[0].fieldName;
+function getTemplate(homePath: string, filename: string): Template {
+    var ast = parseFile(`${homePath}/${filename}`);
+    var templateAst = Ast.select(templateAst, '*')[0];
+    return {
+        id: templateAst.fieldName,
+        name: templateAst.fieldName,
+        description: ""
+    }
 }
 
 export function updateFactions() {
@@ -48,24 +62,24 @@ export function updateFactions() {
 }
 
 export function updateGearTemplates() {
-    var gearFilenamess = fs.readdirSync(GEAR_HOME_PATH);
-    gearTemplates = gearFilenamess.map(gf => getTemplateName(GEAR_HOME_PATH, gf));
+    var gearTemplateFilenames = fs.readdirSync(GEAR_HOME_PATH);
+    gearTemplates = gearTemplateFilenames.map(gf => getTemplate(GEAR_HOME_PATH, gf));
 }
 
 export function updateUniformTemplates() {
-    var uniformFilenames = fs.readdirSync(UNIFORM_HOME_PATH);
-    uniformTemplates = uniformFilenames.map(uf => getTemplateName(UNIFORM_HOME_PATH, uf));
+    var uniformTemplateFilenames = fs.readdirSync(UNIFORM_HOME_PATH);
+    uniformTemplates = uniformTemplateFilenames.map(uf => getTemplate(UNIFORM_HOME_PATH, uf));
 }
 
 export function getFactions(): Faction[] {
     return factions;
 }
 
-export function getGearTemplates(): string[] {
+export function getGearTemplates(): GearTemplate[] {
     return gearTemplates;
 }
 
-export function getUniformTemplates(): string[] {
+export function getUniformTemplates(): UniformTemplate[] {
     return uniformTemplates;
 }
 

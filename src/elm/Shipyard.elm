@@ -1,4 +1,4 @@
-module HullParser where
+module Shipyard where
 
 import Basics exposing (toString)
 import Debug exposing(log)
@@ -14,10 +14,58 @@ import Task exposing (..)
 
 -- MODEL
 
-type Game
-    = Arma2
-    | Arma2I44
-    | Arma3
+type alias MissionType =
+    { COOP
+    , TVT
+    , GTVT
+    , COTVT
+    }
+
+type alias Terrain =
+    { id : String
+    , name: String
+    }
+
+type alias Faction =
+    { side : Side
+    , faction: Hull3.Faction;
+    gear: string;
+    uniform: string;
+}
+
+export interface Addons {
+    Admiral: boolean;
+    Plank: boolean;
+}
+
+export interface Mission {
+    terrain: Terrain;
+    missionTypeName: string;
+    maxPlayers: number;
+    onLoadName: string;
+    author: string;
+    briefingName: string;
+    overviewText: string;
+    factions: Faction[];
+    addons: Addons;
+}
+
+export interface Hull3Configuration {
+    factions: Hull3.Faction[];
+    gearTemplateNames: string[];
+    uniformTemplateNames: string[];
+}
+
+export interface MissionConfig {
+    missionTypeNames: string[];
+    terrains: Terrain[];
+    Hull3: Hull3Configuration;
+}
+
+type alias MissionConfig =
+    {
+        
+    }
 
 type alias Faction =
     { name : String

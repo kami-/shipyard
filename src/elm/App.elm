@@ -1,10 +1,10 @@
-module HullParserApp where
+module ShipyardApp where
 
 import Effects exposing (Never)
 import StartApp
 import Task exposing (..)
 
-import HullParser exposing (init, view, update)
+import Shipyard exposing (init, view, update)
 
 app =
   StartApp.start

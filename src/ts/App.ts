@@ -15,26 +15,7 @@ function registerRoutes(app: express.Express) {
     });
     
     app.route(Settings.CONTEXT_PATH + '/mission/generate').get((request, response) => {
-        var mission: Mission.Mission = {
-            terrain: {id: 'Altis', name: 'Altis' },
-            missionTypeName: 'co',
-            maxPlayers: 60,
-            onLoadName: "Oh it's this mission",
-            author: 'Kami',
-            briefingName: 'oh_its_this_mission',
-            overviewText: 'Slot everything!',
-            factions: [],
-            addons: {
-                Admiral: true,
-                Plank: true
-            }
-        }
-        //var missionDir = Mission.generateMission(request.body);
-        var generatedMission = Mission.generateMission(mission);
-        var missionZipPath = zipMission(generatedMission.missionWorkingDir);
-        response.setHeader('Content-disposition', `attachment; filename=${generatedMission.missionDir}.zip`);
-        response.setHeader('Content-type', mime.lookup(missionZipPath));
-        response.sendFile(missionZipPath, { root: './' });
+        generateMission(request, response);
     });
     app.route(Settings.CONTEXT_PATH + '/mission/config').get((request, response) => {
         response.json(Mission.getMissionConfig());
@@ -75,10 +56,37 @@ function registerRoutes(app: express.Express) {
     });
 }
 
+function generateMission(request, response) {
+    var mission: Mission.Mission = {
+        terrain: {id: 'Altis', name: 'Altis' },
+        missionTypeName: 'co',
+        maxPlayers: 60,
+        onLoadName: "Oh it's this mission",
+        author: 'Kami',
+        briefingName: 'oh_its_this_mission',
+        overviewText: 'Slot everything!',
+        factions: [],
+        addons: {
+            Admiral: true,
+            Plank: true
+        }
+    }
+    //var missionDir = Mission.generateMission(request.body);
+    var generatedMission = Mission.generateMission(mission);
+    var missionZipPath = zipMission(generatedMission.missionDir);
+    response.setHeader('Content-disposition', `attachment; filename=${generatedMission.missionDirName}.zip`);
+    response.setHeader('Content-type', mime.lookup(missionZipPath));
+    response.sendFile(missionZipPath, { root: './' }, () => removeMissionWorkingDir(generatedMission.missionWorkingDir) );
+}
+
 function zipMission(missionDir: string): string {
     var missionZip = `${missionDir}.zip`;
     cp.execSync(`7z a ${missionZip} ./${missionDir}/*`);
     return missionZip;
+}
+
+function removeMissionWorkingDir(missionWorkingDir: string) {
+    fs.removeSync(missionWorkingDir);
 }
 
 export function start() {
