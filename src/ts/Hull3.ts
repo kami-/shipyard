@@ -48,7 +48,7 @@ function factionNodeToFaction(node: Parser.Node): Faction {
 
 function getTemplate(homePath: string, filename: string): Template {
     var ast = parseFile(`${homePath}/${filename}`);
-    var templateAst = Ast.select(templateAst, '*')[0];
+    var templateAst = Ast.select(ast, '*')[0];
     return {
         id: templateAst.fieldName,
         name: templateAst.fieldName,

@@ -110,7 +110,7 @@ export function generateMission(mission: Mission): GeneratedMission {
     // ark_co60_oh_its_this_mission.Altis
     var missionDirName = `ark_${mission.missionTypeName.toLowerCase()}${mission.maxPlayers}_${mission.briefingName.toLowerCase()}.${mission.terrain.name}`;
     var missionWorkingDir = `${Settings.PATH.Mission.workingDir}/${missionId}`;
-    var missionDir = `${missionDir}/${missionDirName}`;
+    var missionDir = `${missionWorkingDir}/${missionDirName}`;
     fs.copySync(Hull3.getSampleMissionPath(), missionDir);
     return {
         missionId: missionId,
