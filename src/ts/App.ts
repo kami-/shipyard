@@ -71,17 +71,27 @@ function generateMission(request, response) {
             Plank: true
         }
     }
+    console.log(mission.briefingName);
+    mission.briefingName = mission.briefingName.replace(/[^a-z0-9_]*/g, '');
+    console.log(mission.briefingName);
     //var missionDir = Mission.generateMission(request.body);
     var generatedMission = Mission.generateMission(mission);
-    var missionZipPath = zipMission(generatedMission.missionDir);
+    var missionZipPath = zipMission(generatedMission.missionDir, generatedMission.missionDirName);
     response.setHeader('Content-disposition', `attachment; filename=${generatedMission.missionDirName}.zip`);
     response.setHeader('Content-type', mime.lookup(missionZipPath));
     response.sendFile(missionZipPath, { root: './' }, () => removeMissionWorkingDir(generatedMission.missionWorkingDir) );
 }
 
-function zipMission(missionDir: string): string {
+// Horrible way to do this. We only allow alphanum and underscroe, so no remote code execution shouldn't happen?.
+// Sadly I haven't found a JS module that can zip a folder the way I want ...
+function zipMission(missionDir: string, missionDirName: string): string {
     var missionZip = `${missionDir}.zip`;
-    cp.execSync(`7z a ${missionZip} ./${missionDir}/*`);
+    var zipCommand = `7z a ${missionZip} ./${missionDir}/*`;
+    if (process.platform === 'linux') {
+        var missionZipName = `${missionDirName}.zip`;
+        zipCommand = `(cd ${missionDir} ; zip -r ${missionZipName} . ; mv ${missionZipName} .. ; cd -)`;
+    }
+    cp.execSync(zipCommand);
     return missionZip;
 }
 
@@ -90,6 +100,8 @@ function removeMissionWorkingDir(missionWorkingDir: string) {
 }
 
 export function start() {
+    if (process.platform !== 'linux' && process.platform !== 'win32') { throw 'Unsupported platform!' }
+
     var app = express();
     app.use(Settings.CONTEXT_PATH, express.static(Settings.PATH.RESOURCES_HOME));
     app.use(bodyParser.json());
