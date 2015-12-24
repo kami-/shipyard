@@ -2,21 +2,15 @@
 
 <html>
 <head>
-    <title>Hull Parser</title>
+    <title>Shipyard</title>
     <link href="styles.css" rel="stylesheet">
     <script type="text/javascript" src="elm.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
 </head>
 <body>
     <script>
-        (function(undefined) {
-            var hullParser = Elm.fullscreen(Elm.HullParser);
-            var editor = ace.edit("editor");
-            editor.setTheme("ace/theme/merbivore_soft");
-            editor.getSession().setMode("ace/mode/c_cpp");
-            hullParser.ports.mission.subscribe(function(mission) {
-                editor.setValue(mission);
-            });
+        (function() {
+            Elm.fullscreen(Elm.ShipyardApp);
         }());
     </script>
 </body>

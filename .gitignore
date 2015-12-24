@@ -5,4 +5,5 @@
 /workingDir
 /node_modules
 /src/elm/elm-stuff
+/src/elm/index.html
 /src/elm/test/elm-stuff

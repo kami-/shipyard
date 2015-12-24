@@ -16,12 +16,3 @@ app =
 
 main =
   app.html
-
-port tasks : Signal (Task.Task Never ())
-port tasks =
-  app.tasks
-
-port mission : Signal String
-port mission =
-  Signal.map .mission app.model
-  |> Signal.dropRepeats

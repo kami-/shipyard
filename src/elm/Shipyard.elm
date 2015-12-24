@@ -1,5 +1,8 @@
 module Shipyard where
 
+import Mission
+import Hull3
+
 import Basics exposing (toString)
 import Debug exposing(log)
 import Effects exposing (Effects)
@@ -12,157 +15,48 @@ import Http
 import Signal exposing (Address)
 import Task exposing (..)
 
+
 -- MODEL
 
-type alias MissionType =
-    { COOP
-    , TVT
-    , GTVT
-    , COTVT
-    }
+defaultMission : Mission.Mission
+defaultMission =
+  { terrain = { id = "", name = "" }
+  , missionType = Mission.COOP
+  , maxPlayers = 0
+  , onLoadName = "Oh it's this mission!"
+  , author = "Kami"
+  , briefingName = "oh_its_this_mission"
+  , overviewText = "Slot everything!"
+  , factions = []
+  , addons = { admiral = True, plank = False }
+  }
 
-type alias Terrain =
-    { id : String
-    , name: String
-    }
-
-type alias Faction =
-    { side : Side
-    , faction: Hull3.Faction;
-    gear: string;
-    uniform: string;
-}
-
-export interface Addons {
-    Admiral: boolean;
-    Plank: boolean;
-}
-
-export interface Mission {
-    terrain: Terrain;
-    missionTypeName: string;
-    maxPlayers: number;
-    onLoadName: string;
-    author: string;
-    briefingName: string;
-    overviewText: string;
-    factions: Faction[];
-    addons: Addons;
-}
-
-export interface Hull3Configuration {
-    factions: Hull3.Faction[];
-    gearTemplateNames: string[];
-    uniformTemplateNames: string[];
-}
-
-export interface MissionConfig {
-    missionTypeNames: string[];
-    terrains: Terrain[];
-    Hull3: Hull3Configuration;
-}
-
-type alias MissionConfig =
-    {
-        
-    }
-
-type alias Faction =
-    { name : String
-    , checked : Bool
-    }
-
-type FactionCheckState
-    = CheckAll
-    | UncheckAll
+defaultModel : Model
+defaultModel = Model defaultMission
 
 type alias Model =
-    { game : Game
-    , factions : List Faction
-    , checkState : FactionCheckState
-    , mission : String
+    { mission : Mission.Mission
+    
     }
 
 init : (Model, Effects Action)
 init =
-  ( Model Arma2 [] CheckAll ""
-  , getGameFactions "arma2"
+  ( defaultModel
+  , Effects.none
   )
-
-gameToString : Game -> String
-gameToString game =
-  case game of
-    Arma2 -> "arma2"
-    Arma2I44 -> "arma2-i44"
-    Arma3 -> "arma3"
-
-stringToGame : String -> Game
-stringToGame gameStr =
-   if | gameStr == "arma2" -> Arma2
-      | gameStr == "arma2-i44" -> Arma2I44
-      | otherwise -> Arma3
 
 -- UPDATE
 
 type Action
-    = GameChange String
-    | FactionsReceive (List String)
-    | FactionCheck String Bool
-    | CheckAllFactions
-    | GetMission
-    | MissionReceive String
+    = One
+    | Two
 
 update : Action -> Model -> (Model, Effects Action)
 update action model =
   case action of
-    GameChange gameStr ->
-      ( { model 
-          | game <- stringToGame gameStr
-          , mission <- ""
-        }
-      , getGameFactions gameStr
-      )
+    One -> (model, Effects.none)
+    Two -> (model, Effects.none)
 
-    FactionsReceive factionNames ->
-      ( { model | factions <- List.map (\name -> Faction name False) factionNames }
-      , Effects.none
-      )
-
-    FactionCheck name checked ->
-      ( { model | factions <- checkFaction model.factions name checked }
-      , Effects.none
-      )
-
-    CheckAllFactions ->
-      ( { model 
-          | factions <- checkAllFactions model.factions model.checkState
-          , checkState <- if model.checkState == CheckAll then UncheckAll else CheckAll
-        }
-      , Effects.none
-      )
-
-    GetMission ->
-      (model, getMission model.game model.factions)
-
-    MissionReceive mission ->
-      ( { model | mission <- mission }
-      , Effects.none
-      )
-
-checkFaction : List Faction -> String -> Bool -> List Faction
-checkFaction factions name checked =
-  let tryReplaceFaction faction =
-    if faction.name == name
-      then { faction | checked <- checked }
-      else faction
-  in
-    List.map tryReplaceFaction factions
-
-checkAllFactions : List Faction -> FactionCheckState -> List Faction
-checkAllFactions factions checkState =
-  let checked = checkState == CheckAll
-  in
-    List.map (\f -> { f | checked <- checked }) factions
 
 -- VIEW
 
@@ -172,7 +66,64 @@ view address model =
     []
     [ div
       [ class "header" ]
-      [ span [ class "header-text" ] [ text "Hull Parser" ] ]
+      [ span [ class "header-text" ] [ text "Shipyard" ] ]
+    , div
+      [ class "content" ]
+      [ div
+        [ class "form" ]
+        [ h3 [] [ text "Mission" ]
+        , selectField "terrain" "Terrain" [ ("Altis", "Altis"), ("Stratis", "Stratis") ]
+        , selectField "missionType" "Mission type" [ ("COOP", "COOP"), ("TVT", "TVT"), ("GTVT", "GTVT"), ("COTVT", "COTVT") ]
+        , intField "maxPlayers" "Max players"
+        , textField "onLoadName" "OnLoadName"
+        , textField "author" "Author"
+        , textField "briefingName" "Briefing name"
+        , textField "overviewText" "Overview text"
+        , h3 [] [ text "Factions" ]
+        , h3 [] [ text "Addons" ]
+        ]
+      ]
+    ]
+
+fieldGroup : String -> String -> Html -> Html
+fieldGroup inpName lblText inp =
+  div 
+  [ class "field-group" ]
+  [ label [ for inpName ] [ text lblText ]
+  , inp
+  ]
+
+selectField : String -> String -> List (String, String) -> Html
+selectField inpId lblText opts =
+  let
+    toOption (val, txt) = option [ value val ] [ text txt ]
+  in
+    fieldGroup inpId lblText
+      <| select [ id inpId ]
+        <| List.map toOption opts
+
+intField : String -> String -> Html
+intField inpId lblText =
+  fieldGroup inpId lblText
+    <| input
+        [ id inpId
+        , name inpId
+        , type' "number"
+        , step "1"
+        ]
+        []
+
+textField : String -> String -> Html
+textField inpId lblText =
+  fieldGroup inpId lblText
+    <| input
+        [ id inpId
+        , name inpId
+        , type' "text"
+        ]
+        []
+
+{-
     , div
       [ class "container" ]
       [ div
@@ -231,52 +182,6 @@ view address model =
         ]
       ]
     ]
+-}
 
-factionCheckBox : Address Action -> Faction -> Html
-factionCheckBox address faction =
-  div
-  [ class "checkbox" ]
-  [ input
-    [ id ("faction-checkbox-" ++ faction.name)
-    , type' "checkbox"
-    , checked faction.checked
-    , name faction.name
-    , value faction.name
-    , on "change" targetChecked (Signal.message address << FactionCheck faction.name)
-    ]
-    []
-  , label [ for ("faction-checkbox-" ++ faction.name) ] [ text faction.name ]
-  ]
-
--- EFFECTS
-
-encodeFaction : List Faction -> Json.Encode.Value
-encodeFaction factions =
-    List.filter .checked factions
-    |> List.map (\f -> Json.Encode.string f.name)
-    |> Json.Encode.list
-
-jsonPost : Json.Decode.Decoder value -> String -> Http.Body -> Task Http.Error value
-jsonPost decoder url body = 
-  let request =
-    { verb = "POST"
-    , headers = [ ("Content-Type", "application/json") ]
-    , url = url
-    , body = body
-    }
-  in
-    Http.fromJson decoder (Http.send Http.defaultSettings request)
-
-getGameFactions : String -> Effects Action
-getGameFactions gameStr =
-  Http.get (Json.Decode.list Json.Decode.string) ("/hull-parser/faction/" ++ gameStr)
-    `onError` (\_ -> succeed [])
-    |> Task.map FactionsReceive
-    |> Effects.task
-
-getMission : Game -> List Faction -> Effects Action
-getMission game factions =
-  jsonPost Json.Decode.string ("/hull-parser/faction/" ++ (gameToString game)) (Http.string (Json.Encode.encode 0 (encodeFaction factions)))
-    `onError` (\_ -> succeed "")
-    |> Task.map MissionReceive
-    |> Effects.task
+-- Effects
