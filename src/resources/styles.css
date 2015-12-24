@@ -8,7 +8,15 @@ body {
 }
 
 h3 {
-    margin: 0 0 14px 0;
+    margin: 0;
+}
+
+h3.before {
+    margin-top: 20px;
+}
+
+h3.after {
+    margin-bottom: 14px;
 }
 
 input {
@@ -19,6 +27,14 @@ input {
     padding: 0 5px 0 5px;
     font-size: 14px;
     box-sizing: border-box;
+}
+
+input[type=checkbox] {
+    width: 18px;
+    height: 18px;
+    margin: 0 0 0 0;
+    box-sizing: border-box;
+    vertical-align: middle;
 }
 
 select {
@@ -63,6 +79,10 @@ label {
     padding: 8px;
 }
 
+.header-text {
+    font-size: 30px;
+}
+
 .content {
     margin-top: 10px;
     background-color: #fff;
@@ -73,6 +93,7 @@ label {
 
 .field-group {
     margin-bottom: 10px;
+    height: 28px;
 }
 
 .checkbox {

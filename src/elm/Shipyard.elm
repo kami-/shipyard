@@ -20,7 +20,7 @@ import Task exposing (..)
 
 defaultMission : Mission.Mission
 defaultMission =
-  { terrain = { id = "", name = "" }
+  { terrain = { id = "Altis", name = "Altis" }
   , missionType = Mission.COOP
   , maxPlayers = 0
   , onLoadName = "Oh it's this mission!"
@@ -31,12 +31,27 @@ defaultMission =
   , addons = { admiral = True, plank = False }
   }
 
+defaultMissionConfig : Mission.Config
+defaultMissionConfig =
+  { sides = Mission.sides
+  , missionTypes = Mission.missionTypes
+  , terrains =
+      [ { id="Altis", name="Altis" }
+      , { id="Stratis", name="Stratis" }
+      ]
+  , hull3 =
+      { factions = []
+      , gearTemplates = []
+      , uniformTemplates = []
+      }
+  }
+
 defaultModel : Model
-defaultModel = Model defaultMission
+defaultModel = Model defaultMission defaultMissionConfig
 
 type alias Model =
     { mission : Mission.Mission
-    
+    , missionConfig : Mission.Config
     }
 
 init : (Model, Effects Action)
@@ -44,6 +59,7 @@ init =
   ( defaultModel
   , Effects.none
   )
+
 
 -- UPDATE
 
@@ -71,19 +87,50 @@ view address model =
       [ class "content" ]
       [ div
         [ class "form" ]
-        [ h3 [] [ text "Mission" ]
-        , selectField "terrain" "Terrain" [ ("Altis", "Altis"), ("Stratis", "Stratis") ]
-        , selectField "missionType" "Mission type" [ ("COOP", "COOP"), ("TVT", "TVT"), ("GTVT", "GTVT"), ("COTVT", "COTVT") ]
-        , intField "maxPlayers" "Max players"
-        , textField "onLoadName" "OnLoadName"
-        , textField "author" "Author"
-        , textField "briefingName" "Briefing name"
-        , textField "overviewText" "Overview text"
-        , h3 [] [ text "Factions" ]
-        , h3 [] [ text "Addons" ]
+        [ h3 [ class "after" ] [ text "Mission" ]
+        , selectField
+            "terrain"
+            "Terrain"
+            (toOptionPairs .id .name [{id="Altis",name="Altis"},{id="Stratis",name="Stratis"}])
+            model.mission.terrain.id
+        , selectField
+            "missionType"
+            "Mission type"
+            (toOptionPairs Mission.missionTypeToStr Mission.missionTypeToStr Mission.missionTypes)
+            <| Mission.missionTypeToStr model.mission.missionType
+        , intField
+            "maxPlayers"
+            "Max players"
+            model.mission.maxPlayers
+        , textField
+            "onLoadName"
+            "OnLoadName"
+            model.mission.onLoadName
+        , textField
+            "author"
+            "Author"
+            model.mission.author
+        , textField
+            "briefingName"
+            "Briefing name"
+            model.mission.briefingName
+        , textField
+            "overviewText"
+            "Overview text"
+            model.mission.overviewText
+        , h3 [ class "before after" ] [ text "Factions" ]
+        , button
+          [ id "add-faction" ]
+          [ text "Add faction" ]
+        , h3 [ class "before after" ] [ text "Addons" ]
+        , addonField "admiral" "Admiral" model.mission.addons.admiral
+        , addonField "plank" "Plank" model.mission.addons.plank
         ]
       ]
     ]
+
+toOptionPairs : (a -> String) -> (a -> String) -> List a -> List (String, String)
+toOptionPairs toVal toTxt xs = List.map (\x -> (toVal x, toTxt x)) xs
 
 fieldGroup : String -> String -> Html -> Html
 fieldGroup inpName lblText inp =
@@ -93,35 +140,83 @@ fieldGroup inpName lblText inp =
   , inp
   ]
 
-selectField : String -> String -> List (String, String) -> Html
-selectField inpId lblText opts =
+selectField : String -> String -> List (String, String) -> String -> Html
+selectField inpId lblText opts selectedVal =
   let
-    toOption (val, txt) = option [ value val ] [ text txt ]
+    toOption selectedVal (val, txt) =
+      option
+      [ value val
+      , selected (val == selectedVal)
+      ]
+      [ text txt ]
   in
     fieldGroup inpId lblText
       <| select [ id inpId ]
-        <| List.map toOption opts
+        <| List.map (toOption selectedVal) opts
 
-intField : String -> String -> Html
-intField inpId lblText =
+intField : String -> String -> Int -> Html
+intField inpId lblText val =
   fieldGroup inpId lblText
     <| input
         [ id inpId
         , name inpId
         , type' "number"
         , step "1"
+        , value
+            <| toString val 
         ]
         []
 
-textField : String -> String -> Html
-textField inpId lblText =
+textField : String -> String -> String -> Html
+textField inpId lblText val =
   fieldGroup inpId lblText
     <| input
         [ id inpId
         , name inpId
         , type' "text"
+        , value val
         ]
         []
+
+addonField : String -> String -> Bool -> Html
+addonField inpId lblText isChecked =
+  fieldGroup inpId lblText
+    <| input
+        [ id inpId
+        , name inpId
+        , type' "checkbox"
+        , checked isChecked
+        ]
+        []
+
+faction : Hull3.Config -> Mission.Faction -> Int -> Html
+faction h3Config f idx =
+  div
+  []
+  [ selectField
+      (factionFieldId "faction" idx)
+      "Gear template"
+      (toOptionPairs  .id .name  h3Config.gearTemplates)
+      f.gearTemplateId
+  , selectField
+      (factionFieldId "side" idx)
+      "Side"
+      (toOptionPairs Mission.sideToStr Mission.sideToStr Mission.sides)
+      <| Mission.sideToStr f.side
+  , selectField
+      (factionFieldId "gear" idx)
+      "Gear template"
+      (toOptionPairs  .id .name  h3Config.gearTemplates)
+      f.gearTemplateId
+  , selectField
+      (factionFieldId "uniform" idx)
+      "Uniform template"
+      (toOptionPairs  .id .name  h3Config.uniformTemplates)
+      f.uniformTemplateId
+  ]
+
+factionFieldId : String -> Int -> String
+factionFieldId id idx = id ++ "Faction" ++ (toString idx)
 
 {-
     , div

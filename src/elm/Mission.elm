@@ -46,7 +46,8 @@ type alias Mission =
     }
 
 type alias Config =
-    { missionTypes : List MissionType
+    { sides : List Side
+    , missionTypes : List MissionType
     , terrains : List Terrain
     , hull3 : Hull3.Config
     }
@@ -54,8 +55,14 @@ type alias Config =
 side : Decoder Side
 side = map strToSide string
 
+sides : List Side
+sides = [ BLUFOR, OPFOR, INDFOR, CIVILIAN ]
+
 missionType : Decoder MissionType
 missionType = map strToMissionType string
+
+missionTypes : List MissionType
+missionTypes = [ COOP, TVT, GTVT, COTVT ]
 
 terrain : Decoder Terrain
 terrain =
@@ -63,9 +70,10 @@ terrain =
     ("id" := string)
     ("name" := string)
 
-mission : Decoder Config
-mission =
-  object3 Config
+config : Decoder Config
+config =
+  object4 Config
+    ("sides" := list side)
     ("missionTypes" := list missionType)
     ("terrains" := list terrain)
     ("hull3" := Hull3.config)
@@ -78,6 +86,14 @@ strToSide str =
     "CIVILIAN" -> CIVILIAN
     _ -> BLUFOR
 
+sideToStr : Side -> String
+sideToStr s =
+  case s of
+    BLUFOR -> "BLUFOR"
+    OPFOR -> "OPFOR"
+    INDFOR -> "INDFOR"
+    CIVILIAN -> "CIVILIAN"
+
 strToMissionType : String -> MissionType
 strToMissionType str =
   case str of
@@ -85,3 +101,11 @@ strToMissionType str =
     "GTVT" -> GTVT
     "COTVT" -> COTVT
     _ -> COOP
+
+missionTypeToStr : MissionType -> String
+missionTypeToStr mt =
+  case mt of
+    COOP -> "COOP"
+    TVT -> "TVT"
+    GTVT -> "GTVT"
+    COTVT -> "COTVT"
