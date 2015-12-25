@@ -1,13 +1,11 @@
-/// <reference path="../../typings/tsd.d.ts" />
+/// <reference path="./typings/tsd.d.ts" />
 
 import Settings = require('./Settings');
 import fs = require('fs-extra');
 
-import * as configParser from 'config-parser'
-import Ast = configParser.Ast;
-import Lexer = configParser.Lexer;
-import Mission = configParser.Mission;
-import Parser = configParser.Parser;
+import {Ast, Lexer, Mission, Parser} from 'config-parser';
+import {Faction, Template, GearTemplate, UniformTemplate} from '../common/Hull3';
+export {Faction, Template, GearTemplate, UniformTemplate} from '../common/Hull3';
 
 var SAMPLE_MISSION_PATH = `${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.SAMPLE_MISSION_HOME}`, 
     FACTION_PATH = `${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.FACTION}`,
@@ -17,21 +15,6 @@ var SAMPLE_MISSION_PATH = `${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.SAM
 export var factions: Faction[] = [];
 export var gearTemplates: Template[] = [];
 export var uniformTemplates: Template[] = [];
-
-export interface Template {
-    id: string;
-    name: string;
-    description: string;
-}
-
-export interface GearTemplate extends Template {}
-export interface UniformTemplate extends Template {}
-
-export interface Faction {
-    name: string;
-    gearTemplateId: string;
-    uniformTemplateId: string;
-}
 
 function parseFile(path: string): Parser.Node {
     var factionFile: string = fs.readFileSync(path, 'UTF-8');

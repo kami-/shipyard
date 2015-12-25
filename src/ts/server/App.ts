@@ -1,4 +1,4 @@
-/// <reference path="../../typings/tsd.d.ts" />
+/// <reference path="./typings/tsd.d.ts" />
 
 import express = require('express');
 import bodyParser = require('body-parser');
@@ -63,7 +63,7 @@ function generateMission(request, response) {
         maxPlayers: 60,
         onLoadName: "Oh it's this mission",
         author: 'Kami',
-        briefingName: 'oh_its_this_mission',
+        briefingName: ' ; echo "hello" ; oh_its_this_mission',
         overviewText: 'Slot everything!',
         factions: [],
         addons: {

@@ -1,5 +1,5 @@
-export var HOST_NAME = '127.0.0.1';
-export var PORT = 5000
+export var HOST_NAME = process.env.IP;
+export var PORT = process.env.PORT
 export var CONTEXT_PATH= '/shipyard';
 
 export var PATH = {

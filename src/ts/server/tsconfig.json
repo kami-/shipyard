@@ -8,14 +8,14 @@
         "preserveConstEnums": true,
         "declaration": true,
         "suppressImplicitAnyIndexErrors": true,
-        "outDir": "./src/js"
+        "outDir": "../../js"
     },
     "files": [
-        "./src/ts/index.ts",
-        "./src/ts/App.ts",
-        "./src/ts/Hull3.ts",
-        "./src/ts/Mission.ts",
-        "./src/ts/Settings.ts",
+        "./index.ts",
+        "./App.ts",
+        "./Hull3.ts",
+        "./Mission.ts",
+        "./Settings.ts",
         "./typings/tsd.d.ts"
     ]
 }

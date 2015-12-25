@@ -1,72 +1,13 @@
-/// <reference path="../../typings/tsd.d.ts" />
+/// <reference path="./typings/tsd.d.ts" />
 
 import Hull3 = require('./Hull3');
 import Settings = require('./Settings');
 import fs = require('fs-extra');
 
+import {Side, MissionType, Terrain, Faction, Addons, Mission, Hull3Config, MissionConfig, GeneratedMission} from '../common/Mission';
+export {Side, MissionType, Terrain, Faction, Addons, Mission, Hull3Config, MissionConfig, GeneratedMission} from '../common/Mission';
+
 var missionIdCounter: number = 0;
-
-export enum Side {
-    BLUFOR,
-    OPFOR,
-    INDFOR,
-    CIVILIAN
-}
-
-export enum MissionType {
-    COOP,
-    TVT,
-    GTVT,
-    COTVT
-}
-
-export interface Terrain {
-    id: string;
-    name: string;
-}
-
-export interface Faction {
-    side: Side;
-    faction: Hull3.Faction;
-    gearTemplateId: string;
-    uniformTemplateId: string;
-}
-
-export interface Addons {
-    Admiral: boolean;
-    Plank: boolean;
-}
-
-export interface Mission {
-    terrain: Terrain;
-    missionTypeName: string;
-    maxPlayers: number;
-    onLoadName: string;
-    author: string;
-    briefingName: string;
-    overviewText: string;
-    factions: Faction[];
-    addons: Addons;
-}
-
-export interface Hull3Config {
-    factions: Hull3.Faction[];
-    gearTemplates: Hull3.Template[];
-    uniformTemplates: Hull3.Template[];
-}
-
-export interface MissionConfig {
-    missionTypeNames: string[];
-    terrains: Terrain[];
-    Hull3: Hull3Config;
-}
-
-export interface GeneratedMission {
-    missionId: number;
-    missionWorkingDir: string;
-    missionDirName: string;
-    missionDir: string;
-}
 
 function nextMissionId(): number {
     missionIdCounter = missionIdCounter + 1;
