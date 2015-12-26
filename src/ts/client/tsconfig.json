@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "noImplicitAny": false,
+        "removeComments": true,
+        "noLib": false,
+        "preserveConstEnums": true,
+        "declaration": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "outDir": "../../js"
+    },
+    "files": [
+        "./App.ts",
+        "./Hull3.ts",
+        "./Mission.ts",
+        "./View.ts",
+        "./typings/tsd.d.ts"
+    ]
+}

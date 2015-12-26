@@ -58,7 +58,7 @@ function registerRoutes(app: express.Express) {
 
 function generateMission(request, response) {
     var mission: Mission.Mission = {
-        terrain: {id: 'Altis', name: 'Altis' },
+        terrainId: 'Altis',
         missionTypeName: 'co',
         maxPlayers: 60,
         onLoadName: "Oh it's this mission",
@@ -67,8 +67,8 @@ function generateMission(request, response) {
         overviewText: 'Slot everything!',
         factions: [],
         addons: {
-            Admiral: true,
-            Plank: true
+            admiral: true,
+            plank: true
         }
     }
     console.log(mission.briefingName);

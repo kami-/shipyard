@@ -27,32 +27,36 @@ export interface Faction {
 }
 
 export interface Addons {
-    Admiral: boolean;
-    Plank: boolean;
+    admiral: boolean;
+    plank: boolean;
+}
+
+export interface FactionRequest {
+    factionId: string;
+    sideName: string;
+    gearTemplateId: string;
+    uniformTemplateId: string;
+    groups: { [id: string]: boolean };
+    vehicleClassnames: { [id: string]: string }
 }
 
 export interface Mission {
-    terrain: Terrain;
+    terrainId: string;
     missionTypeName: string;
     maxPlayers: number;
     onLoadName: string;
     author: string;
     briefingName: string;
     overviewText: string;
-    factions: Faction[];
+    factions: FactionRequest[];
     addons: Addons;
 }
 
-export interface Hull3Config {
-    factions: Hull3.Faction[];
-    gearTemplates: Hull3.Template[];
-    uniformTemplates: Hull3.Template[];
-}
-
-export interface MissionConfig {
+export interface Config {
+    sideNames: string[];
     missionTypeNames: string[];
     terrains: Terrain[];
-    Hull3: Hull3Config;
+    Hull3: Hull3.Config;
 }
 
 export interface GeneratedMission {

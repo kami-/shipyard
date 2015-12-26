@@ -4,8 +4,8 @@ import Hull3 = require('./Hull3');
 import Settings = require('./Settings');
 import fs = require('fs-extra');
 
-import {Side, MissionType, Terrain, Faction, Addons, Mission, Hull3Config, MissionConfig, GeneratedMission} from '../common/Mission';
-export {Side, MissionType, Terrain, Faction, Addons, Mission, Hull3Config, MissionConfig, GeneratedMission} from '../common/Mission';
+import {Side, MissionType, Terrain, Faction, Addons, FactionRequest, Mission, Config, GeneratedMission} from '../common/Mission';
+export {Side, MissionType, Terrain, Faction, Addons, FactionRequest, Mission, Config, GeneratedMission} from '../common/Mission';
 
 var missionIdCounter: number = 0;
 
@@ -33,14 +33,17 @@ export function getTerrains(): Terrain[] {
     ]
 }
 
-export function getMissionConfig(): MissionConfig {
+export function getMissionConfig(): Config {
     return {
+        sideNames: getSideNames(),
         missionTypeNames: getMissionTypeNames(),
         terrains: getTerrains(),
         Hull3: {
             factions: Hull3.getFactions(),
             gearTemplates: Hull3.getGearTemplates(),
-            uniformTemplates: Hull3.getUniformTemplates()
+            uniformTemplates: Hull3.getUniformTemplates(),
+            groupTemplates: Hull3.getGroupTemplates(),
+            vehicleClassnameTemplates: Hull3.getVehicleClassnameTemplates()
         }
     }
 }
@@ -49,7 +52,7 @@ export function getMissionConfig(): MissionConfig {
 export function generateMission(mission: Mission): GeneratedMission {
     var missionId = nextMissionId();
     // ark_co60_oh_its_this_mission.Altis
-    var missionDirName = `ark_${mission.missionTypeName.toLowerCase()}${mission.maxPlayers}_${mission.briefingName.toLowerCase()}.${mission.terrain.name}`;
+    var missionDirName = `ark_${mission.missionTypeName.toLowerCase()}${mission.maxPlayers}_${mission.briefingName.toLowerCase()}.${mission.terrainId}`;
     var missionWorkingDir = `${Settings.PATH.Mission.workingDir}/${missionId}`;
     var missionDir = `${missionWorkingDir}/${missionDirName}`;
     fs.copySync(Hull3.getSampleMissionPath(), missionDir);

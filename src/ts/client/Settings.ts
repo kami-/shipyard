@@ -1,0 +1,1 @@
+export var CONTEXT_PATH= '/shipyard';

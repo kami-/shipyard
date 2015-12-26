@@ -1,17 +1,103 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
     <title>Shipyard</title>
     <link href="styles.css" rel="stylesheet">
-    <script type="text/javascript" src="elm.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
-</head>
-<body>
-    <script>
-        (function() {
-            Elm.fullscreen(Elm.ShipyardApp);
-        }());
+    <script type="text/javascript" src="main.js"></script>
+    
+    <script id="faction-select-field-template" type="text/template">
+        <div class="field-group">
+            <label for="<%- label + factionId %>"><%- label %></label>
+            <select id="<%- label + factionId %>" name="<%- label + factionId %>">
+                <% _.forEach(options, function(o) { %>
+                    <option value="<%- o.value %>" <% o.value == selectedValue ? 'selected="selected"' : '' %> ><%- o.text %></option>
+                <% }); %>
+            </select>
+        </div> 
     </script>
+    
+    <script id="faction-group-fields-template" type="text/template">
+        <div class="faction-group-fields">
+            <% _.forEach(groupTemplates, function(gt) { %>
+                <div class="field-group group-template">
+                    <input id="<%- gt.id + factionId %>" name="<%- gt.id + factionId %>" type="checkbox" checked />
+                    <label for="<%- gt.id + factionId %>"><%- gt.name %></label>
+                </div>
+            <% }); %>
+        </div> 
+    </script>
+
+    <script id="faction-vehicle-classname-fields-template" type="text/template">
+        <div class="faction-vehicle-classname-fields">
+            <% _.forEach(vehicleClassnameTemplates, function(vct) { %>
+                <div class="field-group vehicle-classname-template">
+                    <label for="<%- vct.id + factionId %>"><%- vct.name %></label>
+                    <input id="<%- vct.id + factionId %>" name="<%- vct.id + factionId %>" type="text" value="<%- vct.classname %>" />
+                </div>
+            <% }); %>
+        </div> 
+    </script>
+</head>
+
+<body>
+<div>
+    <div class="header">
+        <span class="header-text">Shipyard</span>
+    </div>
+    <div class="content">
+        <div class="form">
+            <h3 class="after">Mission</h3>
+            <div class="field-group">
+                <label for="terrain">Terrain</label>
+                <select id="terrain">
+                </select>
+            </div>
+            <div class="field-group">
+                <label for="missionType">Mission type</label>
+                <select id="missionType">
+                </select>
+            </div>
+            <div class="field-group">
+                <label for="maxPlayers">Max players</label>
+                <input id="maxPlayers" name="maxPlayers" type="number" step="1">
+            </div>
+            <div class="field-group">
+                <label for="onLoadName">OnLoadName</label>
+                <input id="onLoadName" name="onLoadName" type="text">
+            </div>
+            <div class="field-group">
+                <label for="author">Author</label>
+                <input id="author" name="author" type="text">
+            </div>
+            <div class="field-group">
+                <label for="briefingName">Briefing name</label>
+                <input id="briefingName" name="briefingName" type="text">
+            </div>
+            <div class="field-group">
+                <label for="overviewText">Overview text</label>
+                <input id="overviewText" name="overviewText" type="text">
+            </div>
+            
+            <h3 class="before after">Factions</h3>
+            <div id="factions"></div>
+            <button id="add-faction">Add faction</button>
+            
+            <h3 class="before after">Addons</h3>
+            <div class="field-group">
+                <label for="admiral">Admiral</label>
+                <input id="admiral" name="admiral" type="checkbox">
+            </div>
+            <div class="field-group">
+                <label for="plank">Plank</label>
+                <input id="plank" name="plank" type="checkbox">
+            </div>
+
+            <button id="generate-mission">Generate mission</button>
+        </div>
+    </div>
+</div>
 </body>
+
 </html>
