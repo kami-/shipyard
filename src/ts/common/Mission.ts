@@ -37,7 +37,7 @@ export interface FactionRequest {
     gearTemplateId: string;
     uniformTemplateId: string;
     groups: { [id: string]: boolean };
-    vehicleClassnames: { [id: string]: string }
+    vehicleClassnames: { [id: string]: string };
 }
 
 export interface Mission {
@@ -64,4 +64,28 @@ export interface GeneratedMission {
     missionWorkingDir: string;
     missionDirName: string;
     missionDir: string;
+}
+
+export function getSides(): Side[] {
+    return [Side.BLUFOR, Side.OPFOR, Side.INDFOR, Side.CIVILIAN];
+}
+
+export function sideToString(s: Side): string {
+    return Side[s];
+}
+
+export function getSideNames(): string[] {
+    return getSides().map(sideToString);
+}
+
+export function getMissionTypes(): MissionType[] {
+    return [MissionType.COOP, MissionType.TVT, MissionType.GTVT, MissionType.COTVT];
+}
+
+export function missionTypeToString(mt: MissionType): string {
+    return MissionType[mt];
+}
+
+export function getMissionTypeNames(): string[] {
+    return getMissionTypes().map(missionTypeToString);
 }

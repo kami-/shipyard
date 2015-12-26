@@ -4,8 +4,8 @@ import Hull3 = require('./Hull3');
 import Settings = require('./Settings');
 import fs = require('fs-extra');
 
-import {Side, MissionType, Terrain, Faction, Addons, FactionRequest, Mission, Config, GeneratedMission} from '../common/Mission';
-export {Side, MissionType, Terrain, Faction, Addons, FactionRequest, Mission, Config, GeneratedMission} from '../common/Mission';
+import {Side, MissionType, Terrain, Faction, Addons, FactionRequest, Mission, Config, GeneratedMission, getSideNames, getMissionTypeNames} from '../common/Mission';
+export {Side, MissionType, Terrain, Faction, Addons, FactionRequest, Mission, Config, GeneratedMission, getSideNames, getMissionTypeNames} from '../common/Mission';
 
 var missionIdCounter: number = 0;
 
@@ -16,14 +16,6 @@ function nextMissionId(): number {
 
 function cleanWorkingDir() {
     fs.emptyDirSync(Settings.PATH.Mission.workingDir);
-}
-
-export function getSideNames(): string[] {
-    return [Side.BLUFOR, Side.OPFOR, Side.INDFOR, Side.CIVILIAN].map(s => Side[s]);
-}
-
-export function getMissionTypeNames(): string[] {
-    return [MissionType.COOP, MissionType.TVT, MissionType.GTVT, MissionType.COTVT].map(mt => MissionType[mt]);
 }
 
 export function getTerrains(): Terrain[] {
@@ -47,7 +39,6 @@ export function getMissionConfig(): Config {
         }
     }
 }
-
 
 export function generateMission(mission: Mission): GeneratedMission {
     var missionId = nextMissionId();

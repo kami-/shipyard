@@ -32,7 +32,6 @@ export function getVehicleClassnameTemplates(): VehicleClassnameTemplate[] {
 }
 
 export function updateFromConfig(config: Config) {
-console.log("hull3", config);
     factions = config.factions;
     gearTemplates = config.gearTemplates;
     uniformTemplates = config.uniformTemplates;
