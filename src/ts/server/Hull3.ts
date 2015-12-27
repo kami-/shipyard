@@ -2,18 +2,22 @@
 
 import Settings = require('./Settings');
 import fs = require('fs-extra');
+import _ = require('lodash');
 
 import {Ast, Lexer, Mission, Parser} from 'config-parser';
-import {Faction, Template, GearTemplate, UniformTemplate, GroupTemplate, VehicleClassnameTemplate, Config} from '../common/Hull3';
-export {Faction, Template, GearTemplate, UniformTemplate, GroupTemplate, VehicleClassnameTemplate, Config} from '../common/Hull3';
+import {Template, GearTemplate, UniformTemplate, GroupTemplate, VehicleClassnameTemplate, Faction, FactionConfig, Config} from '../common/Hull3';
+export {Template, GearTemplate, UniformTemplate, GroupTemplate, VehicleClassnameTemplate, Faction, FactionConfig, Config} from '../common/Hull3';
 
 var SAMPLE_MISSION_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.SAMPLE_MISSION_HOME}`, 
     FACTION_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.FACTION}`,
     GEAR_HOME_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.GEAR_HOME}`,
     UNIFORM_HOME_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.UNIFORM_HOME}`,
-    GROUPS_JSON_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/groups.json`;
+    FACTION_CONFIGS_JSON_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/factions.json`,
+    GROUPS_JSON_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/groups.json`,
+    VEHICLE_CLASSNAMES_JSON_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/vehicle-classnames.json`;
 
 var factions: Faction[] = [];
+var factionConfigs: { [id: string]: FactionConfig } = {};
 var gearTemplates: GearTemplate[] = [];
 var uniformTemplates: UniformTemplate[] = [];
 var groupTemplates: GroupTemplate[] = [];
@@ -49,6 +53,13 @@ export function updateFactions() {
     factions = Ast.select(factionsAst, 'Faction.*').map(factionNodeToFaction);
 }
 
+export function updateFactionConfigs() {
+    factionConfigs = JSON.parse(fs.readFileSync(FACTION_CONFIGS_JSON_PATH, 'UTF-8'));
+    _.forOwn(factionConfigs, (rc, factionId) => {
+        rc.factionId = factionId;
+    });
+}
+
 export function updateGearTemplates() {
     var gearTemplateFilenames = fs.readdirSync(GEAR_HOME_PATH);
     gearTemplates = gearTemplateFilenames.map(gf => getTemplate(GEAR_HOME_PATH, gf));
@@ -60,20 +71,19 @@ export function updateUniformTemplates() {
 }
 
 export function updateGroupTemplates() {
-    groupTemplates = JSON.parse(fs.readFileSync(GROUPS_JSON_PATH, 'UTF-8'));
+    groupTemplates = <GroupTemplate[]>JSON.parse(fs.readFileSync(GROUPS_JSON_PATH, 'UTF-8'));
 }
 
 export function updateVehicleClassnameTemplates() {
-    vehicleClassnameTemplates = [
-        { id: 'IFV', name: 'IFV', description: '', classname: 'BLU_IFV' },
-        { id: 'TNK', name: 'Tank', description: '', classname: 'BLU_TNK' },
-        { id: 'TH', name: 'Transport helo', description: '', classname: 'BLU_TH' },
-        { id: 'AH', name: 'Attack helo', description: '', classname: 'BLU_AH' }
-    ];
+    vehicleClassnameTemplates = <VehicleClassnameTemplate[]>JSON.parse(fs.readFileSync(VEHICLE_CLASSNAMES_JSON_PATH, 'UTF-8'));
 }
 
 export function getFactions(): Faction[] {
     return factions;
+}
+
+export function getFactionConfigs(): { [id: string]: FactionConfig } {
+    return factionConfigs;
 }
 
 export function getGearTemplates(): GearTemplate[] {
@@ -97,6 +107,7 @@ export function getSampleMissionPath(): string {
 }
 
 updateFactions();
+updateFactionConfigs();
 updateGearTemplates();
 updateUniformTemplates();
 updateGroupTemplates();

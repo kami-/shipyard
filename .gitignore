@@ -3,3 +3,5 @@
 /addon
 /workingDir
 /node_modules
+/src/ts/client/typings
+/src/ts/server/typings

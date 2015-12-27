@@ -91,30 +91,34 @@ function addFaction(container: JQuery) {
     var factionId = nextFactionId();
     var factionContainer = $(`<div class="faction-container"></div>`),
         factionFieldContainer = $(`<div class="faction-field-container"></div>`),
-        factionField = FACTION_SELECT_FIELD_TEMPLATE({
+        factionField = $(FACTION_SELECT_FIELD_TEMPLATE({
             factionId: factionId,
+            fieldClass: 'faction',
             label: 'Faction',
             options: Hull3.getFactions().map(factionToOption),
             selectedValue: ''
-        }),
-        sideField = FACTION_SELECT_FIELD_TEMPLATE({
+        })),
+        sideField = $(FACTION_SELECT_FIELD_TEMPLATE({
             factionId: factionId,
+            fieldClass: 'side',
             label: 'Side',
             options: Mission.getSides().map(sideToOption),
             selectedValue: ''
-        }),
-        gearField = FACTION_SELECT_FIELD_TEMPLATE({
+        })),
+        gearField = $(FACTION_SELECT_FIELD_TEMPLATE({
             factionId: factionId,
+            fieldClass: 'gearTemplate',
             label: 'Gear template',
             options: Hull3.getGearTemplates().map(templateToOption),
             selectedValue: ''
-        }),
-        uniformField = FACTION_SELECT_FIELD_TEMPLATE({
+        })),
+        uniformField = $(FACTION_SELECT_FIELD_TEMPLATE({
             factionId: factionId,
+            fieldClass: 'uniformTemplate',
             label: 'Uniform template',
             options: Hull3.getUniformTemplates().map(templateToOption),
             selectedValue: ''
-        }),
+        })),
         removeFooter = $(`<div class="remove-footer"></div>`),
         removeButton = $(`<button class="remove-button">Remove</button>`);
     factionFieldContainer.append(factionField);
@@ -129,6 +133,20 @@ function addFaction(container: JQuery) {
     removeFooter.append($('<div style="clear: both;"></div>'));
     factionContainer.append(removeFooter);
     container.append(factionContainer);
+    addFactionChangeHandling(factionContainer, Hull3.getFactionConfigs());
+}
+
+function addFactionChangeHandling(factionContainer: JQuery, factionConfigs: { [id: string]: Hull3.FactionConfig }) {
+    factionContainer.find('select.faction').change(e => {
+        var selectedFactionId = $(e.target).find(':selected').val();
+        var faction = Hull3.getFactionById(selectedFactionId),
+            vehicleClassnames = factionConfigs[selectedFactionId].vehicleClassnames;
+        factionContainer.find('select.gearTemplate').val(faction.gearTemplateId);
+        factionContainer.find('select.uniformTemplate').val(faction.uniformTemplateId);
+        factionContainer.find('input.vehicle-classname').each((idx, el) => {
+            $(el).val(vehicleClassnames[$(el).data('id')]);
+        });
+    });
 }
 
 function addGroups(container: JQuery, factionId: number) {

@@ -10,7 +10,7 @@
     <script id="faction-select-field-template" type="text/template">
         <div class="field-group">
             <label for="<%- label + factionId %>"><%- label %></label>
-            <select id="<%- label + factionId %>" name="<%- label + factionId %>">
+            <select id="<%- label + factionId %>" class="<%- fieldClass %>" name="<%- label + factionId %>">
                 <% _.forEach(options, function(o) { %>
                     <option value="<%- o.value %>" <% o.value == selectedValue ? 'selected="selected"' : '' %> ><%- o.text %></option>
                 <% }); %>
@@ -41,7 +41,12 @@
             <% _.forEach(vehicleClassnameTemplates, function(vct) { %>
                 <div class="field-group vehicle-classname-template">
                     <label for="<%- vct.id + factionId %>"><%- vct.name %></label>
-                    <input id="<%- vct.id + factionId %>" name="<%- vct.id + factionId %>" type="text" value="<%- vct.classname %>" />
+                    <input id="<%- vct.id + factionId %>"
+                        class="vehicle-classname"
+                        name="<%- vct.id + factionId %>"
+                        type="text"
+                        value="<%- vct.classname %>"
+                        data-id="<%- vct.id %>" />
                 </div>
             <% }); %>
         </div> 

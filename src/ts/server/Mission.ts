@@ -32,6 +32,7 @@ export function getMissionConfig(): Config {
         terrains: getTerrains(),
         Hull3: {
             factions: Hull3.getFactions(),
+            factionConfigs: Hull3.getFactionConfigs(),
             gearTemplates: Hull3.getGearTemplates(),
             uniformTemplates: Hull3.getUniformTemplates(),
             groupTemplates: Hull3.getGroupTemplates(),

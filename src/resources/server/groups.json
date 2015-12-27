@@ -46,10 +46,10 @@
     { "id": "DHAT3", "name": "DHAT 3", "description": "", "groupingId": "DHAT" },
     { "id": "DHAT4", "name": "DHAT 4", "description": "", "groupingId": "DHAT" },
 
-    { "id": "ENG1", "name": "Engineering 1", "description": "", "groupingId": "ENG" },
-    { "id": "ENG2", "name": "Engineering 2", "description": "", "groupingId": "ENG" },
-    { "id": "ENG3", "name": "Engineering 3", "description": "", "groupingId": "ENG" },
-    { "id": "ENG4", "name": "Engineering 4", "description": "", "groupingId": "ENG" },
+    { "id": "ENG1", "name": "Engineer 1", "description": "", "groupingId": "ENG" },
+    { "id": "ENG2", "name": "Engineer 2", "description": "", "groupingId": "ENG" },
+    { "id": "ENG3", "name": "Engineer 3", "description": "", "groupingId": "ENG" },
+    { "id": "ENG4", "name": "Engineer 4", "description": "", "groupingId": "ENG" },
 
     { "id": "ST1", "name": "Sniper 1", "description": "", "groupingId": "ST" },
     { "id": "ST2", "name": "Sniper 2", "description": "", "groupingId": "ST" },

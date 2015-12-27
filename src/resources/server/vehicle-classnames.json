@@ -1,0 +1,14 @@
+[
+    { "id": "CO", "name": "Command", "description": "", "classname": "" },
+    { "id": "SL", "name": "Squad Lead", "description": "", "classname": "" },
+    { "id": "FT", "name": "Fireteam", "description": "", "classname": "" },
+    { "id": "ATTCH", "name": "Attachment", "description": "", "classname": "" },
+    { "id": "ENG", "name": "Engineer", "description": "", "classname": "" },
+    { "id": "APC", "name": "APC", "description": "", "classname": "" },
+    { "id": "IFV", "name": "IFV", "description": "", "classname": "" },
+    { "id": "SPAAG", "name": "SPAAG", "description": "", "classname": "" },
+    { "id": "TNK", "name": "Tank", "description": "", "classname": "" },
+    { "id": "TH", "name": "TH", "description": "", "classname": "" },
+    { "id": "AH", "name": "AH", "description": "", "classname": "" },
+    { "id": "CAS", "name": "CAS", "description": "", "classname": "" }
+]
