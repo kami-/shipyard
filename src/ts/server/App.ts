@@ -11,7 +11,7 @@ import mime = require('mime');
 
 function registerRoutes(app: express.Express) {
     app.get(Settings.CONTEXT_PATH, (request, response) => {
-        response.sendFile(Settings.PATH.RESOURCES_HOME + '/index.html');
+        response.sendFile(Settings.PATH.CLIENT_RESOURCES_HOME + '/index.html');
     });
     
     app.route(Settings.CONTEXT_PATH + '/mission/generate').get((request, response) => {
@@ -103,7 +103,7 @@ export function start() {
     if (process.platform !== 'linux' && process.platform !== 'win32') { throw 'Unsupported platform!' }
 
     var app = express();
-    app.use(Settings.CONTEXT_PATH, express.static(Settings.PATH.RESOURCES_HOME));
+    app.use(Settings.CONTEXT_PATH, express.static(Settings.PATH.CLIENT_RESOURCES_HOME));
     app.use(bodyParser.json());
 
     registerRoutes(app);

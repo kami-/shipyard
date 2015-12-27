@@ -18,12 +18,19 @@
         </div> 
     </script>
     
-    <script id="faction-group-fields-template" type="text/template">
-        <div class="faction-group-fields">
-            <% _.forEach(groupTemplates, function(gt) { %>
-                <div class="field-group group-template">
-                    <input id="<%- gt.id + factionId %>" name="<%- gt.id + factionId %>" type="checkbox" checked />
-                    <label for="<%- gt.id + factionId %>"><%- gt.name %></label>
+    <script id="faction-groups-template" type="text/template">
+        <div class="faction-groups">
+            <% _.forOwn(groupings, function(gts, gId) { %>
+                <div class="faction-grouping">
+                    <button class="grouping-select all"><%- gId %></button>
+                    <div class="group-templates">
+                        <% _.forEach(gts, function(gt) { %>
+                            <div class="field-group group-template">
+                                <input id="<%- gt.id + factionId %>" name="<%- gt.id + factionId %>" type="checkbox" checked />
+                                <label for="<%- gt.id + factionId %>"><%- gt.name %></label>
+                            </div>
+                        <% }); %>
+                    </div>
                 </div>
             <% }); %>
         </div> 

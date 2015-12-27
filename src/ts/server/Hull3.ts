@@ -7,10 +7,11 @@ import {Ast, Lexer, Mission, Parser} from 'config-parser';
 import {Faction, Template, GearTemplate, UniformTemplate, GroupTemplate, VehicleClassnameTemplate, Config} from '../common/Hull3';
 export {Faction, Template, GearTemplate, UniformTemplate, GroupTemplate, VehicleClassnameTemplate, Config} from '../common/Hull3';
 
-var SAMPLE_MISSION_PATH = `${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.SAMPLE_MISSION_HOME}`, 
-    FACTION_PATH = `${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.FACTION}`,
-    GEAR_HOME_PATH = `${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.GEAR_HOME}`,
-    UNIFORM_HOME_PATH = `${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.UNIFORM_HOME}`;
+var SAMPLE_MISSION_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.SAMPLE_MISSION_HOME}`, 
+    FACTION_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.FACTION}`,
+    GEAR_HOME_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.GEAR_HOME}`,
+    UNIFORM_HOME_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.UNIFORM_HOME}`,
+    GROUPS_JSON_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/groups.json`;
 
 var factions: Faction[] = [];
 var gearTemplates: GearTemplate[] = [];
@@ -59,21 +60,7 @@ export function updateUniformTemplates() {
 }
 
 export function updateGroupTemplates() {
-    groupTemplates = [
-        { id: 'CO', name: 'CO', description: '' },
-        { id: 'A', name: 'Alpha Squad Lead', description: '' },
-        { id: 'A1', name: 'Alpha Fireteam 1', description: '' },
-        { id: 'A2', name: 'Alpha Fireteam 2', description: '' },
-        { id: 'A3', name: 'Alpha Fireteam 3', description: '' },
-        { id: 'B', name: 'Bravo Squad Lead', description: '' },
-        { id: 'B1', name: 'Bravo Fireteam 1', description: '' },
-        { id: 'B2', name: 'Bravo Fireteam 2', description: '' },
-        { id: 'B3', name: 'Bravo Fireteam 3', description: '' },
-        { id: 'C', name: 'Charlie Squad Lead', description: '' },
-        { id: 'C1', name: 'Charlie Fireteam 1', description: '' },
-        { id: 'C2', name: 'Charlie Fireteam 2', description: '' },
-        { id: 'C3', name: 'Charlie Fireteam 3', description: '' }
-    ];
+    groupTemplates = JSON.parse(fs.readFileSync(GROUPS_JSON_PATH, 'UTF-8'));
 }
 
 export function updateVehicleClassnameTemplates() {

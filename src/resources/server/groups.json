@@ -1,0 +1,104 @@
+[
+    { "id": "CO", "name": "CO", "description": "", "groupingId": "CO" },
+    
+    { "id": "ASL", "name": "Alpha SL", "description": "", "groupingId": "A" },
+    { "id": "A1FT", "name": "Alpha 1", "description": "", "groupingId": "A" },
+    { "id": "A2FT", "name": "Alpha 2", "description": "", "groupingId": "A" },
+    { "id": "A3FT", "name": "Alpha 3", "description": "", "groupingId": "A" },
+    
+    { "id": "BSL", "name": "Bravo SL", "description": "", "groupingId": "B" },
+    { "id": "B1FT", "name": "Bravo 1", "description": "", "groupingId": "B" },
+    { "id": "B2FT", "name": "Bravo 2", "description": "", "groupingId": "B" },
+    { "id": "B3FT", "name": "Bravo 3", "description": "", "groupingId": "B" },
+    
+    { "id": "CSL", "name": "Charlie SL", "description": "", "groupingId": "C" },
+    { "id": "C1FT", "name": "Charlie 1", "description": "", "groupingId": "C" },
+    { "id": "C2FT", "name": "Charlie 2", "description": "", "groupingId": "C" },
+    { "id": "C3FT", "name": "Charlie 3", "description": "", "groupingId": "C" },
+    
+    { "id": "DSL", "name": "Delta SL", "description": "", "groupingId": "D" },
+    { "id": "D1FT", "name": "Delta 1", "description": "", "groupingId": "D" },
+    { "id": "D2FT", "name": "Delta 2", "description": "", "groupingId": "D" },
+    { "id": "D3FT", "name": "Delta 3", "description": "", "groupingId": "D" },
+
+    { "id": "MMG1", "name": "MMG 1", "description": "", "groupingId": "MMG" },
+    { "id": "MMG2", "name": "MMG 2", "description": "", "groupingId": "MMG" },
+    { "id": "MMG3", "name": "MMG 3", "description": "", "groupingId": "MMG" },
+    { "id": "MMG4", "name": "MMG 4", "description": "", "groupingId": "MMG" },
+
+    { "id": "HMG1", "name": "HMG 1", "description": "", "groupingId": "HMG" },
+    { "id": "HMG2", "name": "HMG 2", "description": "", "groupingId": "HMG" },
+    { "id": "HMG3", "name": "HMG 3", "description": "", "groupingId": "HMG" },
+    { "id": "HMG4", "name": "HMG 4", "description": "", "groupingId": "HMG" },
+
+    { "id": "MAT1", "name": "MAT 1", "description": "", "groupingId": "MAT" },
+    { "id": "MAT2", "name": "MAT 2", "description": "", "groupingId": "MAT" },
+    { "id": "MAT3", "name": "MAT 3", "description": "", "groupingId": "MAT" },
+    { "id": "MAT4", "name": "MAT 4", "description": "", "groupingId": "MAT" },
+
+    { "id": "HAT1", "name": "HAT 1", "description": "", "groupingId": "HAT" },
+    { "id": "HAT2", "name": "HAT 2", "description": "", "groupingId": "HAT" },
+    { "id": "HAT3", "name": "HAT 3", "description": "", "groupingId": "HAT" },
+    { "id": "HAT4", "name": "HAT 4", "description": "", "groupingId": "HAT" },
+
+    { "id": "DHAT1", "name": "DHAT 1", "description": "", "groupingId": "DHAT" },
+    { "id": "DHAT2", "name": "DHAT 2", "description": "", "groupingId": "DHAT" },
+    { "id": "DHAT3", "name": "DHAT 3", "description": "", "groupingId": "DHAT" },
+    { "id": "DHAT4", "name": "DHAT 4", "description": "", "groupingId": "DHAT" },
+
+    { "id": "ENG1", "name": "Engineering 1", "description": "", "groupingId": "ENG" },
+    { "id": "ENG2", "name": "Engineering 2", "description": "", "groupingId": "ENG" },
+    { "id": "ENG3", "name": "Engineering 3", "description": "", "groupingId": "ENG" },
+    { "id": "ENG4", "name": "Engineering 4", "description": "", "groupingId": "ENG" },
+
+    { "id": "ST1", "name": "Sniper 1", "description": "", "groupingId": "ST" },
+    { "id": "ST2", "name": "Sniper 2", "description": "", "groupingId": "ST" },
+    { "id": "ST3", "name": "Sniper 3", "description": "", "groupingId": "ST" },
+    { "id": "ST4", "name": "Sniper 4", "description": "", "groupingId": "ST" },
+
+    { "id": "SAM1", "name": "SAM 1", "description": "", "groupingId": "SAM" },
+    { "id": "SAM2", "name": "SAM 2", "description": "", "groupingId": "SAM" },
+    { "id": "SAM3", "name": "SAM 3", "description": "", "groupingId": "SAM" },
+    { "id": "SAM4", "name": "SAM 4", "description": "", "groupingId": "SAM" },
+
+    { "id": "GMG1", "name": "GMG 1", "description": "", "groupingId": "GMG" },
+    { "id": "GMG2", "name": "GMG 2", "description": "", "groupingId": "GMG" },
+    { "id": "GMG3", "name": "GMG 3", "description": "", "groupingId": "GMG" },
+    { "id": "GMG4", "name": "GMG 4", "description": "", "groupingId": "GMG" },
+
+    { "id": "MTR1", "name": "Mortar 1", "description": "", "groupingId": "MTR" },
+    { "id": "MTR2", "name": "Mortar 2", "description": "", "groupingId": "MTR" },
+    { "id": "MTR3", "name": "Mortar 3", "description": "", "groupingId": "MTR" },
+    { "id": "MTR4", "name": "Mortar 4", "description": "", "groupingId": "MTR" },
+
+    { "id": "APC1", "name": "APC 1", "description": "", "groupingId": "APC" },
+    { "id": "APC2", "name": "APC 2", "description": "", "groupingId": "APC" },
+    { "id": "APC3", "name": "APC 3", "description": "", "groupingId": "APC" },
+    { "id": "APC4", "name": "APC 4", "description": "", "groupingId": "APC" },
+    
+    { "id": "IFV1", "name": "IFV 1", "description": "", "groupingId": "IFV" },
+    { "id": "IFV2", "name": "IFV 2", "description": "", "groupingId": "IFV" },
+    { "id": "IFV3", "name": "IFV 3", "description": "", "groupingId": "IFV" },
+    { "id": "IFV4", "name": "IFV 4", "description": "", "groupingId": "IFV" },
+
+    { "id": "SPAAG1", "name": "SPAAG 1", "description": "", "groupingId": "SPAAG" },
+    { "id": "SPAAG2", "name": "SPAAG 2", "description": "", "groupingId": "SPAAG" },
+    { "id": "SPAAG3", "name": "SPAAG 3", "description": "", "groupingId": "SPAAG" },
+    { "id": "SPAAG4", "name": "SPAAG 4", "description": "", "groupingId": "SPAAG" },
+
+    { "id": "TNK1", "name": "Tank 1", "description": "", "groupingId": "TNK" },
+    { "id": "TNK2", "name": "Tank 2", "description": "", "groupingId": "TNK" },
+    { "id": "TNK3", "name": "Tank 3", "description": "", "groupingId": "TNK" },
+    { "id": "TNK4", "name": "Tank 4", "description": "", "groupingId": "TNK" },
+
+    { "id": "TH1", "name": "TH 1", "description": "", "groupingId": "TH" },
+    { "id": "TH2", "name": "TH 2", "description": "", "groupingId": "TH" },
+    { "id": "TH3", "name": "TH 3", "description": "", "groupingId": "TH" },
+    { "id": "TH4", "name": "TH 4", "description": "", "groupingId": "TH" },
+
+    { "id": "AH1", "name": "AH 1", "description": "", "groupingId": "AH" },
+    { "id": "AH2", "name": "AH 2", "description": "", "groupingId": "AH" },
+
+    { "id": "CAS1", "name": "CAS 1", "description": "", "groupingId": "CAS" },
+    { "id": "CAS2", "name": "CAS 2", "description": "", "groupingId": "CAS" }
+]

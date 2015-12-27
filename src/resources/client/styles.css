@@ -7,6 +7,12 @@ body {
     margin: 0;
 }
 
+body.header {
+    color: #fff;
+    background-color: #294546;
+    padding: 8px;
+}
+
 h3 {
     margin: 0;
 }
@@ -93,12 +99,6 @@ label {
     margin-top: 10px;
 }
 
-.header {
-    color: #fff;
-    background-color: #294546;
-    padding: 8px;
-}
-
 .header-text {
     font-size: 30px;
 }
@@ -128,24 +128,43 @@ label {
     padding-left: 5px;
 }
 
-.faction-group-fields {
-    margin-left: 15px;
+.faction-groups {
+    margin: 0 15px 0 15px;
 }
 
-.field-group.group-template {
-    margin-bottom: 5px;
-    height: 20px;
-    display: inline-block;
-}
-
-.field-group.group-template input[type=checkbox] {
+.faction-groups input[type=checkbox] {
     width: 14px;
     height: 14px;
 }
 
+.faction-grouping {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.faction-grouping button {
+    border-right: 1px solid #ccc;
+    min-width: 70px;
+    font-size: 15px;
+    line-height: 30px;
+    display: inline-block;
+}
+
+.group-templates {
+    margin-left: 5px;
+    display: inline-block;
+}
+
+.field-group.group-template {
+    margin: 0px;
+    height: 20px;
+    display: inline-block;
+}
+
 .field-group.group-template label {
     padding: 0 10px 0 2px;
-    width: 150px;
+    width: 100px;
 }
 
 .faction-vehicle-classname-fields {

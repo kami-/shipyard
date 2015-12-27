@@ -14,7 +14,7 @@ var TERRAIN_FIELD: JQuery = null,
     BRIEFING_NAME_FIELD: JQuery = null,
     OVERVIEW_TEXT_FIELD: JQuery = null,
     FACTION_SELECT_FIELD_TEMPLATE: _.TemplateExecutor = null,
-    FACTION_GROUP_FIELDS_TEMPLATE: _.TemplateExecutor = null,
+    FACTION_GROUPS_TEMPLATE: _.TemplateExecutor = null,
     FACTION_VEHICLE_CLASSNAME_FIELDS_TEMPLATE: _.TemplateExecutor = null,
     ADD_FACTION_BUTTON: JQuery = null,
     FACIONS_CONTAINER: JQuery = null,
@@ -47,7 +47,7 @@ function initMissionFields(terrains: Mission.Terrain[], missionTypes: Mission.Mi
 
 function initFactions() {
     FACTION_SELECT_FIELD_TEMPLATE = _.template($('#faction-select-field-template').html());
-    FACTION_GROUP_FIELDS_TEMPLATE = _.template($('#faction-group-fields-template').html());
+    FACTION_GROUPS_TEMPLATE = _.template($('#faction-groups-template').html());
     FACTION_VEHICLE_CLASSNAME_FIELDS_TEMPLATE = _.template($('#faction-vehicle-classname-fields-template').html());
     ADD_FACTION_BUTTON = $('#add-faction').eq(0);
     FACIONS_CONTAINER = $('#factions').eq(0);
@@ -132,12 +132,30 @@ function addFaction(container: JQuery) {
 }
 
 function addGroups(container: JQuery, factionId: number) {
-    var factionGroupFields = FACTION_GROUP_FIELDS_TEMPLATE({
+    var factionGroups = $(FACTION_GROUPS_TEMPLATE({
             factionId: factionId,
-            groupTemplates: Hull3.getGroupTemplates()
-        });
+            groupings: _.groupBy(Hull3.getGroupTemplates(), 'groupingId')
+        }));
     container.append($('<h4 class="before">Groups</h4>'));
-    container.append(factionGroupFields);
+    container.append(factionGroups);
+    factionGroups.find('.faction-grouping').each((idx, fg) => {
+        $(fg).find('.grouping-select').click(e => {
+            checkGroups($(e.target), $(fg).find('input'));
+        });
+    });
+}
+
+function checkGroups(button: JQuery, checkboxes: JQuery) {
+    var newState = 'none',
+        oldState = 'all',
+        newCheckState = false;
+    if (button.hasClass('none')) {
+        newState = 'all';
+        oldState = 'none';
+        newCheckState = true;
+    }
+    button.addClass(newState).removeClass(oldState);
+    checkboxes.prop('checked', newCheckState);
 }
 
 function addVehicleClassnames(container: JQuery, factionId: number) {

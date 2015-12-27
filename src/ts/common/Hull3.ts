@@ -6,7 +6,11 @@ export interface Template {
 
 export interface GearTemplate extends Template {}
 export interface UniformTemplate extends Template {}
-export interface GroupTemplate extends Template {}
+
+export interface GroupTemplate extends Template {
+    groupingId: string;    
+}
+
 export interface VehicleClassnameTemplate extends Template {
     classname: string;
 }
