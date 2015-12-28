@@ -26,7 +26,12 @@
                     <div class="group-templates">
                         <% _.forEach(gts, function(gt) { %>
                             <div class="field-group group-template">
-                                <input id="<%- gt.id + factionId %>" name="<%- gt.id + factionId %>" type="checkbox" checked />
+                                <input id="<%- gt.id + factionId %>"
+                                    class="group-template"
+                                    name="<%- gt.id + factionId %>"
+                                    type="checkbox"
+                                    checked
+                                    data-id="<%- gt.id %>" />
                                 <label for="<%- gt.id + factionId %>"><%- gt.name %></label>
                             </div>
                         <% }); %>

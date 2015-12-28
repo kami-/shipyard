@@ -35,7 +35,7 @@ export interface FactionRequest {
     sideName: string;
     gearTemplateId: string;
     uniformTemplateId: string;
-    groups: { [id: string]: boolean };
+    groupTemplateIds: string[];
     vehicleClassnames: { [id: string]: string };
 }
 

@@ -185,16 +185,41 @@ function addVehicleClassnames(container: JQuery, factionId: number) {
     container.append(factionVehicleClassnameFields);
 }
 
-function getFactions(): Mission.FactionRequest[] {
-    return FACIONS_CONTAINER.find('.faction-field-container').map((idx, container) => {
-        var children = $(container).children();
+function getSelectedFactions(): Mission.FactionRequest[] {
+    return FACIONS_CONTAINER.find('.faction-container').map((idx, container) => {
+        var ffcChildren = $(container).find('.faction-field-container').children();
         return {
-            factionId: children.eq(0).find('select :selected').val(),
-            sideName: children.eq(1).find('select :selected').val(),
-            gearTemplateId: children.eq(2).find('select :selected').val(),
-            uniformTemplateId: children.eq(3).find('select :selected').val()
+            factionId: ffcChildren.eq(0).find('select :selected').val(),
+            sideName: ffcChildren.eq(1).find('select :selected').val(),
+            gearTemplateId: ffcChildren.eq(2).find('select :selected').val(),
+            uniformTemplateId: ffcChildren.eq(3).find('select :selected').val(),
+            groupTemplates: getSelectedGroupTemplateIds($(container)),
+            vehicleClassnameTemplates: getVehicleClassnames($(container))
         } 
     }).toArray();
+}
+
+function getSelectedGroupTemplateIds(container: JQuery): string[] {
+    var groups = container.find('input.group-template').map((idx, inp) => {
+        return {
+            id: $(inp).data('id'),
+            checked: $(inp).prop('checked')
+        }
+    }).toArray();
+    return _.pluck(_.filter(groups, 'checked'), 'id');
+}
+
+function getVehicleClassnames(container: JQuery): { [id: string]: string } {
+    var vehicleClassnames = container.find('input.vehicle-classname').map((idx, inp) => {
+        return {
+            id: $(inp).data('id'),
+            classname: $(inp).val()
+        }
+    }).toArray();
+    return _.foldl(vehicleClassnames, (res, vcn) => {
+        res[vcn.id] = vcn.classname;
+        return res;
+    }, <{ [id: string]: string }>{});
 }
 
 function initAddons() {
@@ -216,7 +241,7 @@ function getMission(): Mission.Mission {
         author: AUTHOR_FIELD.val(),
         briefingName: BRIEFING_NAME_FIELD.val(),
         overviewText: OVERVIEW_TEXT_FIELD.val(),
-        factions: getFactions(),
+        factions: getSelectedFactions(),
         addons: {
             admiral: ADMIRAL_FIELD.prop('checked'),
             plank: PLANK_FIELD.prop('checked')
