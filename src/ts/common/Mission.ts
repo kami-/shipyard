@@ -3,8 +3,7 @@ import Hull3 = require('./Hull3');
 export enum Side {
     BLUFOR,
     OPFOR,
-    INDFOR,
-    CIVILIAN
+    INDFOR
 }
 
 export enum MissionType {
@@ -67,7 +66,7 @@ export interface GeneratedMission {
 }
 
 export function getSides(): Side[] {
-    return [Side.BLUFOR, Side.OPFOR, Side.INDFOR, Side.CIVILIAN];
+    return [Side.BLUFOR, Side.OPFOR, Side.INDFOR];
 }
 
 export function sideToString(s: Side): string {
