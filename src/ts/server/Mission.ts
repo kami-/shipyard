@@ -7,7 +7,10 @@ import fs = require('fs-extra');
 import {Side, MissionType, Terrain, Faction, Addons, FactionRequest, Mission, Config, GeneratedMission, getSideNames, getMissionTypeNames} from '../common/Mission';
 export {Side, MissionType, Terrain, Faction, Addons, FactionRequest, Mission, Config, GeneratedMission, getSideNames, getMissionTypeNames} from '../common/Mission';
 
-var missionIdCounter: number = 0;
+var missionIdCounter: number = 0,
+    TERRAINS_JSON_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/terrains.json`;
+
+var terrains: Terrain[] = [];
 
 function nextMissionId(): number {
     missionIdCounter = missionIdCounter + 1;
@@ -19,10 +22,11 @@ function cleanWorkingDir() {
 }
 
 export function getTerrains(): Terrain[] {
-    return [
-        { id: 'Altis', name: 'Altis' },
-        { id: 'Stratis', name: 'Stratis' }
-    ]
+    return terrains
+}
+
+export function updateTerrains() {
+    terrains = <Terrain[]>JSON.parse(fs.readFileSync(TERRAINS_JSON_PATH, 'UTF-8'));
 }
 
 export function getMissionConfig(): Config {
@@ -57,3 +61,4 @@ export function generateMission(mission: Mission): GeneratedMission {
 }
 
 cleanWorkingDir();
+updateTerrains();

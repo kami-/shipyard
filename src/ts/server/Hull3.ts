@@ -16,12 +16,12 @@ var SAMPLE_MISSION_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PAT
     GROUPS_JSON_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/groups.json`,
     VEHICLE_CLASSNAMES_JSON_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/vehicle-classnames.json`;
 
-var factions: Faction[] = [];
-var factionConfigs: { [id: string]: FactionConfig } = {};
-var gearTemplates: GearTemplate[] = [];
-var uniformTemplates: UniformTemplate[] = [];
-var groupTemplates: GroupTemplate[] = [];
-var vehicleClassnameTemplates: VehicleClassnameTemplate[] = [];
+var factions: Faction[] = [],
+    factionConfigs: { [id: string]: FactionConfig } = {},
+    gearTemplates: GearTemplate[] = [],
+    uniformTemplates: UniformTemplate[] = [],
+    groupTemplates: GroupTemplate[] = [],
+    vehicleClassnameTemplates: VehicleClassnameTemplate[] = [];
 
 function parseFile(path: string): Parser.Node {
     var factionFile: string = fs.readFileSync(path, 'UTF-8');
