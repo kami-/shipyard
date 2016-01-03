@@ -65,12 +65,26 @@ function generateHull3Header(missionDir: string, mission: Mission) {
 }
 
 function generateDescriptionExt(missionDir: string, mission: Mission, missionType: MissionType, maxPlayers: number) {
-    var desciptionExt = fs.readFileSync(`${missionDir}/description.ext`, 'UTF-8')
+    var descriptionExt = fs.readFileSync(`${missionDir}/description.ext`, 'UTF-8')
         .replace(/onLoadName = "[^"]*";/g, `onLoadName = "${mission.onLoadName}";`)
         .replace(/author = "[^"]*";/g, `author = "${mission.author}";`)
         .replace(/gametype = [^;]*;/g, `gametype = ${missionTypeToGameType(missionType)};`)
         .replace(/maxPlayers = [^;]*;/g, `maxPlayers = ${maxPlayers.toString()};`);
-    fs.writeFileSync(`${missionDir}/description.ext`, desciptionExt, 'UTF-8');
+    descriptionExt = tryAddAdmiralInclude(descriptionExt, mission);
+    fs.writeFileSync(`${missionDir}/description.ext`, descriptionExt, 'UTF-8');
+}
+
+function tryAddAdmiralInclude(descriptionExt: string, mission: Mission): string {
+    if (mission.addons.admiral) {
+        return '#include "admiral\admiral.h"\n' + descriptionExt;
+    }
+    return descriptionExt;
+}
+
+function tryAddAdmiralDirectory(mission: Mission, missionDir: string) {
+    if (mission.addons.admiral) {
+        fs.copySync(`${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Admiral.HOME}/${Settings.PATH.Admiral.SAMPLE_MISSION_HOME}/admiral`, `${missionDir}/admiral`);   
+    }
 }
 
 export function getTerrains(): Terrain[] {
@@ -110,6 +124,7 @@ export function generateMission(mission: Mission): GeneratedMission {
     fs.writeFileSync(`${missionDir}/mission.sqm`, PrettyPrinter.create('\t').print(missionAst), 'UTF-8');
     generateHull3Header(missionDir, mission);
     generateDescriptionExt(missionDir, mission, missionType, maxPlayers);
+    tryAddAdmiralDirectory(mission, missionDir);
     return {
         missionId: missionId,
         missionWorkingDir: missionWorkingDir,

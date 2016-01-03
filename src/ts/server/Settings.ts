@@ -14,7 +14,8 @@ export var PATH = {
         UNIFORM_HOME: 'hull3/assign/uniform'
     },
     Admiral: {
-        HOME: 'addon/admiral'
+        HOME: 'addon/admiral',
+        SAMPLE_MISSION_HOME: 'admiral.Altis'
     },
     Plank: {
         HOME: 'addon/plank'  
