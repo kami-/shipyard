@@ -1,5 +1,6 @@
 [
     { "id": "MCN_Aliabad", "name": "Aliabad" },
+    { "id": "Altis", "name": "Altis" },
     { "id": "Bootcamp_ACR", "name": "Bukovina" },
     { "id": "Woodland_ACR", "name": "Bystrica" },
     { "id": "Caribou", "name": "Caribou" },
@@ -17,6 +18,7 @@
     { "id": "ProvingGrounds_PMC", "name": "Proving Grounds" },
     { "id": "Sara", "name": "Sahrani" },
     { "id": "Shapur_BAF", "name": "Shapur" },
+    { "id": "Stratis", "name": "Stratis" },
     { "id": "Takistan", "name": "Takistan" },
     { "id": "ThirskW", "name": "Thirsk Winter" },
     { "id": "Thirsk", "name": "Thirsk" },
