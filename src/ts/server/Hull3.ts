@@ -67,7 +67,7 @@ function removeUnselectedGroups(ast: Parser.Node, factionId: string, rolePrefix:
                 break;
             }
             description.value = (<string>description.value).replace(`Group.${groupId};`, rolePrefix);
-            init.value = (<string>init.value).replace('["faction", "FACTION"]', `["faction", "${rolePrefix}"]`);
+            init.value = (<string>init.value).replace('["faction", "FACTION"]', `["faction", "${factionId}"]`);
             shiftPosition(vehicleItems[j], xShift);
         }
     }
@@ -89,7 +89,7 @@ function removeUnselectedVehicles(ast: Parser.Node, factionId: string, rolePrefi
         }
         description.value = '';
         if (init) {
-            init.value = (<string>init.value).replace('["faction", "FACTION"]', `["faction", "${rolePrefix}"]`);
+            init.value = (<string>init.value).replace('["faction", "FACTION"]', `["faction", "${factionId}"]`);
         }
         vehicle.value = vehicleClassnames[vehicleClassnameId];
         shiftPosition(vehicleItems[i], xShift);
