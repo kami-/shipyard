@@ -15,7 +15,6 @@
     "typescript": "^1.7.5"
   },
   "dependencies": {
-    "bluebird": "^3.1.1",
     "body-parser": "^1.13.3",
     "config-parser": "^0.1.0",
     "express": "^4.13.3",

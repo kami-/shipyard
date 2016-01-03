@@ -8,7 +8,6 @@ import Mission = require('./Mission');
 var factionIdCounter = 0; 
 var TERRAIN_FIELD: JQuery = null,
     MISSION_TYPE_FIELD: JQuery = null,
-    MAX_PLAYERS_FIELD: JQuery = null,
     ON_LOAD_NAME_FIELD: JQuery = null,
     AUTHOR_FIELD: JQuery = null,
     BRIEFING_NAME_FIELD: JQuery = null,
@@ -20,7 +19,8 @@ var TERRAIN_FIELD: JQuery = null,
     FACIONS_CONTAINER: JQuery = null,
     ADMIRAL_FIELD: JQuery = null,
     PLANK_FIELD: JQuery = null,
-    GENERATE_MISSION_BUTTON: JQuery = null;
+    GENERATE_MISSION_BUTTON: JQuery = null,
+    DOWNLOAD_MISSION_FORM: JQuery = null;
 
 interface Option {
     value: string;
@@ -35,7 +35,6 @@ function nextFactionId(): number {
 function initMissionFields(terrains: Mission.Terrain[], missionTypes: Mission.MissionType[]) {
     TERRAIN_FIELD = $('#terrain').eq(0);
     MISSION_TYPE_FIELD = $('#missionType').eq(0);
-    MAX_PLAYERS_FIELD = $('#maxPlayers').eq(0);
     ON_LOAD_NAME_FIELD = $('#onLoadName').eq(0);
     AUTHOR_FIELD = $('#author').eq(0);
     BRIEFING_NAME_FIELD = $('#briefingName').eq(0);
@@ -134,6 +133,7 @@ function addFaction(container: JQuery) {
     factionContainer.append(removeFooter);
     container.append(factionContainer);
     addFactionChangeHandling(factionContainer, Hull3.getFactionConfigs());
+    factionField.find('select.faction').trigger('change');
 }
 
 function addFactionChangeHandling(factionContainer: JQuery, factionConfigs: { [id: string]: Hull3.FactionConfig }) {
@@ -185,7 +185,7 @@ function addVehicleClassnames(container: JQuery, factionId: number) {
     container.append(factionVehicleClassnameFields);
 }
 
-function getSelectedFactions(): Mission.FactionRequest[] {
+function getSelectedFactions(): Hull3.FactionRequest[] {
     return FACIONS_CONTAINER.find('.faction-container').map((idx, container) => {
         var ffcChildren = $(container).find('.faction-field-container').children();
         return {
@@ -193,8 +193,8 @@ function getSelectedFactions(): Mission.FactionRequest[] {
             sideName: ffcChildren.eq(1).find('select :selected').val(),
             gearTemplateId: ffcChildren.eq(2).find('select :selected').val(),
             uniformTemplateId: ffcChildren.eq(3).find('select :selected').val(),
-            groupTemplates: getSelectedGroupTemplateIds($(container)),
-            vehicleClassnameTemplates: getVehicleClassnames($(container))
+            groupTemplateIds: getSelectedGroupTemplateIds($(container)),
+            vehicleClassnames: getVehicleClassnames($(container))
         } 
     }).toArray();
 }
@@ -230,13 +230,13 @@ function initAddons() {
 function initGenerateMission() {
     GENERATE_MISSION_BUTTON = $('#generate-mission').eq(0);
     GENERATE_MISSION_BUTTON.click(generateMission);
+    DOWNLOAD_MISSION_FORM = $('#download-mission').eq(0);
 }
 
 function getMission(): Mission.Mission {
     return {
         terrainId: TERRAIN_FIELD.find(':selected').val(),
         missionTypeName: MISSION_TYPE_FIELD.find(':selected').val(),
-        maxPlayers: MAX_PLAYERS_FIELD.val(),
         onLoadName: ON_LOAD_NAME_FIELD.val(),
         author: AUTHOR_FIELD.val(),
         briefingName: BRIEFING_NAME_FIELD.val(),
@@ -250,7 +250,19 @@ function getMission(): Mission.Mission {
 }
 
 function generateMission() {
-    console.log(getMission());   
+    var mission = getMission();
+    console.log(mission);
+    $.ajax({
+        url: Mission.getGeneratePath(),
+        method: 'POST',
+        dataType: 'json',
+        contentType: "application/json",
+        data: JSON.stringify(mission),
+        processData: false
+    }).done(generatedMission => {
+        DOWNLOAD_MISSION_FORM.attr('action', Mission.getDownloadPath(generatedMission.id, generatedMission.zip));
+        DOWNLOAD_MISSION_FORM.submit();
+    }); 
 }
 
 export function init() {

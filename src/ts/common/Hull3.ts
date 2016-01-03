@@ -37,3 +37,12 @@ export interface Config {
     groupTemplates: GroupTemplate[];
     vehicleClassnameTemplates: VehicleClassnameTemplate[];
 }
+
+export interface FactionRequest {
+    factionId: string;
+    sideName: string;
+    gearTemplateId: string;
+    uniformTemplateId: string;
+    groupTemplateIds: string[];
+    vehicleClassnames: { [id: string]: string };
+}

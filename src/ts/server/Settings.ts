@@ -1,10 +1,10 @@
 export var HOST_NAME = process.env.IP;
-export var PORT = process.env.PORT
+export var PORT = 5000;
 export var CONTEXT_PATH= '/shipyard';
 
 export var PATH = {
     Mission: {
-        workingDir: 'workingDir'
+        WORKING_DIR: 'workingDir'
     },
     Hull3: {
         HOME: 'addon/hull3',

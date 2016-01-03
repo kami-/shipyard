@@ -30,24 +30,14 @@ export interface Addons {
     plank: boolean;
 }
 
-export interface FactionRequest {
-    factionId: string;
-    sideName: string;
-    gearTemplateId: string;
-    uniformTemplateId: string;
-    groupTemplateIds: string[];
-    vehicleClassnames: { [id: string]: string };
-}
-
 export interface Mission {
     terrainId: string;
     missionTypeName: string;
-    maxPlayers: number;
     onLoadName: string;
     author: string;
     briefingName: string;
     overviewText: string;
-    factions: FactionRequest[];
+    factions: Hull3.FactionRequest[];
     addons: Addons;
 }
 
@@ -87,4 +77,34 @@ export function missionTypeToString(mt: MissionType): string {
 
 export function getMissionTypeNames(): string[] {
     return getMissionTypes().map(missionTypeToString);
+}
+
+export function stringToMissionType(mt: string): MissionType {
+    return MissionType[mt];
+}
+
+export function missionTypeToGameType(mt: MissionType): string {
+    switch (mt) {
+        case MissionType.TVT:
+            return 'TDM';
+        case MissionType.GTVT:
+            return 'DM';
+        case MissionType.COTVT:
+            return 'TDM';
+        default:
+            return 'Coop';
+    }
+}
+
+export function missionTypeToMissionNamePrefix(mt: MissionType): string {
+    switch (mt) {
+        case MissionType.TVT:
+            return 'tvt';
+        case MissionType.GTVT:
+            return 'gtvt';
+        case MissionType.COTVT:
+            return 'cotvt';
+        default:
+            return 'co';
+    }
 }

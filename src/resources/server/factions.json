@@ -2,18 +2,18 @@
     "Default": {
         "rolePrefix": "Default",
         "vehicleClassnames": {        
-            "CO": "",
-            "SL": "",
-            "FT": "",
-            "ATTCH": "",
-            "ENG": "",
-            "APC": "",
-            "IFV": "",
-            "SPAAG": "",
-            "TNK": "",
-            "TH": "",
-            "AH": "",
-            "CAS": ""
+            "CO": "C_Kart_01_F",
+            "SL": "C_Kart_01_F",
+            "FT": "C_Kart_01_F",
+            "ATTCH": "C_Kart_01_F",
+            "ENG": "C_Kart_01_F",
+            "APC": "C_Kart_01_F",
+            "IFV": "C_Kart_01_F",
+            "SPAAG": "C_Kart_01_F",
+            "TNK": "C_Kart_01_F",
+            "TH": "C_Kart_01_F",
+            "AH": "C_Kart_01_F",
+            "CAS": "C_Kart_01_F"
         }
     },
     "BLU_F": {

@@ -14,8 +14,11 @@ function registerRoutes(app: express.Express) {
         response.sendFile(Settings.PATH.CLIENT_RESOURCES_HOME + '/index.html');
     });
     
-    app.route(Settings.CONTEXT_PATH + '/mission/generate').get((request, response) => {
+    app.route(Settings.CONTEXT_PATH + '/mission/generate').post((request, response) => {
         generateMission(request, response);
+    });
+    app.route(Settings.CONTEXT_PATH + '/mission/generate/:id/:zip').get((request, response) => {
+        sendMission(request, response, request.params.id, request.params.zip);
     });
     app.route(Settings.CONTEXT_PATH + '/mission/config').get((request, response) => {
         response.json(Mission.getMissionConfig());
@@ -57,42 +60,32 @@ function registerRoutes(app: express.Express) {
 }
 
 function generateMission(request, response) {
-    var mission: Mission.Mission = {
-        terrainId: 'Altis',
-        missionTypeName: 'co',
-        maxPlayers: 60,
-        onLoadName: "Oh it's this mission",
-        author: 'Kami',
-        briefingName: ' ; echo "hello" ; oh_its_this_mission',
-        overviewText: 'Slot everything!',
-        factions: [],
-        addons: {
-            admiral: true,
-            plank: true
-        }
-    }
-    console.log(mission.briefingName);
+    var mission = request.body;
     mission.briefingName = mission.briefingName.replace(/[^a-z0-9_]*/g, '');
-    console.log(mission.briefingName);
-    //var missionDir = Mission.generateMission(request.body);
     var generatedMission = Mission.generateMission(mission);
-    var missionZipPath = zipMission(generatedMission.missionDir, generatedMission.missionDirName);
-    response.setHeader('Content-disposition', `attachment; filename=${generatedMission.missionDirName}.zip`);
+    var missionZipName = zipMission(generatedMission.missionDir, generatedMission.missionDirName);
+    response.json({ id: generatedMission.missionId, zip: missionZipName });
+}
+
+function sendMission(request, response, missionId, missionZip) {
+    var missionWorkingDir = `${Settings.PATH.Mission.WORKING_DIR}/${missionId}`;
+    var missionZipPath = `${missionWorkingDir}/${missionZip}`;
+    response.setHeader('Content-disposition', `attachment; filename=${missionZip}`);
     response.setHeader('Content-type', mime.lookup(missionZipPath));
-    response.sendFile(missionZipPath, { root: './' }, () => removeMissionWorkingDir(generatedMission.missionWorkingDir) );
+    response.sendFile(missionZipPath, { root: './' }, () => removeMissionWorkingDir(missionWorkingDir) );
 }
 
 // Horrible way to do this. We only allow alphanum and underscroe, so no remote code execution shouldn't happen?.
 // Sadly I haven't found a JS module that can zip a folder the way I want ...
 function zipMission(missionDir: string, missionDirName: string): string {
-    var missionZip = `${missionDir}.zip`;
+    var missionZipName = `${missionDirName}.zip`,
+        missionZip = `${missionDir}.zip`;
     var zipCommand = `7z a ${missionZip} ./${missionDir}/*`;
     if (process.platform === 'linux') {
-        var missionZipName = `${missionDirName}.zip`;
         zipCommand = `(cd ${missionDir} ; zip -r ${missionZipName} . ; mv ${missionZipName} .. ; cd -)`;
     }
     cp.execSync(zipCommand);
-    return missionZip;
+    return missionZipName;
 }
 
 function removeMissionWorkingDir(missionWorkingDir: string) {

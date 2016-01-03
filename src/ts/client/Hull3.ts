@@ -3,8 +3,8 @@
 import Settings = require('./Settings');
 import _ = require('lodash');
 
-import {Template, GearTemplate, UniformTemplate, GroupTemplate, VehicleClassnameTemplate, Faction, FactionConfig, Config} from '../common/Hull3';
-export {Template, GearTemplate, UniformTemplate, GroupTemplate, VehicleClassnameTemplate, Faction, FactionConfig, Config} from '../common/Hull3';
+import {Template, GearTemplate, UniformTemplate, GroupTemplate, VehicleClassnameTemplate, Faction, FactionConfig, Config, FactionRequest} from '../common/Hull3';
+export {Template, GearTemplate, UniformTemplate, GroupTemplate, VehicleClassnameTemplate, Faction, FactionConfig, Config, FactionRequest} from '../common/Hull3';
 
 export var factions: Faction[] = [];
 export var factionConfigs: { [id: string]: FactionConfig } = {};
