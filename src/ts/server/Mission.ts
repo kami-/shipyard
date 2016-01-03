@@ -76,7 +76,7 @@ function generateDescriptionExt(missionDir: string, mission: Mission, missionTyp
 
 function tryAddAdmiralInclude(descriptionExt: string, mission: Mission): string {
     if (mission.addons.admiral) {
-        return '#include "admiral\admiral.h"\n' + descriptionExt;
+        return '#include "admiral\\admiral.h"\n' + descriptionExt;
     }
     return descriptionExt;
 }
