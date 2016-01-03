@@ -3,16 +3,8 @@ class Mission
 {
 	addOns[]=
 	{
-		"A3_Characters_F_BLUFOR",
 		"a3_characters_f",
-		"A3_Armor_F_AMV",
 		"A3_Armor_F_Slammer",
-		"A3_Air_F_Beta_Heli_Transport_01",
-		"A3_Air_F_Beta_Heli_Attack_01",
-		"A3_Air_F_EPC_Plane_CAS_01",
-		"A3_Armor_F_Panther",
-		"A3_Soft_F_MRAP_01",
-		"A3_Soft_F_HEMTT",
 		"a3_map_altis",
 		"A3_Characters_F_OPFOR",
 		"A3_Characters_F_INDEP",
@@ -83,7 +75,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={97.246773,-0.02095516,246.80188};
+					position[]={66.291328,0.004383889,223.04041};
 					special="NONE";
 					id=0;
 					side="GUER";
@@ -97,7 +89,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={100.37962,0.016307056,244.74719};
+					position[]={69.424141,0.0041395873,220.98572};
 					special="NONE";
 					id=1;
 					side="GUER";
@@ -110,7 +102,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={103.11789,0.06534376,244.73157};
+					position[]={72.162422,0.0026943744,220.97009};
 					special="NONE";
 					id=2;
 					side="GUER";
@@ -123,7 +115,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={106.06906,0.077679925,244.72375};
+					position[]={75.113594,0.0010296166,220.96228};
 					special="NONE";
 					id=3;
 					side="GUER";
@@ -144,7 +136,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={57.213562,0.02561456,220.34875};
+					position[]={26.258114,0.0011965474,196.58728};
 					id=4;
 					side="GUER";
 					vehicle="I_Soldier_SL_F";
@@ -157,7 +149,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={59.313171,0.03516151,218.63};
+					position[]={28.357723,0.0011912154,194.86853};
 					special="NONE";
 					id=5;
 					side="GUER";
@@ -178,7 +170,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={55.254578,-0.26645786,207.68079};
+					position[]={24.299129,0.0035502412,183.91931};
 					special="NONE";
 					id=6;
 					side="GUER";
@@ -192,7 +184,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={57.112,-0.25789344,205.94641};
+					position[]={26.156551,0.0037678401,182.18494};
 					special="NONE";
 					id=7;
 					side="GUER";
@@ -205,7 +197,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={59.502625,-0.22163835,205.80579};
+					position[]={28.547176,0.0049208915,182.04431};
 					special="NONE";
 					id=8;
 					side="GUER";
@@ -217,7 +209,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={61.828796,-0.15979797,205.96985};
+					position[]={30.873348,0.0056500454,182.20837};
 					special="NONE";
 					id=9;
 					side="GUER";
@@ -237,7 +229,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={54.508484,-0.056194056,196.85657};
+					position[]={23.553036,-0.0012834845,173.09509};
 					special="NONE";
 					id=10;
 					side="GUER";
@@ -251,7 +243,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={56.346375,-0.054629505,195.1925};
+					position[]={25.390926,-0.0011286659,171.43103};
 					special="NONE";
 					id=11;
 					side="GUER";
@@ -264,7 +256,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={58.664734,-0.10990448,194.96594};
+					position[]={27.709286,-0.00074119261,171.20447};
 					special="NONE";
 					id=12;
 					side="GUER";
@@ -276,7 +268,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={61.123718,-0.16908723,194.98938};
+					position[]={30.16827,0.00024514575,171.22791};
 					special="NONE";
 					id=13;
 					side="GUER";
@@ -296,7 +288,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={54.127625,0.083414547,187.22766};
+					position[]={23.172176,0.0034120427,163.46619};
 					special="NONE";
 					id=14;
 					side="GUER";
@@ -310,7 +302,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={55.959656,0.089258119,184.96204};
+					position[]={25.004208,0.0038601877,161.20056};
 					special="NONE";
 					id=15;
 					side="GUER";
@@ -323,7 +315,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={58.303406,0.11126551,184.84094};
+					position[]={27.347958,0.0025839841,161.07947};
 					special="NONE";
 					id=16;
 					side="GUER";
@@ -335,7 +327,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={60.70575,0.10640199,184.76282};
+					position[]={29.750301,0.0012888364,161.00134};
 					special="NONE";
 					id=17;
 					side="GUER";
@@ -355,7 +347,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={85.971375,-0.057454411,219.84875};
+					position[]={55.01593,0.0060466905,196.08728};
 					id=18;
 					side="GUER";
 					vehicle="I_Soldier_SL_F";
@@ -368,7 +360,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={88.248718,-0.031943012,218.04016};
+					position[]={57.293282,0.0061282399,194.27869};
 					special="NONE";
 					id=19;
 					side="GUER";
@@ -389,7 +381,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={84.01239,-0.17769098,208.83704};
+					position[]={53.056946,0.0012089609,185.07556};
 					special="NONE";
 					id=20;
 					side="GUER";
@@ -403,7 +395,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={86.088562,-0.16355443,206.51672};
+					position[]={55.133118,0.0011824835,182.75525};
 					special="NONE";
 					id=21;
 					side="GUER";
@@ -416,7 +408,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={88.920593,-0.1888476,206.57141};
+					position[]={57.965157,0.0029498585,182.80994};
 					special="NONE";
 					id=22;
 					side="GUER";
@@ -428,7 +420,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={91.434265,-0.17631212,206.46594};
+					position[]={60.478828,0.0044836672,182.70447};
 					special="NONE";
 					id=23;
 					side="GUER";
@@ -448,7 +440,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={84.33075,0.12239141,197.25891};
+					position[]={53.375305,0.0012555469,173.49744};
 					special="NONE";
 					id=24;
 					side="GUER";
@@ -462,7 +454,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={86.096375,0.13494472,195.24719};
+					position[]={55.14093,0.0014885312,171.48572};
 					special="NONE";
 					id=25;
 					side="GUER";
@@ -475,7 +467,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={89.037781,0.086641043,195.07922};
+					position[]={58.082344,0.00035025808,171.31775};
 					special="NONE";
 					id=26;
 					side="GUER";
@@ -487,7 +479,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={92.045593,0.0087928157,195.1261};
+					position[]={61.090157,-9.9830329e-005,171.36462};
 					special="NONE";
 					id=27;
 					side="GUER";
@@ -507,7 +499,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={84.133484,0.054982509,186.82141};
+					position[]={53.17804,0.0068788091,163.05994};
 					special="NONE";
 					id=28;
 					side="GUER";
@@ -521,7 +513,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={85.965515,0.05625391,184.54797};
+					position[]={55.010071,0.0069919713,160.7865};
 					special="NONE";
 					id=29;
 					side="GUER";
@@ -534,7 +526,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={88.822937,0.13808617,184.55188};
+					position[]={57.8675,0.0062909895,160.79041};
 					special="NONE";
 					id=30;
 					side="GUER";
@@ -546,7 +538,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={91.965515,0.19441681,184.55188};
+					position[]={61.010078,0.0047373311,160.79041};
 					special="NONE";
 					id=31;
 					side="GUER";
@@ -566,7 +558,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={123.26437,0.10606946,219.55969};
+					position[]={92.308899,0.0067059267,195.79822};
 					id=32;
 					side="GUER";
 					vehicle="I_Soldier_SL_F";
@@ -579,7 +571,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={126.17843,0.13677695,217.21985};
+					position[]={95.222961,0.006581367,193.45837};
 					special="NONE";
 					id=33;
 					side="GUER";
@@ -600,7 +592,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={122.17647,-0.10952822,209.45422};
+					position[]={91.221008,0.0035877547,185.69275};
 					special="NONE";
 					id=34;
 					side="GUER";
@@ -614,7 +606,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={124.40108,-0.097378775,207.49329};
+					position[]={93.445618,0.0037062508,183.73181};
 					special="NONE";
 					id=35;
 					side="GUER";
@@ -627,7 +619,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={127.12569,-0.058596894,207.3761};
+					position[]={96.170227,0.0052329339,183.61462};
 					special="NONE";
 					id=36;
 					side="GUER";
@@ -639,7 +631,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={130.21945,0.022749998,207.39563};
+					position[]={99.263977,0.0065648053,183.63416};
 					special="NONE";
 					id=37;
 					side="GUER";
@@ -659,7 +651,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={121.03585,0.17144817,197.30969};
+					position[]={90.080383,0.0010118703,173.54822};
 					special="NONE";
 					id=38;
 					side="GUER";
@@ -673,7 +665,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={123.3796,0.17380373,195.16907};
+					position[]={92.424133,0.00088656321,171.40759};
 					special="NONE";
 					id=39;
 					side="GUER";
@@ -686,7 +678,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={126.10226,0.10781804,195.03235};
+					position[]={95.14679,3.8754661e-006,171.27087};
 					special="NONE";
 					id=40;
 					side="GUER";
@@ -698,7 +690,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={129.1882,0.028266042,194.9386};
+					position[]={98.232727,-0.00017326348,171.17712};
 					special="NONE";
 					id=41;
 					side="GUER";
@@ -718,7 +710,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={121.07101,0.22034258,187.46204};
+					position[]={90.11554,0.0062959231,163.70056};
 					special="NONE";
 					id=42;
 					side="GUER";
@@ -732,7 +724,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={123.27804,0.23029263,185.16125};
+					position[]={92.322571,0.0062440699,161.39978};
 					special="NONE";
 					id=43;
 					side="GUER";
@@ -745,7 +737,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={126.17452,0.27314439,184.98547};
+					position[]={95.219055,0.0049832128,161.224};
 					special="NONE";
 					id=44;
 					side="GUER";
@@ -757,7 +749,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={129.14914,0.27497125,184.96204};
+					position[]={98.193665,0.0031590606,161.20056};
 					special="NONE";
 					id=45;
 					side="GUER";
@@ -777,7 +769,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={148.73117,-0.060800098,219.0675};
+					position[]={117.7757,0.003809175,195.30603};
 					id=46;
 					side="GUER";
 					vehicle="I_Soldier_SL_F";
@@ -790,7 +782,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={152.14914,-0.036080681,216.44641};
+					position[]={121.1937,0.0041357209,192.68494};
 					special="NONE";
 					id=47;
 					side="GUER";
@@ -811,7 +803,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={147.51633,0.080937788,210.17297};
+					position[]={116.56085,-0.00028409925,186.4115};
 					special="NONE";
 					id=48;
 					side="GUER";
@@ -825,7 +817,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={149.20969,0.098040186,208.02454};
+					position[]={118.25424,-0.00032890192,184.26306};
 					special="NONE";
 					id=49;
 					side="GUER";
@@ -838,7 +830,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={151.82297,0.032105967,207.95813};
+					position[]={120.86753,-0.00039053336,184.19666};
 					special="NONE";
 					id=50;
 					side="GUER";
@@ -850,7 +842,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={154.83273,-0.02049464,207.92297};
+					position[]={123.87727,0.00038241316,184.1615};
 					special="NONE";
 					id=51;
 					side="GUER";
@@ -870,7 +862,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={147.31906,0.28533742,198.91125};
+					position[]={116.36359,0.0049638748,175.14978};
 					special="NONE";
 					id=52;
 					side="GUER";
@@ -884,7 +876,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={149.47531,0.28717518,195.86438};
+					position[]={118.51987,0.0052410155,172.10291};
 					special="NONE";
 					id=53;
 					side="GUER";
@@ -897,7 +889,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={152.40305,0.30015993,195.79407};
+					position[]={121.44761,0.0036109933,172.03259};
 					special="NONE";
 					id=54;
 					side="GUER";
@@ -909,7 +901,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={155.54562,0.26523522,195.74719};
+					position[]={124.59015,0.0015810546,171.98572};
 					special="NONE";
 					id=55;
 					side="GUER";
@@ -929,7 +921,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={147.47336,0.041198812,186.95422};
+					position[]={116.51788,0.0038511874,163.19275};
 					special="NONE";
 					id=56;
 					side="GUER";
@@ -943,7 +935,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={149.51047,0.044432849,184.70032};
+					position[]={118.55502,0.003505823,160.93884};
 					special="NONE";
 					id=57;
 					side="GUER";
@@ -956,7 +948,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={152.22726,0.12387007,184.88782};
+					position[]={121.27183,0.0048602428,161.12634};
 					special="NONE";
 					id=58;
 					side="GUER";
@@ -968,7 +960,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={155.06125,0.20587355,184.74329};
+					position[]={124.10578,0.0054692701,160.98181};
 					special="NONE";
 					id=59;
 					side="GUER";
@@ -988,7 +980,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={177.92258,0.078192547,179.71594};
+					position[]={146.96706,-0.0029037022,155.95447};
 					special="NONE";
 					id=60;
 					side="GUER";
@@ -1002,7 +994,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={181.54977,0.048630327,176.96204};
+					position[]={150.59401,-0.0033688878,153.20056};
 					special="NONE";
 					id=61;
 					side="GUER";
@@ -1022,7 +1014,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={196.11423,0.27659801,180.78625};
+					position[]={165.15849,0.0030724148,157.02478};
 					special="NONE";
 					id=62;
 					side="GUER";
@@ -1036,7 +1028,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={199.9072,0.28847086,178.14563};
+					position[]={168.95146,0.0026462702,154.38416};
 					special="NONE";
 					id=63;
 					side="GUER";
@@ -1053,1330 +1045,12 @@ class Mission
 			side="GUER";
 			class Vehicles
 			{
-				items=3;
+				items=2;
 				class Item0
 				{
-					position[]={179.92844,0.29135472,162.6925};
+					position[]={181.46266,-0.004699958,156.44666};
 					special="NONE";
 					id=64;
-					side="GUER";
-					vehicle="I_Soldier_TL_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MATAG""], [""marker"", ""MAT1"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.MAT1; - MAT 1 Leader";
-				};
-				class Item1
-				{
-					position[]={175.83664,0.031766996,156.1261};
-					special="NONE";
-					id=65;
-					side="GUER";
-					vehicle="I_Soldier_AT_F";
-					player="PLAY CDG";
-					rank="CORPORAL";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MATG""]] call hull3_unit_fnc_init;";
-					description="Group.MAT1; - MAT 1 Gunner";
-				};
-				class Item2
-				{
-					position[]={183.92673,0.23776598,156.005};
-					special="NONE";
-					id=66;
-					side="GUER";
-					vehicle="I_Soldier_A_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MATAC""]] call hull3_unit_fnc_init;";
-					description="Group.MAT1; - MAT 1 Ammo Carrier";
-				};
-			};
-		};
-		class Item20
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={197.10251,-0.025265478,162.13391};
-					special="NONE";
-					id=67;
-					side="GUER";
-					vehicle="I_Soldier_TL_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MATAG""], [""marker"", ""MAT2"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.MAT2; - MAT 2 Leader";
-				};
-				class Item1
-				{
-					position[]={193.17673,0.22378197,155.65344};
-					special="NONE";
-					id=68;
-					side="GUER";
-					vehicle="I_Soldier_AT_F";
-					player="PLAY CDG";
-					rank="CORPORAL";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MATG""]] call hull3_unit_fnc_init;";
-					description="Group.MAT2; - MAT 2 Gunner";
-				};
-				class Item2
-				{
-					position[]={201.10837,-0.0010182336,155.21594};
-					special="NONE";
-					id=69;
-					side="GUER";
-					vehicle="I_Soldier_A_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MATAC""]] call hull3_unit_fnc_init;";
-					description="Group.MAT2; - MAT 2 Ammo Carrier";
-				};
-			};
-		};
-		class Item21
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={215.40326,0.22440258,161.16125};
-					special="NONE";
-					id=70;
-					side="GUER";
-					vehicle="I_Soldier_TL_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HATAG""], [""marker"", ""HAT1"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.HAT1; - HAT 1 Leader";
-				};
-				class Item1
-				{
-					position[]={211.50684,-0.035594538,154.47766};
-					special="NONE";
-					id=71;
-					side="GUER";
-					vehicle="I_Soldier_AT_F";
-					player="PLAY CDG";
-					rank="CORPORAL";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HATG""]] call hull3_unit_fnc_init;";
-					description="Group.HAT1; - HAT 1 Gunner";
-				};
-				class Item2
-				{
-					position[]={219.85446,0.16346407,154.19641};
-					special="NONE";
-					id=72;
-					side="GUER";
-					vehicle="I_Soldier_A_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HATAC""]] call hull3_unit_fnc_init;";
-					description="Group.HAT1; - HAT 1 Ammo Carrier";
-				};
-			};
-		};
-		class Item22
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={231.00299,-0.086401716,160.9386};
-					special="NONE";
-					id=73;
-					side="GUER";
-					vehicle="I_Soldier_TL_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HATAG""], [""marker"", ""HAT2"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.HAT2; - HAT 2 Leader";
-				};
-				class Item1
-				{
-					position[]={227.2764,0.16127472,154.33704};
-					special="NONE";
-					id=74;
-					side="GUER";
-					vehicle="I_Soldier_AT_F";
-					player="PLAY CDG";
-					rank="CORPORAL";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HATG""]] call hull3_unit_fnc_init;";
-					description="Group.HAT2; - HAT 2 Gunner";
-				};
-				class Item2
-				{
-					position[]={235.24518,-0.068192624,154.11047};
-					special="NONE";
-					id=75;
-					side="GUER";
-					vehicle="I_Soldier_A_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HATAC""]] call hull3_unit_fnc_init;";
-					description="Group.HAT2; - HAT 2 Ammo Carrier";
-				};
-			};
-		};
-		class Item23
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={179.07297,0.26720542,207.65344};
-					special="NONE";
-					id=76;
-					side="GUER";
-					vehicle="I_engineer_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""ENG""], [""marker"", ""ENG1"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.ENG1; - Engineering 1 Leader";
-				};
-				class Item1
-				{
-					position[]={182.33493,0.26909482,204.255};
-					special="NONE";
-					id=77;
-					side="GUER";
-					vehicle="I_engineer_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""ENGA""]] call hull3_unit_fnc_init;";
-					description="Group.ENG1; - Engineering 1 Assistant";
-				};
-				class Item2
-				{
-					position[]={176.20578,0.31341761,204.63782};
-					special="NONE";
-					id=78;
-					side="GUER";
-					vehicle="I_engineer_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""ENGA""]] call hull3_unit_fnc_init;";
-					description="Group.ENG1; - Engineering 1 Assistant";
-				};
-			};
-		};
-		class Item24
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={198.64743,0.11074503,207.5011};
-					special="NONE";
-					id=79;
-					side="GUER";
-					vehicle="I_engineer_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""ENG""], [""marker"", ""ENG2"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.ENG2; - Engineering 2 Leader";
-				};
-				class Item1
-				{
-					position[]={201.90524,0.11328121,204.14563};
-					special="NONE";
-					id=80;
-					side="GUER";
-					vehicle="I_engineer_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""ENGA""]] call hull3_unit_fnc_init;";
-					description="Group.ENG2; - Engineering 2 Assistant";
-				};
-				class Item2
-				{
-					position[]={195.79587,0.003657341,204.54016};
-					special="NONE";
-					id=81;
-					side="GUER";
-					vehicle="I_engineer_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""ENGA""]] call hull3_unit_fnc_init;";
-					description="Group.ENG2; - Engineering 2 Assistant";
-				};
-			};
-		};
-		class Item25
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={58.713562,-0.16000338,168.57532};
-					special="NONE";
-					id=82;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VC""], [""marker"", ""APC1"", ""ColorRed""]] call hull3_unit_fnc_init;";
-					description="Group.APC1; - APC 1 Commander";
-				};
-				class Item1
-				{
-					position[]={55.91864,-0.10919765,164.59094};
-					special="NONE";
-					id=83;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VD""]] call hull3_unit_fnc_init;";
-					description="Group.APC1; - APC 1 Driver";
-				};
-				class Item2
-				{
-					position[]={61.951843,-0.14598064,164.46985};
-					special="NONE";
-					id=84;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VG""]] call hull3_unit_fnc_init;";
-					description="Group.APC1; - APC 1 Gunner";
-				};
-			};
-		};
-		class Item26
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={89.651062,-0.086960584,169.09485};
-					special="NONE";
-					id=85;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VC""], [""marker"", ""APC2"", ""ColorBlue""]] call hull3_unit_fnc_init;";
-					description="Group.APC2; - APC 2 Commander";
-				};
-				class Item1
-				{
-					position[]={86.440125,0.072299056,164.74719};
-					special="NONE";
-					id=86;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VD""]] call hull3_unit_fnc_init;";
-					description="Group.APC2; - APC 2 Driver";
-				};
-				class Item2
-				{
-					position[]={92.485046,-0.061005414,164.98547};
-					special="NONE";
-					id=87;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VG""]] call hull3_unit_fnc_init;";
-					description="Group.APC2; - APC 2 Gunner";
-				};
-			};
-		};
-		class Item27
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={126.28976,-0.019753903,168.10266};
-					special="NONE";
-					id=88;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VC""], [""marker"", ""APC3"", ""ColorGreen""]] call hull3_unit_fnc_init;";
-					description="Group.APC3; - APC 3 Commander";
-				};
-				class Item1
-				{
-					position[]={123.11202,0.10005722,163.76282};
-					special="NONE";
-					id=89;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VD""]] call hull3_unit_fnc_init;";
-					description="Group.APC3; - APC 3 Driver";
-				};
-				class Item2
-				{
-					position[]={129.02414,-0.0068489909,163.58313};
-					special="NONE";
-					id=90;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VG""]] call hull3_unit_fnc_init;";
-					description="Group.APC3; - APC 3 Gunner";
-				};
-			};
-		};
-		class Item28
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={152.99484,0.12123223,168.23157};
-					special="NONE";
-					id=91;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VC""], [""marker"", ""APC4"", ""ColorBrown""]] call hull3_unit_fnc_init;";
-					description="Group.APC4; - APC 4 Commander";
-				};
-				class Item1
-				{
-					position[]={149.82687,0.30487475,163.86047};
-					special="NONE";
-					id=92;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VD""]] call hull3_unit_fnc_init;";
-					description="Group.APC4; - APC 4 Driver";
-				};
-				class Item2
-				{
-					position[]={155.83469,0.16782659,163.47766};
-					special="NONE";
-					id=93;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VG""]] call hull3_unit_fnc_init;";
-					description="Group.APC4; - APC 4 Gunner";
-				};
-			};
-		};
-		class Item29
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={53.401062,0.26032066,115.6261};
-					special="NONE";
-					id=94;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VC""], [""marker"", ""SPAAG1"", ""ColorRed""]] call hull3_unit_fnc_init;";
-					description="Group.SPAAG1; - SPAAG 1 Commander";
-				};
-				class Item1
-				{
-					position[]={50.612,0.11143897,111.62219};
-					special="NONE";
-					id=95;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VD""]] call hull3_unit_fnc_init;";
-					description="Group.SPAAG1; - SPAAG 1 Driver";
-				};
-				class Item2
-				{
-					position[]={56.63739,0.26613802,111.51672};
-					special="NONE";
-					id=96;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VG""]] call hull3_unit_fnc_init;";
-					description="Group.SPAAG1; - SPAAG 1 Gunner";
-				};
-			};
-		};
-		class Item30
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={86.760437,0.27199548,114.20032};
-					special="NONE";
-					id=97;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VC""], [""marker"", ""SPAAG2"", ""ColorBlue""]] call hull3_unit_fnc_init;";
-					description="Group.SPAAG2; - SPAAG 2 Commander";
-				};
-				class Item1
-				{
-					position[]={83.578796,0.073693149,109.82532};
-					special="NONE";
-					id=98;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VD""]] call hull3_unit_fnc_init;";
-					description="Group.SPAAG2; - SPAAG 2 Driver";
-				};
-				class Item2
-				{
-					position[]={89.526062,0.24055621,109.61829};
-					special="NONE";
-					id=99;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VG""]] call hull3_unit_fnc_init;";
-					description="Group.SPAAG2; - SPAAG 2 Gunner";
-				};
-			};
-		};
-		class Item31
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={121.57686,0.27051884,113.47375};
-					special="NONE";
-					id=100;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VC""], [""marker"", ""SPAAG3"", ""ColorGreen""]] call hull3_unit_fnc_init;";
-					description="Group.SPAAG3; - SPAAG 3 Commander";
-				};
-				class Item1
-				{
-					position[]={118.61593,0.07541956,109.0675};
-					special="NONE";
-					id=101;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VD""]] call hull3_unit_fnc_init;";
-					description="Group.SPAAG3; - SPAAG 3 Driver";
-				};
-				class Item2
-				{
-					position[]={124.62569,0.24177043,109.14954};
-					special="NONE";
-					id=102;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VG""]] call hull3_unit_fnc_init;";
-					description="Group.SPAAG3; - SPAAG 3 Gunner";
-				};
-			};
-		};
-		class Item32
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={154.89914,0.2106266,113.64172};
-					special="NONE";
-					id=103;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VC""], [""marker"", ""SPAAG4"", ""ColorBrown""]] call hull3_unit_fnc_init;";
-					description="Group.SPAAG4; - SPAAG 4 Commander";
-				};
-				class Item1
-				{
-					position[]={151.64523,0.023406841,109.95032};
-					special="NONE";
-					id=104;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VD""]] call hull3_unit_fnc_init;";
-					description="Group.SPAAG4; - SPAAG 4 Driver";
-				};
-				class Item2
-				{
-					position[]={157.49481,0.16531101,109.46594};
-					special="NONE";
-					id=105;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VG""]] call hull3_unit_fnc_init;";
-					description="Group.SPAAG4; - SPAAG 4 Gunner";
-				};
-			};
-		};
-		class Item33
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={54.133484,0.28527373,84.149536};
-					special="NONE";
-					id=106;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VC""], [""marker"", ""TNK1"", ""ColorRed""]] call hull3_unit_fnc_init;";
-					description="Group.TNK1; - Tank 1 Commander";
-				};
-				class Item1
-				{
-					position[]={50.701843,0.29947963,81.460083};
-					special="NONE";
-					id=107;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VD""]] call hull3_unit_fnc_init;";
-					description="Group.TNK1; - Tank 1 Driver";
-				};
-				class Item2
-				{
-					position[]={56.756531,0.28538746,81.538208};
-					special="NONE";
-					id=108;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VG""]] call hull3_unit_fnc_init;";
-					description="Group.TNK1; - Tank 1 Gunner";
-				};
-			};
-		};
-		class Item34
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={87.182312,0.31305355,83.169067};
-					special="NONE";
-					id=109;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VC""], [""marker"", ""TNK2"", ""ColorBlue""]] call hull3_unit_fnc_init;";
-					description="Group.TNK2; - Tank 2 Commander";
-				};
-				class Item1
-				{
-					position[]={84.305359,0.25866675,79.487427};
-					special="NONE";
-					id=110;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VD""]] call hull3_unit_fnc_init;";
-					description="Group.TNK2; - Tank 2 Driver";
-				};
-				class Item2
-				{
-					position[]={89.113953,0.31471318,79.712036};
-					special="NONE";
-					id=111;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VG""]] call hull3_unit_fnc_init;";
-					description="Group.TNK2; - Tank 2 Gunner";
-				};
-			};
-		};
-		class Item35
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={122.9128,0.24413365,83.073364};
-					special="NONE";
-					id=112;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VC""], [""marker"", ""TNK3"", ""ColorGreen""]] call hull3_unit_fnc_init;";
-					description="Group.TNK3; - Tank 3 Commander";
-				};
-				class Item1
-				{
-					position[]={120.15303,0.23976949,79.17688};
-					special="NONE";
-					id=113;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VD""]] call hull3_unit_fnc_init;";
-					description="Group.TNK3; - Tank 3 Driver";
-				};
-				class Item2
-				{
-					position[]={125.0964,0.24638194,79.628052};
-					special="NONE";
-					id=114;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VG""]] call hull3_unit_fnc_init;";
-					description="Group.TNK3; - Tank 3 Gunner";
-				};
-			};
-		};
-		class Item36
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={154.13742,0.19659263,83.450317};
-					special="NONE";
-					id=115;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VC""], [""marker"", ""TNK4"", ""ColorBrown""]] call hull3_unit_fnc_init;";
-					description="Group.TNK4; - Tank 4 Commander";
-				};
-				class Item1
-				{
-					position[]={151.49875,0.11183639,79.307739};
-					special="NONE";
-					id=116;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VD""]] call hull3_unit_fnc_init;";
-					description="Group.TNK4; - Tank 4 Driver";
-				};
-				class Item2
-				{
-					position[]={157.41083,0.1787599,79.479614};
-					special="NONE";
-					id=117;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VG""]] call hull3_unit_fnc_init;";
-					description="Group.TNK4; - Tank 4 Gunner";
-				};
-			};
-		};
-		class Item37
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={55.869812,0.14140448,51.602661};
-					special="NONE";
-					id=118;
-					side="GUER";
-					vehicle="I_helipilot_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""P""], [""marker"", ""TH1"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.TH1; - TH 1 Pilot";
-				};
-				class Item1
-				{
-					position[]={53.334656,0.27271268,49.126099};
-					special="NONE";
-					id=119;
-					side="GUER";
-					vehicle="I_helicrew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init="[this, [""faction"", ""FACTION""], [""gear"", ""PCM""]] call hull3_unit_fnc_init;";
-					description="Group.TH1; - TH 1 Crew";
-				};
-				class Item2
-				{
-					position[]={57.973328,0.13890058,49.297974};
-					special="NONE";
-					id=120;
-					side="GUER";
-					vehicle="I_helicrew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init="[this, [""faction"", ""FACTION""], [""gear"", ""PCM""]] call hull3_unit_fnc_init;";
-					description="Group.TH1; - TH 1 Crew";
-				};
-			};
-		};
-		class Item38
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={85.235046,0.24516766,50.819458};
-					special="NONE";
-					id=121;
-					side="GUER";
-					vehicle="I_helipilot_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""P""], [""marker"", ""TH2"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.TH2; - TH 2 Pilot";
-				};
-				class Item1
-				{
-					position[]={83.416687,0.28033227,48.797974};
-					special="NONE";
-					id=122;
-					side="GUER";
-					vehicle="I_helicrew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init="[this, [""faction"", ""FACTION""], [""gear"", ""PCM""]] call hull3_unit_fnc_init;";
-					description="Group.TH2; - TH 2 Crew";
-				};
-				class Item2
-				{
-					position[]={87.264343,0.23540801,48.735474};
-					special="NONE";
-					id=123;
-					side="GUER";
-					vehicle="I_helicrew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init="[this, [""faction"", ""FACTION""], [""gear"", ""PCM""]] call hull3_unit_fnc_init;";
-					description="Group.TH2; - TH 2 Crew";
-				};
-			};
-		};
-		class Item39
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={120.06319,0.14120892,51.215942};
-					special="NONE";
-					id=124;
-					side="GUER";
-					vehicle="I_helipilot_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="CORPORAL";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""P""], [""marker"", ""TH3"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.TH3; - TH 3 Pilot";
-				};
-				class Item1
-				{
-					position[]={118.65108,0.19303979,49.436646};
-					special="NONE";
-					id=125;
-					side="GUER";
-					vehicle="I_helicrew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init="[this, [""faction"", ""FACTION""], [""gear"", ""PCM""]] call hull3_unit_fnc_init;";
-					description="Group.TH3; - TH 3 Crew";
-				};
-				class Item2
-				{
-					position[]={121.74287,0.13080052,49.469849};
-					special="NONE";
-					id=126;
-					side="GUER";
-					vehicle="I_helicrew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init="[this, [""faction"", ""FACTION""], [""gear"", ""PCM""]] call hull3_unit_fnc_init;";
-					description="Group.TH3; - TH 3 Crew";
-				};
-			};
-		};
-		class Item40
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={153.61789,0.061467547,51.241333};
-					special="NONE";
-					id=127;
-					side="GUER";
-					vehicle="I_helipilot_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""P""], [""marker"", ""TH4"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.TH4; - TH 4 Pilot";
-				};
-				class Item1
-				{
-					position[]={152.3757,0.10833877,49.034302};
-					special="NONE";
-					id=128;
-					side="GUER";
-					vehicle="I_helicrew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init="[this, [""faction"", ""FACTION""], [""gear"", ""PCM""]] call hull3_unit_fnc_init;";
-					description="Group.TH4; - TH 4 Crew";
-				};
-				class Item2
-				{
-					position[]={155.02414,0.067632794,48.893677};
-					special="NONE";
-					id=129;
-					side="GUER";
-					vehicle="I_helicrew_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init="[this, [""faction"", ""FACTION""], [""gear"", ""PCM""]] call hull3_unit_fnc_init;";
-					description="Group.TH4; - TH 4 Crew";
-				};
-			};
-		};
-		class Item41
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=2;
-				class Item0
-				{
-					position[]={187.0947,-0.16457094,101.26868};
-					special="NONE";
-					id=130;
-					side="GUER";
-					vehicle="I_pilot_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="LIEUTENANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""P""], [""marker"", ""AH1"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.AH1; - AH 1 Pilot";
-				};
-				class Item1
-				{
-					position[]={193.66501,-0.11924443,100.53235};
-					special="NONE";
-					id=131;
-					side="GUER";
-					vehicle="I_pilot_F";
-					player="PLAY CDG";
-					rank="LIEUTENANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""P""]] call hull3_unit_fnc_init;";
-					description="Group.AH1; - AH 1 Gunner";
-				};
-			};
-		};
-		class Item42
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={195.3779,-0.17326047,63.327271};
-					special="NONE";
-					id=132;
-					side="GUER";
-					vehicle="I_pilot_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="LIEUTENANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""P""], [""marker"", ""CAS1"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.CAS1; - CAS 1 Pilot";
-				};
-			};
-		};
-		class Item43
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={221.88577,-0.3108204,63.182739};
-					special="NONE";
-					id=133;
-					side="GUER";
-					vehicle="I_pilot_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="LIEUTENANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""P""], [""marker"", ""CAS2"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.CAS2; - CAS 2 Pilot";
-				};
-			};
-		};
-		class Item44
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=2;
-				class Item0
-				{
-					position[]={218.08099,-0.20182279,100.93079};
-					special="NONE";
-					id=134;
-					side="GUER";
-					vehicle="I_pilot_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="LIEUTENANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""P""], [""marker"", ""AH2"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.AH2; - AH 2 Pilot";
-				};
-				class Item1
-				{
-					position[]={224.69046,-0.25227273,100.22961};
-					special="NONE";
-					id=135;
-					side="GUER";
-					vehicle="I_pilot_F";
-					player="PLAY CDG";
-					rank="LIEUTENANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""P""]] call hull3_unit_fnc_init;";
-					description="Group.AH2; - AH 2 Gunner";
-				};
-			};
-		};
-		class Item45
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={180.00461,-0.02440504,149.13};
-					special="NONE";
-					id=136;
-					side="GUER";
-					vehicle="I_Soldier_TL_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MATAG""], [""marker"", ""MAT3"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.MAT3; - MAT 3 Leader";
-				};
-				class Item1
-				{
-					position[]={175.92258,0.10328723,142.57532};
-					special="NONE";
-					id=137;
-					side="GUER";
-					vehicle="I_Soldier_AT_F";
-					player="PLAY CDG";
-					rank="CORPORAL";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MATG""]] call hull3_unit_fnc_init;";
-					description="Group.MAT3; - MAT 3 Gunner";
-				};
-				class Item2
-				{
-					position[]={184.25681,-0.059008457,142.03625};
-					special="NONE";
-					id=138;
-					side="GUER";
-					vehicle="I_Soldier_A_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MATAC""]] call hull3_unit_fnc_init;";
-					description="Group.MAT3; - MAT 3 Ammo Carrier";
-				};
-			};
-		};
-		class Item46
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={197.3154,0.24032307,148.52063};
-					special="NONE";
-					id=139;
-					side="GUER";
-					vehicle="I_Soldier_TL_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MATAG""], [""marker"", ""MAT4"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.MAT4; - MAT 4 Leader";
-				};
-				class Item1
-				{
-					position[]={193.37009,0.10003603,142.05579};
-					special="NONE";
-					id=140;
-					side="GUER";
-					vehicle="I_Soldier_AT_F";
-					player="PLAY CDG";
-					rank="CORPORAL";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MATG""]] call hull3_unit_fnc_init;";
-					description="Group.MAT4; - MAT 4 Gunner";
-				};
-				class Item2
-				{
-					position[]={201.32321,0.22481743,141.59094};
-					special="NONE";
-					id=141;
-					side="GUER";
-					vehicle="I_Soldier_A_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MATAC""]] call hull3_unit_fnc_init;";
-					description="Group.MAT4; - MAT 4 Ammo Carrier";
-				};
-			};
-		};
-		class Item47
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={215.89154,-0.087425865,148.34094};
-					special="NONE";
-					id=142;
-					side="GUER";
-					vehicle="I_Soldier_TL_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HATAG""], [""marker"", ""HAT3"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.HAT3; - HAT 3 Leader";
-				};
-				class Item1
-				{
-					position[]={211.99121,-0.018757075,141.68079};
-					special="NONE";
-					id=143;
-					side="GUER";
-					vehicle="I_Soldier_AT_F";
-					player="PLAY CDG";
-					rank="CORPORAL";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HATG""]] call hull3_unit_fnc_init;";
-					description="Group.HAT3; - HAT 3 Gunner";
-				};
-				class Item2
-				{
-					position[]={220.3447,-0.14276598,141.3761};
-					special="NONE";
-					id=144;
-					side="GUER";
-					vehicle="I_Soldier_A_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HATAC""]] call hull3_unit_fnc_init;";
-					description="Group.HAT3; - HAT 3 Ammo Carrier";
-				};
-			};
-		};
-		class Item48
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={231.10846,0.1594815,147.96204};
-					special="NONE";
-					id=145;
-					side="GUER";
-					vehicle="I_Soldier_TL_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HATAG""], [""marker"", ""HAT4"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.HAT4; - HAT 4 Leader";
-				};
-				class Item1
-				{
-					position[]={227.3721,-0.0049744784,141.38391};
-					special="NONE";
-					id=146;
-					side="GUER";
-					vehicle="I_Soldier_AT_F";
-					player="PLAY CDG";
-					rank="CORPORAL";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HATG""]] call hull3_unit_fnc_init;";
-					description="Group.HAT4; - HAT 4 Gunner";
-				};
-				class Item2
-				{
-					position[]={235.34479,0.13346013,141.14172};
-					special="NONE";
-					id=147;
-					side="GUER";
-					vehicle="I_Soldier_A_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HATAC""]] call hull3_unit_fnc_init;";
-					description="Group.HAT4; - HAT 4 Ammo Carrier";
-				};
-			};
-		};
-		class Item49
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=2;
-				class Item0
-				{
-					position[]={212.41895,0.017073758,180.20813};
-					special="NONE";
-					id=148;
 					side="GUER";
 					vehicle="I_Soldier_TL_F";
 					player="PLAY CDG";
@@ -2388,9 +1062,9 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={216.03021,-0.018115558,177.52063};
+					position[]={185.07399,-0.0051957299,153.75916};
 					special="NONE";
-					id=149;
+					id=65;
 					side="GUER";
 					vehicle="I_Soldier_AR_F";
 					player="PLAY CDG";
@@ -2400,7 +1074,7 @@ class Mission
 				};
 			};
 		};
-		class Item50
+		class Item20
 		{
 			side="GUER";
 			class Vehicles
@@ -2408,9 +1082,9 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={230.58502,0.23281091,181.30188};
+					position[]={199.62871,0.0012469527,157.54041};
 					special="NONE";
-					id=150;
+					id=66;
 					side="GUER";
 					vehicle="I_Soldier_TL_F";
 					player="PLAY CDG";
@@ -2422,9 +1096,9 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={234.40533,0.23140292,178.66907};
+					position[]={203.44899,0.00099635031,154.90759};
 					special="NONE";
-					id=151;
+					id=67;
 					side="GUER";
 					vehicle="I_Soldier_AR_F";
 					player="PLAY CDG";
@@ -2434,7 +1108,7 @@ class Mission
 				};
 			};
 		};
-		class Item51
+		class Item21
 		{
 			side="GUER";
 			class Vehicles
@@ -2442,270 +1116,46 @@ class Mission
 				items=3;
 				class Item0
 				{
-					position[]={217.78021,0.14709599,207.27063};
+					position[]={148.97292,0.0029086811,138.93103};
 					special="NONE";
-					id=152;
-					side="GUER";
-					vehicle="I_engineer_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""ENG""], [""marker"", ""ENG3"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.ENG3; - Engineering 3 Leader";
-				};
-				class Item1
-				{
-					position[]={221.01657,0.13632691,203.89563};
-					special="NONE";
-					id=153;
-					side="GUER";
-					vehicle="I_engineer_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""ENGA""]] call hull3_unit_fnc_init;";
-					description="Group.ENG3; - Engineering 3 Assistant";
-				};
-				class Item2
-				{
-					position[]={214.92474,0.2887148,204.28235};
-					special="NONE";
-					id=154;
-					side="GUER";
-					vehicle="I_engineer_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""ENGA""]] call hull3_unit_fnc_init;";
-					description="Group.ENG3; - Engineering 3 Assistant";
-				};
-			};
-		};
-		class Item52
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={237.33893,0.20077506,207.15735};
-					special="NONE";
-					id=155;
-					side="GUER";
-					vehicle="I_engineer_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""ENG""], [""marker"", ""ENG4"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.ENG4; - Engineering 4 Leader";
-				};
-				class Item1
-				{
-					position[]={240.61432,0.19307539,203.78235};
-					special="NONE";
-					id=156;
-					side="GUER";
-					vehicle="I_engineer_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""ENGA""]] call hull3_unit_fnc_init;";
-					description="Group.ENG4; - Engineering 4 Assistant";
-				};
-				class Item2
-				{
-					position[]={234.50104,0.039725773,204.14172};
-					special="NONE";
-					id=157;
-					side="GUER";
-					vehicle="I_engineer_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""ENGA""]] call hull3_unit_fnc_init;";
-					description="Group.ENG4; - Engineering 4 Assistant";
-				};
-			};
-		};
-		class Item53
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=2;
-				class Item0
-				{
-					position[]={255.12994,0.00098857284,206.82532};
-					special="NONE";
-					id=158;
-					side="GUER";
-					vehicle="I_Sniper_F";
-					player="PLAY CDG";
-					leader=1;
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SN""], [""marker"", ""ST1"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.ST1; - Sniper 1 Marksmen";
-				};
-				class Item1
-				{
-					position[]={258.38385,-0.042247124,204.76672};
-					special="NONE";
-					id=159;
-					side="GUER";
-					vehicle="I_Spotter_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init="[this, [""faction"", ""FACTION""], [""gear"", ""SP""]] call hull3_unit_fnc_init;";
-					description="Group.ST1; - Sniper 1 Spotter";
-				};
-			};
-		};
-		class Item54
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=2;
-				class Item0
-				{
-					position[]={265.22955,-0.036415406,206.88391};
-					special="NONE";
-					id=160;
-					side="GUER";
-					vehicle="I_Sniper_F";
-					player="PLAY CDG";
-					leader=1;
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SN""], [""marker"", ""ST2"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.ST2; - Sniper 2 Marksmen";
-				};
-				class Item1
-				{
-					position[]={268.47369,-0.014726169,204.84875};
-					special="NONE";
-					id=161;
-					side="GUER";
-					vehicle="I_Spotter_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init="[this, [""faction"", ""FACTION""], [""gear"", ""SP""]] call hull3_unit_fnc_init;";
-					description="Group.ST2; - Sniper 2 Spotter";
-				};
-			};
-		};
-		class Item55
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=2;
-				class Item0
-				{
-					position[]={255.38776,0.16142607,199.74329};
-					special="NONE";
-					id=162;
-					side="GUER";
-					vehicle="I_Sniper_F";
-					player="PLAY CDG";
-					leader=1;
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SN""], [""marker"", ""ST3"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.ST3; - Sniper 3 Marksmen";
-				};
-				class Item1
-				{
-					position[]={258.62799,0.11212103,197.69641};
-					special="NONE";
-					id=163;
-					side="GUER";
-					vehicle="I_Spotter_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init="[this, [""faction"", ""FACTION""], [""gear"", ""SP""]] call hull3_unit_fnc_init;";
-					description="Group.ST3; - Sniper 3 Spotter";
-				};
-			};
-		};
-		class Item56
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=2;
-				class Item0
-				{
-					position[]={265.62604,-0.10744976,199.3175};
-					special="NONE";
-					id=164;
-					side="GUER";
-					vehicle="I_Sniper_F";
-					player="PLAY CDG";
-					leader=1;
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SN""], [""marker"", ""ST4"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.ST4; - Sniper 4 Marksmen";
-				};
-				class Item1
-				{
-					position[]={268.87018,-0.12937698,197.30579};
-					special="NONE";
-					id=165;
-					side="GUER";
-					vehicle="I_Spotter_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init="[this, [""faction"", ""FACTION""], [""gear"", ""SP""]] call hull3_unit_fnc_init;";
-					description="Group.ST4; - Sniper 4 Spotter";
-				};
-			};
-		};
-		class Item57
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={256.03424,0.043615788,184.40735};
-					special="NONE";
-					id=166;
+					id=68;
 					side="GUER";
 					vehicle="I_Soldier_TL_F";
 					player="PLAY CDG";
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SAMAG""], [""marker"", ""SAM1"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.SAM1; - SAM 1 Leader";
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MATAG""], [""marker"", ""MAT1"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.MAT1; - MAT 1 Leader";
 				};
 				class Item1
 				{
-					position[]={252.14172,-0.13319713,177.71594};
+					position[]={144.88112,-0.0012601854,132.36462};
 					special="NONE";
-					id=167;
+					id=69;
 					side="GUER";
-					vehicle="I_Soldier_AA_F";
+					vehicle="I_Soldier_AT_F";
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SAMG""]] call hull3_unit_fnc_init;";
-					description="Group.SAM1; - SAM 1 Gunner";
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MATG""]] call hull3_unit_fnc_init;";
+					description="Group.MAT1; - MAT 1 Gunner";
 				};
 				class Item2
 				{
-					position[]={260.49518,-0.04614798,177.38};
+					position[]={152.97096,0.0021803831,132.24353};
 					special="NONE";
-					id=168;
+					id=70;
 					side="GUER";
 					vehicle="I_Soldier_A_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SAMAC""]] call hull3_unit_fnc_init;";
-					description="Group.SAM1; - SAM 1 Ammo Carrier";
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MATAC""]] call hull3_unit_fnc_init;";
+					description="Group.MAT1; - MAT 1 Ammo Carrier";
 				};
 			};
 		};
-		class Item58
+		class Item22
 		{
 			side="GUER";
 			class Vehicles
@@ -2713,46 +1163,46 @@ class Mission
 				items=3;
 				class Item0
 				{
-					position[]={272.84479,-0.022206109,184.52063};
+					position[]={166.14677,-0.0051053055,138.37244};
 					special="NONE";
-					id=169;
+					id=71;
 					side="GUER";
 					vehicle="I_Soldier_TL_F";
 					player="PLAY CDG";
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SAMAG""], [""marker"", ""SAM2"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.SAM2; - SAM 2 Leader";
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MATAG""], [""marker"", ""MAT2"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.MAT2; - MAT 2 Leader";
 				};
 				class Item1
 				{
-					position[]={268.93658,0.13823438,177.83704};
+					position[]={162.22099,-0.00055638759,131.89197};
 					special="NONE";
-					id=170;
+					id=72;
 					side="GUER";
-					vehicle="I_Soldier_AA_F";
+					vehicle="I_Soldier_AT_F";
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SAMG""]] call hull3_unit_fnc_init;";
-					description="Group.SAM2; - SAM 2 Gunner";
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MATG""]] call hull3_unit_fnc_init;";
+					description="Group.MAT2; - MAT 2 Gunner";
 				};
 				class Item2
 				{
-					position[]={277.29596,0.006469734,177.52063};
+					position[]={170.15263,-0.0050716968,131.45447};
 					special="NONE";
-					id=171;
+					id=73;
 					side="GUER";
 					vehicle="I_Soldier_A_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SAMAC""]] call hull3_unit_fnc_init;";
-					description="Group.SAM2; - SAM 2 Ammo Carrier";
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MATAC""]] call hull3_unit_fnc_init;";
+					description="Group.MAT2; - MAT 2 Ammo Carrier";
 				};
 			};
 		};
-		class Item59
+		class Item23
 		{
 			side="GUER";
 			class Vehicles
@@ -2760,46 +1210,46 @@ class Mission
 				items=3;
 				class Item0
 				{
-					position[]={255.30182,-0.075520679,168.90735};
+					position[]={149.04909,-0.0035573607,125.36853};
 					special="NONE";
-					id=172;
+					id=74;
 					side="GUER";
 					vehicle="I_Soldier_TL_F";
 					player="PLAY CDG";
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SAMAG""], [""marker"", ""SAM3"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.SAM3; - SAM 3 Leader";
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MATAG""], [""marker"", ""MAT3"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.MAT3; - MAT 3 Leader";
 				};
 				class Item1
 				{
-					position[]={251.4093,0.14607586,162.22766};
+					position[]={144.96706,-0.0033982303,118.81384};
 					special="NONE";
-					id=173;
+					id=75;
 					side="GUER";
-					vehicle="I_Soldier_AA_F";
+					vehicle="I_Soldier_AT_F";
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SAMG""]] call hull3_unit_fnc_init;";
-					description="Group.SAM3; - SAM 3 Gunner";
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MATG""]] call hull3_unit_fnc_init;";
+					description="Group.MAT3; - MAT 3 Gunner";
 				};
 				class Item2
 				{
-					position[]={259.74713,-0.048611294,161.92297};
+					position[]={153.30104,-0.0052325302,118.27478};
 					special="NONE";
-					id=174;
+					id=76;
 					side="GUER";
 					vehicle="I_Soldier_A_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SAMAC""]] call hull3_unit_fnc_init;";
-					description="Group.SAM3; - SAM 3 Ammo Carrier";
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MATAC""]] call hull3_unit_fnc_init;";
+					description="Group.MAT3; - MAT 3 Ammo Carrier";
 				};
 			};
 		};
-		class Item60
+		class Item24
 		{
 			side="GUER";
 			class Vehicles
@@ -2807,46 +1257,46 @@ class Mission
 				items=3;
 				class Item0
 				{
-					position[]={272.23541,0.0075901411,168.59094};
+					position[]={166.35966,0.00048934645,124.75916};
 					special="NONE";
-					id=175;
+					id=77;
 					side="GUER";
 					vehicle="I_Soldier_TL_F";
 					player="PLAY CDG";
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SAMAG""], [""marker"", ""SAM4"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.SAM4; - SAM 4 Leader";
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MATAG""], [""marker"", ""MAT4"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.MAT4; - MAT 4 Leader";
 				};
 				class Item1
 				{
-					position[]={268.35455,-0.22055964,161.90735};
+					position[]={162.41435,-0.00094037002,118.29431};
 					special="NONE";
-					id=176;
+					id=78;
 					side="GUER";
-					vehicle="I_Soldier_AA_F";
+					vehicle="I_Soldier_AT_F";
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SAMG""]] call hull3_unit_fnc_init;";
-					description="Group.SAM4; - SAM 4 Gunner";
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MATG""]] call hull3_unit_fnc_init;";
+					description="Group.MAT4; - MAT 4 Gunner";
 				};
 				class Item2
 				{
-					position[]={276.70807,-0.077585116,161.61047};
+					position[]={170.36748,0.00080840359,117.82947};
 					special="NONE";
-					id=177;
+					id=79;
 					side="GUER";
 					vehicle="I_Soldier_A_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SAMAC""]] call hull3_unit_fnc_init;";
-					description="Group.SAM4; - SAM 4 Ammo Carrier";
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MATAC""]] call hull3_unit_fnc_init;";
+					description="Group.MAT4; - MAT 4 Ammo Carrier";
 				};
 			};
 		};
-		class Item61
+		class Item25
 		{
 			side="GUER";
 			class Vehicles
@@ -2854,414 +1304,46 @@ class Mission
 				items=3;
 				class Item0
 				{
-					position[]={255.5108,0.10902801,154.92688};
+					position[]={184.44704,0.0010335227,137.39978};
 					special="NONE";
-					id=178;
+					id=80;
 					side="GUER";
-					vehicle="I_support_AMG_F";
+					vehicle="I_Soldier_TL_F";
 					player="PLAY CDG";
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HMGAG""], [""marker"", ""HMG1"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.HMG1; - HMG 1 Leader";
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HATAG""], [""marker"", ""HAT1"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.HAT1; - HAT 1 Leader";
 				};
 				class Item1
 				{
-					position[]={259.32526,0.088432558,150.73938};
+					position[]={180.55104,-0.0041423142,130.71619};
 					special="NONE";
-					id=179;
+					id=81;
 					side="GUER";
-					vehicle="I_Soldier_A_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HMGAG""]] call hull3_unit_fnc_init;";
-					description="Group.HMG1; - HMG 1 Assistant Gunner";
-				};
-				class Item2
-				{
-					position[]={251.55188,-0.074116834,150.88};
-					special="NONE";
-					id=180;
-					side="GUER";
-					vehicle="I_support_MG_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HMGG""]] call hull3_unit_fnc_init;";
-					description="Group.HMG1; - HMG 1 Gunner";
-				};
-			};
-		};
-		class Item62
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={272.50494,-0.23721142,154.67297};
-					special="NONE";
-					id=181;
-					side="GUER";
-					vehicle="I_support_AMG_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HMGAG""], [""marker"", ""HMG2"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.HMG2; - HMG 2 Leader";
-				};
-				class Item1
-				{
-					position[]={276.32526,-0.25422567,150.5011};
-					special="NONE";
-					id=182;
-					side="GUER";
-					vehicle="I_Soldier_A_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HMGAG""]] call hull3_unit_fnc_init;";
-					description="Group.HMG2; - HMG 2 Assistant Gunner";
-				};
-				class Item2
-				{
-					position[]={268.52643,-0.049407609,150.61829};
-					special="NONE";
-					id=183;
-					side="GUER";
-					vehicle="I_support_MG_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HMGG""]] call hull3_unit_fnc_init;";
-					description="Group.HMG2; - HMG 2 Gunner";
-				};
-			};
-		};
-		class Item63
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={256.09479,-0.12571421,144.98547};
-					special="NONE";
-					id=184;
-					side="GUER";
-					vehicle="I_support_AMG_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HMGAG""], [""marker"", ""HMG3"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.HMG3; - HMG 3 Leader";
-				};
-				class Item1
-				{
-					position[]={259.89166,-0.14518481,140.82532};
-					special="NONE";
-					id=185;
-					side="GUER";
-					vehicle="I_Soldier_A_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HMGAG""]] call hull3_unit_fnc_init;";
-					description="Group.HMG3; - HMG 3 Assistant Gunner";
-				};
-				class Item2
-				{
-					position[]={252.11829,-0.2291621,140.9386};
-					special="NONE";
-					id=186;
-					side="GUER";
-					vehicle="I_support_MG_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HMGG""]] call hull3_unit_fnc_init;";
-					description="Group.HMG3; - HMG 3 Gunner";
-				};
-			};
-		};
-		class Item64
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={272.42487,-0.038294248,145.20032};
-					special="NONE";
-					id=187;
-					side="GUER";
-					vehicle="I_support_AMG_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HMGAG""], [""marker"", ""HMG4"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.HMG4; - HMG 4 Leader";
-				};
-				class Item1
-				{
-					position[]={276.22369,-0.052122541,141.02844};
-					special="NONE";
-					id=188;
-					side="GUER";
-					vehicle="I_Soldier_A_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HMGAG""]] call hull3_unit_fnc_init;";
-					description="Group.HMG4; - HMG 4 Assistant Gunner";
-				};
-				class Item2
-				{
-					position[]={268.43658,0.049196258,141.17688};
-					special="NONE";
-					id=189;
-					side="GUER";
-					vehicle="I_support_MG_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HMGG""]] call hull3_unit_fnc_init;";
-					description="Group.HMG4; - HMG 4 Gunner";
-				};
-			};
-		};
-		class Item65
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={255.42682,-0.13279231,130.46985};
-					special="NONE";
-					id=190;
-					side="GUER";
-					vehicle="I_support_AMG_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""GMGAG""], [""marker"", ""GMG1"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.GMG1; - GMG 1 Leader";
-				};
-				class Item1
-				{
-					position[]={259.23541,-0.14704099,126.28625};
-					special="NONE";
-					id=191;
-					side="GUER";
-					vehicle="I_Soldier_A_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""GMGAG""]] call hull3_unit_fnc_init;";
-					description="Group.GMG1; - GMG 1 Assistant Gunner";
-				};
-				class Item2
-				{
-					position[]={251.46594,0.051009946,126.4386};
-					special="NONE";
-					id=192;
-					side="GUER";
-					vehicle="I_support_GMG_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""GMGG""]] call hull3_unit_fnc_init;";
-					description="Group.GMG1; - GMG 1 Gunner";
-				};
-			};
-		};
-		class Item66
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={272.52643,-0.096299514,130.53625};
-					special="NONE";
-					id=193;
-					side="GUER";
-					vehicle="I_support_AMG_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""GMGAG""], [""marker"", ""GMG2"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.GMG2; - GMG 2 Leader";
-				};
-				class Item1
-				{
-					position[]={276.33112,-0.10971908,126.34094};
-					special="NONE";
-					id=194;
-					side="GUER";
-					vehicle="I_Soldier_A_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""GMGAG""]] call hull3_unit_fnc_init;";
-					description="Group.GMG2; - GMG 2 Assistant Gunner";
-				};
-				class Item2
-				{
-					position[]={268.55573,-0.28382313,126.47766};
-					special="NONE";
-					id=195;
-					side="GUER";
-					vehicle="I_support_GMG_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""GMGG""]] call hull3_unit_fnc_init;";
-					description="Group.GMG2; - GMG 2 Gunner";
-				};
-			};
-		};
-		class Item67
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={255.49323,0.040326789,120.89172};
-					special="NONE";
-					id=196;
-					side="GUER";
-					vehicle="I_support_AMG_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""GMGAG""], [""marker"", ""GMG3"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.GMG3; - GMG 3 Leader";
-				};
-				class Item1
-				{
-					position[]={259.2901,0.027344719,116.72375};
-					special="NONE";
-					id=197;
-					side="GUER";
-					vehicle="I_Soldier_A_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""GMGAG""]] call hull3_unit_fnc_init;";
-					description="Group.GMG3; - GMG 3 Assistant Gunner";
-				};
-				class Item2
-				{
-					position[]={251.52063,-0.073341601,116.86438};
-					special="NONE";
-					id=198;
-					side="GUER";
-					vehicle="I_support_GMG_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""GMGG""]] call hull3_unit_fnc_init;";
-					description="Group.GMG3; - GMG 3 Gunner";
-				};
-			};
-		};
-		class Item68
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={272.58307,-0.30531257,120.96985};
-					special="NONE";
-					id=199;
-					side="GUER";
-					vehicle="I_support_AMG_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""GMGAG""], [""marker"", ""GMG4"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.GMG4; - GMG 4 Leader";
-				};
-				class Item1
-				{
-					position[]={276.38385,-0.31386441,116.76672};
-					special="NONE";
-					id=200;
-					side="GUER";
-					vehicle="I_Soldier_A_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""GMGAG""]] call hull3_unit_fnc_init;";
-					description="Group.GMG4; - GMG 4 Assistant Gunner";
-				};
-				class Item2
-				{
-					position[]={268.60846,-0.19622608,116.91907};
-					special="NONE";
-					id=201;
-					side="GUER";
-					vehicle="I_support_GMG_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""GMGG""]] call hull3_unit_fnc_init;";
-					description="Group.GMG4; - GMG 4 Gunner";
-				};
-			};
-		};
-		class Item69
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={179.73898,0.21912658,132.55579};
-					special="NONE";
-					id=202;
-					side="GUER";
-					vehicle="I_support_AMort_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MTRAG""], [""marker"", ""MTR1"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.MTR1; - MTR 1 Leader";
-				};
-				class Item1
-				{
-					position[]={175.65891,0.14580849,125.98547};
-					special="NONE";
-					id=203;
-					side="GUER";
-					vehicle="I_support_Mort_F";
+					vehicle="I_Soldier_AT_F";
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MTRG""]] call hull3_unit_fnc_init;";
-					description="Group.MTR1; - MTR 1 Gunner";
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HATG""]] call hull3_unit_fnc_init;";
+					description="Group.HAT1; - HAT 1 Gunner";
 				};
 				class Item2
 				{
-					position[]={183.73532,0.22379187,125.89172};
+					position[]={188.89824,1.1126744e-005,130.43494};
 					special="NONE";
-					id=204;
+					id=82;
 					side="GUER";
 					vehicle="I_Soldier_A_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MTRAC""]] call hull3_unit_fnc_init;";
-					description="Group.MTR1; - MTR 1 Ammo Carrier";
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HATAC""]] call hull3_unit_fnc_init;";
+					description="Group.HAT1; - HAT 1 Ammo Carrier";
 				};
 			};
 		};
-		class Item70
+		class Item26
 		{
 			side="GUER";
 			class Vehicles
@@ -3269,46 +1351,46 @@ class Mission
 				items=3;
 				class Item0
 				{
-					position[]={197.03415,-0.068797141,132.55969};
+					position[]={200.04665,-0.0060275896,137.17712};
 					special="NONE";
-					id=205;
+					id=83;
 					side="GUER";
-					vehicle="I_support_AMort_F";
+					vehicle="I_Soldier_TL_F";
 					player="PLAY CDG";
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MTRAG""], [""marker"", ""MTR2"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.MTR2; - MTR 2 Leader";
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HATAG""], [""marker"", ""HAT2"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.HAT2; - HAT 2 Leader";
 				};
 				class Item1
 				{
-					position[]={192.94626,-0.023178652,126.02454};
+					position[]={196.32011,-0.00048470614,130.57556};
 					special="NONE";
-					id=206;
+					id=84;
 					side="GUER";
-					vehicle="I_support_Mort_F";
+					vehicle="I_Soldier_AT_F";
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MTRG""]] call hull3_unit_fnc_init;";
-					description="Group.MTR2; - MTR 2 Gunner";
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HATG""]] call hull3_unit_fnc_init;";
+					description="Group.HAT2; - HAT 2 Gunner";
 				};
 				class Item2
 				{
-					position[]={201.06149,-0.12902121,125.86829};
+					position[]={204.28883,-0.0050917552,130.349};
 					special="NONE";
-					id=207;
+					id=85;
 					side="GUER";
 					vehicle="I_Soldier_A_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MTRAC""]] call hull3_unit_fnc_init;";
-					description="Group.MTR2; - MTR 2 Ammo Carrier";
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HATAC""]] call hull3_unit_fnc_init;";
+					description="Group.HAT2; - HAT 2 Ammo Carrier";
 				};
 			};
 		};
-		class Item71
+		class Item27
 		{
 			side="GUER";
 			class Vehicles
@@ -3316,46 +1398,46 @@ class Mission
 				items=3;
 				class Item0
 				{
-					position[]={179.39133,0.089676529,120.62219};
+					position[]={184.93532,-0.0054650437,124.57947};
 					special="NONE";
-					id=208;
+					id=86;
 					side="GUER";
-					vehicle="I_support_AMort_F";
+					vehicle="I_Soldier_TL_F";
 					player="PLAY CDG";
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MTRAG""], [""marker"", ""MTR3"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.MTR3; - MTR 3 Leader";
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HATAG""], [""marker"", ""HAT3"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.HAT3; - HAT 3 Leader";
 				};
 				class Item1
 				{
-					position[]={175.30148,-0.10043053,114.07532};
+					position[]={181.03542,-0.0046899919,117.91931};
 					special="NONE";
-					id=209;
+					id=87;
 					side="GUER";
-					vehicle="I_support_Mort_F";
+					vehicle="I_Soldier_AT_F";
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MTRG""]] call hull3_unit_fnc_init;";
-					description="Group.MTR3; - MTR 3 Gunner";
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HATG""]] call hull3_unit_fnc_init;";
+					description="Group.HAT3; - HAT 3 Gunner";
 				};
 				class Item2
 				{
-					position[]={183.40134,-0.0010892861,113.93079};
+					position[]={189.38847,-0.0066369725,117.61462};
 					special="NONE";
-					id=210;
+					id=88;
 					side="GUER";
 					vehicle="I_Soldier_A_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MTRAC""]] call hull3_unit_fnc_init;";
-					description="Group.MTR3; - MTR 3 Ammo Carrier";
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HATAC""]] call hull3_unit_fnc_init;";
+					description="Group.HAT3; - HAT 3 Ammo Carrier";
 				};
 			};
 		};
-		class Item72
+		class Item28
 		{
 			side="GUER";
 			class Vehicles
@@ -3363,46 +1445,46 @@ class Mission
 				items=3;
 				class Item0
 				{
-					position[]={197.22556,-0.029267063,120.62219};
+					position[]={200.15211,6.1062863e-005,124.20056};
 					special="NONE";
-					id=211;
+					id=89;
 					side="GUER";
-					vehicle="I_support_AMort_F";
+					vehicle="I_Soldier_TL_F";
 					player="PLAY CDG";
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MTRAG""], [""marker"", ""MTR4"", ""ColorOrange""]] call hull3_unit_fnc_init;";
-					description="Group.MTR4; - MTR 4 Leader";
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HATAG""], [""marker"", ""HAT4"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.HAT4; - HAT 4 Leader";
 				};
 				class Item1
 				{
-					position[]={193.14352,0.17560111,114.0636};
+					position[]={196.41582,-0.0034304371,117.62244};
 					special="NONE";
-					id=212;
+					id=90;
 					side="GUER";
-					vehicle="I_support_AMort_F";
+					vehicle="I_Soldier_AT_F";
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MTRG""]] call hull3_unit_fnc_init;";
-					description="Group.MTR4; - MTR 4 Gunner";
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HATG""]] call hull3_unit_fnc_init;";
+					description="Group.HAT4; - HAT 4 Gunner";
 				};
 				class Item2
 				{
-					position[]={201.20993,0.0055148127,113.97375};
+					position[]={204.38844,-4.7160545e-005,117.38025};
 					special="NONE";
-					id=213;
+					id=91;
 					side="GUER";
 					vehicle="I_Soldier_A_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MTRAC""]] call hull3_unit_fnc_init;";
-					description="Group.MTR4; - MTR 4 Ammo Carrier";
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HATAC""]] call hull3_unit_fnc_init;";
+					description="Group.HAT4; - HAT 4 Ammo Carrier";
 				};
 			};
 		};
-		class Item73
+		class Item29
 		{
 			side="GUER";
 			class Vehicles
@@ -3410,9 +1492,9 @@ class Mission
 				items=3;
 				class Item0
 				{
-					position[]={215.53998,0.073428459,133.21204};
+					position[]={184.58376,-0.0019248042,109.45056};
 					special="NONE";
-					id=214;
+					id=92;
 					side="GUER";
 					vehicle="I_Soldier_TL_F";
 					player="PLAY CDG";
@@ -3424,9 +1506,9 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={211.66113,0.1181601,126.50891};
+					position[]={180.70534,-0.00074876426,102.74744};
 					special="NONE";
-					id=215;
+					id=93;
 					side="GUER";
 					vehicle="I_Soldier_AT_F";
 					player="PLAY CDG";
@@ -3437,9 +1519,9 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={219.98727,0.091029808,126.22375};
+					position[]={189.03105,-0.00076939166,102.46228};
 					special="NONE";
-					id=216;
+					id=94;
 					side="GUER";
 					vehicle="I_Soldier_A_F";
 					player="PLAY CDG";
@@ -3449,7 +1531,7 @@ class Mission
 				};
 			};
 		};
-		class Item74
+		class Item30
 		{
 			side="GUER";
 			class Vehicles
@@ -3457,9 +1539,9 @@ class Mission
 				items=3;
 				class Item0
 				{
-					position[]={231.15143,-0.14614922,132.94641};
+					position[]={200.19508,-0.0062039681,109.18494};
 					special="NONE";
-					id=217;
+					id=95;
 					side="GUER";
 					vehicle="I_Soldier_TL_F";
 					player="PLAY CDG";
@@ -3471,9 +1553,9 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={227.40726,-0.13577256,126.38391};
+					position[]={196.45097,-0.0051022512,102.62244};
 					special="NONE";
-					id=218;
+					id=96;
 					side="GUER";
 					vehicle="I_Soldier_AT_F";
 					player="PLAY CDG";
@@ -3484,9 +1566,9 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={235.36627,-0.21045783,126.16516};
+					position[]={204.40993,-0.0069636824,102.40369};
 					special="NONE";
-					id=219;
+					id=97;
 					side="GUER";
 					vehicle="I_Soldier_A_F";
 					player="PLAY CDG";
@@ -3496,7 +1578,7 @@ class Mission
 				};
 			};
 		};
-		class Item75
+		class Item31
 		{
 			side="GUER";
 			class Vehicles
@@ -3504,9 +1586,9 @@ class Mission
 				items=3;
 				class Item0
 				{
-					position[]={216.01459,0.062312149,120.40735};
+					position[]={185.05836,-0.0017671223,96.645874};
 					special="NONE";
-					id=220;
+					id=98;
 					side="GUER";
 					vehicle="I_Soldier_TL_F";
 					player="PLAY CDG";
@@ -3518,9 +1600,9 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={212.13965,-0.191756,113.6925};
+					position[]={181.18385,-0.0070102927,89.93103};
 					special="NONE";
-					id=221;
+					id=99;
 					side="GUER";
 					vehicle="I_Soldier_AT_F";
 					player="PLAY CDG";
@@ -3531,9 +1613,9 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={220.47946,-0.020543754,113.41125};
+					position[]={189.52324,-0.0033562272,89.64978};
 					special="NONE";
-					id=222;
+					id=100;
 					side="GUER";
 					vehicle="I_Soldier_A_F";
 					player="PLAY CDG";
@@ -3543,7 +1625,7 @@ class Mission
 				};
 			};
 		};
-		class Item76
+		class Item32
 		{
 			side="GUER";
 			class Vehicles
@@ -3551,9 +1633,9 @@ class Mission
 				items=3;
 				class Item0
 				{
-					position[]={231.24908,-0.10516579,119.98547};
+					position[]={200.29274,-0.0034587241,96.223999};
 					special="NONE";
-					id=223;
+					id=101;
 					side="GUER";
 					vehicle="I_Soldier_TL_F";
 					player="PLAY CDG";
@@ -3565,9 +1647,9 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={227.52249,0.085028596,113.38};
+					position[]={196.56621,-8.0700032e-005,89.61853};
 					special="NONE";
-					id=224;
+					id=102;
 					side="GUER";
 					vehicle="I_Soldier_AT_F";
 					player="PLAY CDG";
@@ -3578,9 +1660,9 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={235.45221,-0.068900593,113.18469};
+					position[]={204.49586,-0.0016879694,89.423218};
 					special="NONE";
-					id=225;
+					id=103;
 					side="GUER";
 					vehicle="I_Soldier_A_F";
 					player="PLAY CDG";
@@ -3590,7 +1672,7 @@ class Mission
 				};
 			};
 		};
-		class Item77
+		class Item33
 		{
 			side="GUER";
 			class Vehicles
@@ -3598,9 +1680,1253 @@ class Mission
 				items=3;
 				class Item0
 				{
-					position[]={52.737,-0.026153132,143.14954};
+					position[]={224.55446,-0.00038863672,131.16541};
 					special="NONE";
-					id=226;
+					id=104;
+					side="GUER";
+					vehicle="I_support_AMG_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HMGAG""], [""marker"", ""HMG1"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.HMG1; - HMG 1 Leader";
+				};
+				class Item1
+				{
+					position[]={228.36891,-0.00050831027,126.97791};
+					special="NONE";
+					id=105;
+					side="GUER";
+					vehicle="I_Soldier_A_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HMGAG""]] call hull3_unit_fnc_init;";
+					description="Group.HMG1; - HMG 1 Assistant Gunner";
+				};
+				class Item2
+				{
+					position[]={220.59547,-0.0046806871,127.11853};
+					special="NONE";
+					id=106;
+					side="GUER";
+					vehicle="I_support_MG_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HMGG""]] call hull3_unit_fnc_init;";
+					description="Group.HMG1; - HMG 1 Gunner";
+				};
+			};
+		};
+		class Item34
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={241.5486,-0.0062236614,130.9115};
+					special="NONE";
+					id=107;
+					side="GUER";
+					vehicle="I_support_AMG_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HMGAG""], [""marker"", ""HMG2"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.HMG2; - HMG 2 Leader";
+				};
+				class Item1
+				{
+					position[]={245.36894,-0.0059080031,126.73962};
+					special="NONE";
+					id=108;
+					side="GUER";
+					vehicle="I_Soldier_A_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HMGAG""]] call hull3_unit_fnc_init;";
+					description="Group.HMG2; - HMG 2 Assistant Gunner";
+				};
+				class Item2
+				{
+					position[]={237.57011,-0.0016633946,126.85681};
+					special="NONE";
+					id=109;
+					side="GUER";
+					vehicle="I_support_MG_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HMGG""]] call hull3_unit_fnc_init;";
+					description="Group.HMG2; - HMG 2 Gunner";
+				};
+			};
+		};
+		class Item35
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={225.13844,-0.0054579941,121.224};
+					special="NONE";
+					id=110;
+					side="GUER";
+					vehicle="I_support_AMG_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HMGAG""], [""marker"", ""HMG3"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.HMG3; - HMG 3 Leader";
+				};
+				class Item1
+				{
+					position[]={228.93532,-0.0055833664,117.06384};
+					special="NONE";
+					id=111;
+					side="GUER";
+					vehicle="I_Soldier_A_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HMGAG""]] call hull3_unit_fnc_init;";
+					description="Group.HMG3; - HMG 3 Assistant Gunner";
+				};
+				class Item2
+				{
+					position[]={221.16188,-0.0067239651,117.17712};
+					special="NONE";
+					id=112;
+					side="GUER";
+					vehicle="I_support_MG_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HMGG""]] call hull3_unit_fnc_init;";
+					description="Group.HMG3; - HMG 3 Gunner";
+				};
+			};
+		};
+		class Item36
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={241.46852,-0.00069954339,121.43884};
+					special="NONE";
+					id=113;
+					side="GUER";
+					vehicle="I_support_AMG_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HMGAG""], [""marker"", ""HMG4"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.HMG4; - HMG 4 Leader";
+				};
+				class Item1
+				{
+					position[]={245.26738,-0.000305305,117.26697};
+					special="NONE";
+					id=114;
+					side="GUER";
+					vehicle="I_Soldier_A_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HMGAG""]] call hull3_unit_fnc_init;";
+					description="Group.HMG4; - HMG 4 Assistant Gunner";
+				};
+				class Item2
+				{
+					position[]={237.48027,-0.00045274687,117.41541};
+					special="NONE";
+					id=115;
+					side="GUER";
+					vehicle="I_support_MG_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""HMGG""]] call hull3_unit_fnc_init;";
+					description="Group.HMG4; - HMG 4 Gunner";
+				};
+			};
+		};
+		class Item37
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={224.47047,-0.0027540489,106.70837};
+					special="NONE";
+					id=116;
+					side="GUER";
+					vehicle="I_support_AMG_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""GMGAG""], [""marker"", ""GMG1"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.GMG1; - GMG 1 Leader";
+				};
+				class Item1
+				{
+					position[]={228.27907,-0.0022841794,102.52478};
+					special="NONE";
+					id=117;
+					side="GUER";
+					vehicle="I_Soldier_A_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""GMGAG""]] call hull3_unit_fnc_init;";
+					description="Group.GMG1; - GMG 1 Assistant Gunner";
+				};
+				class Item2
+				{
+					position[]={220.50954,0.00023664674,102.67712};
+					special="NONE";
+					id=118;
+					side="GUER";
+					vehicle="I_support_GMG_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""GMGG""]] call hull3_unit_fnc_init;";
+					description="Group.GMG1; - GMG 1 Gunner";
+				};
+			};
+		};
+		class Item38
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={241.57008,-0.0037845774,106.77478};
+					special="NONE";
+					id=119;
+					side="GUER";
+					vehicle="I_support_AMG_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""GMGAG""], [""marker"", ""GMG2"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.GMG2; - GMG 2 Leader";
+				};
+				class Item1
+				{
+					position[]={245.3748,-0.0037524886,102.57947};
+					special="NONE";
+					id=120;
+					side="GUER";
+					vehicle="I_Soldier_A_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""GMGAG""]] call hull3_unit_fnc_init;";
+					description="Group.GMG2; - GMG 2 Assistant Gunner";
+				};
+				class Item2
+				{
+					position[]={237.59941,-0.0063407738,102.71619};
+					special="NONE";
+					id=121;
+					side="GUER";
+					vehicle="I_support_GMG_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""GMGG""]] call hull3_unit_fnc_init;";
+					description="Group.GMG2; - GMG 2 Gunner";
+				};
+			};
+		};
+		class Item39
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={224.53688,0.00032726768,97.130249};
+					special="NONE";
+					id=122;
+					side="GUER";
+					vehicle="I_support_AMG_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""GMGAG""], [""marker"", ""GMG3"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.GMG3; - GMG 3 Leader";
+				};
+				class Item1
+				{
+					position[]={228.33376,0.00049713464,92.96228};
+					special="NONE";
+					id=123;
+					side="GUER";
+					vehicle="I_Soldier_A_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""GMGAG""]] call hull3_unit_fnc_init;";
+					description="Group.GMG3; - GMG 3 Assistant Gunner";
+				};
+				class Item2
+				{
+					position[]={220.56422,-0.0035708821,93.102905};
+					special="NONE";
+					id=124;
+					side="GUER";
+					vehicle="I_support_GMG_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""GMGG""]] call hull3_unit_fnc_init;";
+					description="Group.GMG3; - GMG 3 Gunner";
+				};
+			};
+		};
+		class Item40
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={241.62672,-0.0057124672,97.208374};
+					special="NONE";
+					id=125;
+					side="GUER";
+					vehicle="I_support_AMG_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""GMGAG""], [""marker"", ""GMG4"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.GMG4; - GMG 4 Leader";
+				};
+				class Item1
+				{
+					position[]={245.42754,-0.0052261828,93.005249};
+					special="NONE";
+					id=126;
+					side="GUER";
+					vehicle="I_Soldier_A_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""GMGAG""]] call hull3_unit_fnc_init;";
+					description="Group.GMG4; - GMG 4 Assistant Gunner";
+				};
+				class Item2
+				{
+					position[]={237.65215,-0.0015372555,93.157593};
+					special="NONE";
+					id=127;
+					side="GUER";
+					vehicle="I_support_GMG_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""GMGG""]] call hull3_unit_fnc_init;";
+					description="Group.GMG4; - GMG 4 Gunner";
+				};
+			};
+		};
+		class Item41
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={225.0779,-0.0024278229,160.64587};
+					special="NONE";
+					id=128;
+					side="GUER";
+					vehicle="I_Soldier_TL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SAMAG""], [""marker"", ""SAM1"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.SAM1; - SAM 1 Leader";
+				};
+				class Item1
+				{
+					position[]={221.18532,-0.0066906717,153.95447};
+					special="NONE";
+					id=129;
+					side="GUER";
+					vehicle="I_Soldier_AA_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SAMG""]] call hull3_unit_fnc_init;";
+					description="Group.SAM1; - SAM 1 Gunner";
+				};
+				class Item2
+				{
+					position[]={229.53883,-0.0043594399,153.61853};
+					special="NONE";
+					id=130;
+					side="GUER";
+					vehicle="I_Soldier_A_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SAMAC""]] call hull3_unit_fnc_init;";
+					description="Group.SAM1; - SAM 1 Ammo Carrier";
+				};
+			};
+		};
+		class Item42
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={241.88844,-0.003558804,160.75916};
+					special="NONE";
+					id=131;
+					side="GUER";
+					vehicle="I_Soldier_TL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SAMAG""], [""marker"", ""SAM2"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.SAM2; - SAM 2 Leader";
+				};
+				class Item1
+				{
+					position[]={237.98027,-8.1217382e-005,154.07556};
+					special="NONE";
+					id=132;
+					side="GUER";
+					vehicle="I_Soldier_AA_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SAMG""]] call hull3_unit_fnc_init;";
+					description="Group.SAM2; - SAM 2 Gunner";
+				};
+				class Item2
+				{
+					position[]={246.33965,-0.0020334045,153.75916};
+					special="NONE";
+					id=133;
+					side="GUER";
+					vehicle="I_Soldier_A_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SAMAC""]] call hull3_unit_fnc_init;";
+					description="Group.SAM2; - SAM 2 Ammo Carrier";
+				};
+			};
+		};
+		class Item43
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={224.34547,-0.0048803696,145.14587};
+					special="NONE";
+					id=134;
+					side="GUER";
+					vehicle="I_Soldier_TL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SAMAG""], [""marker"", ""SAM3"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.SAM3; - SAM 3 Leader";
+				};
+				class Item1
+				{
+					position[]={220.4529,6.3880812e-005,138.46619};
+					special="NONE";
+					id=135;
+					side="GUER";
+					vehicle="I_Soldier_AA_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SAMG""]] call hull3_unit_fnc_init;";
+					description="Group.SAM3; - SAM 3 Gunner";
+				};
+				class Item2
+				{
+					position[]={228.79079,-0.0033770096,138.1615};
+					special="NONE";
+					id=136;
+					side="GUER";
+					vehicle="I_Soldier_A_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SAMAC""]] call hull3_unit_fnc_init;";
+					description="Group.SAM3; - SAM 3 Ammo Carrier";
+				};
+			};
+		};
+		class Item44
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={241.27907,-0.0028066414,144.82947};
+					special="NONE";
+					id=137;
+					side="GUER";
+					vehicle="I_Soldier_TL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SAMAG""], [""marker"", ""SAM4"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.SAM4; - SAM 4 Leader";
+				};
+				class Item1
+				{
+					position[]={237.39824,-0.0070660701,138.14587};
+					special="NONE";
+					id=138;
+					side="GUER";
+					vehicle="I_Soldier_AA_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SAMG""]] call hull3_unit_fnc_init;";
+					description="Group.SAM4; - SAM 4 Gunner";
+				};
+				class Item2
+				{
+					position[]={245.75175,-0.0043559032,137.849};
+					special="NONE";
+					id=139;
+					side="GUER";
+					vehicle="I_Soldier_A_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SAMAC""]] call hull3_unit_fnc_init;";
+					description="Group.SAM4; - SAM 4 Ammo Carrier";
+				};
+			};
+		};
+		class Item45
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={148.78346,-0.00030140241,108.79431};
+					special="NONE";
+					id=140;
+					side="GUER";
+					vehicle="I_support_AMort_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MTRAG""], [""marker"", ""MTR1"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.MTR1; - MTR 1 Leader";
+				};
+				class Item1
+				{
+					position[]={144.70338,-1.46979e-005,102.224};
+					special="NONE";
+					id=141;
+					side="GUER";
+					vehicle="I_support_Mort_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MTRG""]] call hull3_unit_fnc_init;";
+					description="Group.MTR1; - MTR 1 Gunner";
+				};
+				class Item2
+				{
+					position[]={152.77956,0.00044670678,102.13025};
+					special="NONE";
+					id=142;
+					side="GUER";
+					vehicle="I_Soldier_A_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MTRAC""]] call hull3_unit_fnc_init;";
+					description="Group.MTR1; - MTR 1 Ammo Carrier";
+				};
+			};
+		};
+		class Item46
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={166.07841,-0.0050053513,108.79822};
+					special="NONE";
+					id=143;
+					side="GUER";
+					vehicle="I_support_AMort_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MTRAG""], [""marker"", ""MTR2"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.MTR2; - MTR 2 Leader";
+				};
+				class Item1
+				{
+					position[]={161.99052,-0.0049521481,102.26306};
+					special="NONE";
+					id=144;
+					side="GUER";
+					vehicle="I_support_Mort_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MTRG""]] call hull3_unit_fnc_init;";
+					description="Group.MTR2; - MTR 2 Gunner";
+				};
+				class Item2
+				{
+					position[]={170.10576,-0.0064065279,102.10681};
+					special="NONE";
+					id=145;
+					side="GUER";
+					vehicle="I_Soldier_A_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MTRAC""]] call hull3_unit_fnc_init;";
+					description="Group.MTR2; - MTR 2 Ammo Carrier";
+				};
+			};
+		};
+		class Item47
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={148.43581,-0.0013165952,96.860718};
+					special="NONE";
+					id=146;
+					side="GUER";
+					vehicle="I_support_AMort_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MTRAG""], [""marker"", ""MTR3"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.MTR3; - MTR 3 Leader";
+				};
+				class Item1
+				{
+					position[]={144.34596,-0.0062852632,90.313843};
+					special="NONE";
+					id=147;
+					side="GUER";
+					vehicle="I_support_Mort_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MTRG""]] call hull3_unit_fnc_init;";
+					description="Group.MTR3; - MTR 3 Gunner";
+				};
+				class Item2
+				{
+					position[]={152.44557,-0.0034004704,90.169312};
+					special="NONE";
+					id=148;
+					side="GUER";
+					vehicle="I_Soldier_A_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MTRAC""]] call hull3_unit_fnc_init;";
+					description="Group.MTR3; - MTR 3 Ammo Carrier";
+				};
+			};
+		};
+		class Item48
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={166.26982,-0.0045590997,96.860718};
+					special="NONE";
+					id=149;
+					side="GUER";
+					vehicle="I_support_AMort_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MTRAG""], [""marker"", ""MTR4"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.MTR4; - MTR 4 Leader";
+				};
+				class Item1
+				{
+					position[]={162.18779,0.00026097009,90.302124};
+					special="NONE";
+					id=150;
+					side="GUER";
+					vehicle="I_support_AMort_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MTRG""]] call hull3_unit_fnc_init;";
+					description="Group.MTR4; - MTR 4 Gunner";
+				};
+				class Item2
+				{
+					position[]={170.2542,-0.0030656678,90.21228};
+					special="NONE";
+					id=151;
+					side="GUER";
+					vehicle="I_Soldier_A_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""MTRAC""]] call hull3_unit_fnc_init;";
+					description="Group.MTR4; - MTR 4 Ammo Carrier";
+				};
+			};
+		};
+		class Item49
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=2;
+				class Item0
+				{
+					position[]={224.1736,-0.0050204434,183.06384};
+					special="NONE";
+					id=152;
+					side="GUER";
+					vehicle="I_Sniper_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SN""], [""marker"", ""ST1"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.ST1; - Sniper 1 Marksmen";
+				};
+				class Item1
+				{
+					position[]={227.42751,-0.0056367363,181.00525};
+					special="NONE";
+					id=153;
+					side="GUER";
+					vehicle="I_Spotter_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="[this, [""faction"", ""FACTION""], [""gear"", ""SP""]] call hull3_unit_fnc_init;";
+					description="Group.ST1; - Sniper 1 Spotter";
+				};
+			};
+		};
+		class Item50
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=2;
+				class Item0
+				{
+					position[]={234.27324,-0.0041742297,183.12244};
+					special="NONE";
+					id=154;
+					side="GUER";
+					vehicle="I_Sniper_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SN""], [""marker"", ""ST2"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.ST2; - Sniper 2 Marksmen";
+				};
+				class Item1
+				{
+					position[]={237.51738,-0.0036772557,181.08728};
+					special="NONE";
+					id=155;
+					side="GUER";
+					vehicle="I_Spotter_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="[this, [""faction"", ""FACTION""], [""gear"", ""SP""]] call hull3_unit_fnc_init;";
+					description="Group.ST2; - Sniper 2 Spotter";
+				};
+			};
+		};
+		class Item51
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=2;
+				class Item0
+				{
+					position[]={224.43141,-0.001439054,175.98181};
+					special="NONE";
+					id=156;
+					side="GUER";
+					vehicle="I_Sniper_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SN""], [""marker"", ""ST3"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.ST3; - Sniper 3 Marksmen";
+				};
+				class Item1
+				{
+					position[]={227.67165,-0.0023489208,173.93494};
+					special="NONE";
+					id=157;
+					side="GUER";
+					vehicle="I_Spotter_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="[this, [""faction"", ""FACTION""], [""gear"", ""SP""]] call hull3_unit_fnc_init;";
+					description="Group.ST3; - Sniper 3 Spotter";
+				};
+			};
+		};
+		class Item52
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=2;
+				class Item0
+				{
+					position[]={234.66972,-0.0064358129,175.55603};
+					special="NONE";
+					id=158;
+					side="GUER";
+					vehicle="I_Sniper_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""SN""], [""marker"", ""ST4"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.ST4; - Sniper 4 Marksmen";
+				};
+				class Item1
+				{
+					position[]={237.91386,-0.0066378349,173.54431};
+					special="NONE";
+					id=159;
+					side="GUER";
+					vehicle="I_Spotter_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="[this, [""faction"", ""FACTION""], [""gear"", ""SP""]] call hull3_unit_fnc_init;";
+					description="Group.ST4; - Sniper 4 Spotter";
+				};
+			};
+		};
+		class Item53
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={148.11745,0.0010935434,183.89197};
+					special="NONE";
+					id=160;
+					side="GUER";
+					vehicle="I_engineer_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""ENG""], [""marker"", ""ENG1"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.ENG1; - Engineering 1 Leader";
+				};
+				class Item1
+				{
+					position[]={151.37917,0.00089056062,180.49353};
+					special="NONE";
+					id=161;
+					side="GUER";
+					vehicle="I_engineer_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""ENGA""]] call hull3_unit_fnc_init;";
+					description="Group.ENG1; - Engineering 1 Assistant";
+				};
+				class Item2
+				{
+					position[]={145.25026,0.0044964128,180.87634};
+					special="NONE";
+					id=162;
+					side="GUER";
+					vehicle="I_engineer_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""ENGA""]] call hull3_unit_fnc_init;";
+					description="Group.ENG1; - Engineering 1 Assistant";
+				};
+			};
+		};
+		class Item54
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={167.6917,0.0026844454,183.73962};
+					special="NONE";
+					id=163;
+					side="GUER";
+					vehicle="I_engineer_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""ENG""], [""marker"", ""ENG2"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.ENG2; - Engineering 2 Leader";
+				};
+				class Item1
+				{
+					position[]={170.94951,0.0022160555,180.38416};
+					special="NONE";
+					id=164;
+					side="GUER";
+					vehicle="I_engineer_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""ENGA""]] call hull3_unit_fnc_init;";
+					description="Group.ENG2; - Engineering 2 Assistant";
+				};
+				class Item2
+				{
+					position[]={164.84013,-0.00082305819,180.77869};
+					special="NONE";
+					id=165;
+					side="GUER";
+					vehicle="I_engineer_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""ENGA""]] call hull3_unit_fnc_init;";
+					description="Group.ENG2; - Engineering 2 Assistant";
+				};
+			};
+		};
+		class Item55
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={186.82402,-0.0024792918,183.50916};
+					special="NONE";
+					id=166;
+					side="GUER";
+					vehicle="I_engineer_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""ENG""], [""marker"", ""ENG3"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.ENG3; - Engineering 3 Leader";
+				};
+				class Item1
+				{
+					position[]={190.06035,-0.0027598175,180.13416};
+					special="NONE";
+					id=167;
+					side="GUER";
+					vehicle="I_engineer_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""ENGA""]] call hull3_unit_fnc_init;";
+					description="Group.ENG3; - Engineering 3 Assistant";
+				};
+				class Item2
+				{
+					position[]={183.96852,0.00097664644,180.52087};
+					special="NONE";
+					id=168;
+					side="GUER";
+					vehicle="I_engineer_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""ENGA""]] call hull3_unit_fnc_init;";
+					description="Group.ENG3; - Engineering 3 Assistant";
+				};
+			};
+		};
+		class Item56
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={206.38258,0.0016297817,183.39587};
+					special="NONE";
+					id=169;
+					side="GUER";
+					vehicle="I_engineer_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""ENG""], [""marker"", ""ENG4"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.ENG4; - Engineering 4 Leader";
+				};
+				class Item1
+				{
+					position[]={209.658,0.0012193987,180.02087};
+					special="NONE";
+					id=170;
+					side="GUER";
+					vehicle="I_engineer_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""ENGA""]] call hull3_unit_fnc_init;";
+					description="Group.ENG4; - Engineering 4 Assistant";
+				};
+				class Item2
+				{
+					position[]={203.54469,-0.0015395486,180.38025};
+					special="NONE";
+					id=171;
+					side="GUER";
+					vehicle="I_engineer_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""ENGA""]] call hull3_unit_fnc_init;";
+					description="Group.ENG4; - Engineering 4 Assistant";
+				};
+			};
+		};
+		class Item57
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={27.758114,0.0046218364,144.81384};
+					special="NONE";
+					id=172;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VC""], [""marker"", ""APC1"", ""ColorRed""]] call hull3_unit_fnc_init;";
+					description="Group.APC1; - APC 1 Commander";
+				};
+				class Item1
+				{
+					position[]={24.963192,0.0007261096,140.82947};
+					special="NONE";
+					id=173;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VD""]] call hull3_unit_fnc_init;";
+					description="Group.APC1; - APC 1 Driver";
+				};
+				class Item2
+				{
+					position[]={30.996395,0.0041589583,140.70837};
+					special="NONE";
+					id=174;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VG""]] call hull3_unit_fnc_init;";
+					description="Group.APC1; - APC 1 Gunner";
+				};
+			};
+		};
+		class Item58
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={58.695625,0.0021496224,145.33337};
+					special="NONE";
+					id=175;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VC""], [""marker"", ""APC2"", ""ColorBlue""]] call hull3_unit_fnc_init;";
+					description="Group.APC2; - APC 2 Commander";
+				};
+				class Item1
+				{
+					position[]={55.48468,-1.2009405e-006,140.98572};
+					special="NONE";
+					id=176;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VD""]] call hull3_unit_fnc_init;";
+					description="Group.APC2; - APC 2 Driver";
+				};
+				class Item2
+				{
+					position[]={61.52961,0.0013185767,141.224};
+					special="NONE";
+					id=177;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VG""]] call hull3_unit_fnc_init;";
+					description="Group.APC2; - APC 2 Gunner";
+				};
+			};
+		};
+		class Item59
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={95.33429,0.0010930354,144.34119};
+					special="NONE";
+					id=178;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VC""], [""marker"", ""APC3"", ""ColorGreen""]] call hull3_unit_fnc_init;";
+					description="Group.APC3; - APC 3 Commander";
+				};
+				class Item1
+				{
+					position[]={92.156555,-0.0009749725,140.00134};
+					special="NONE";
+					id=179;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VD""]] call hull3_unit_fnc_init;";
+					description="Group.APC3; - APC 3 Driver";
+				};
+				class Item2
+				{
+					position[]={98.068665,-0.00019091554,139.82166};
+					special="NONE";
+					id=180;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VG""]] call hull3_unit_fnc_init;";
+					description="Group.APC3; - APC 3 Gunner";
+				};
+			};
+		};
+		class Item60
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={122.0394,-0.0019571465,144.47009};
+					special="NONE";
+					id=181;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VC""], [""marker"", ""APC4"", ""ColorBrown""]] call hull3_unit_fnc_init;";
+					description="Group.APC4; - APC 4 Commander";
+				};
+				class Item1
+				{
+					position[]={118.87143,0.0018944715,140.099};
+					special="NONE";
+					id=182;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VD""]] call hull3_unit_fnc_init;";
+					description="Group.APC4; - APC 4 Driver";
+				};
+				class Item2
+				{
+					position[]={124.87921,-0.0016704309,139.71619};
+					special="NONE";
+					id=183;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VG""]] call hull3_unit_fnc_init;";
+					description="Group.APC4; - APC 4 Gunner";
+				};
+			};
+		};
+		class Item61
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={21.781551,0.0065809451,119.38806};
+					special="NONE";
+					id=184;
 					side="GUER";
 					vehicle="I_crew_F";
 					player="PLAY CDG";
@@ -3612,9 +2938,9 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={49.953796,-0.11410464,139.14954};
+					position[]={18.998348,0.0029077136,115.38806};
 					special="NONE";
-					id=227;
+					id=185;
 					side="GUER";
 					vehicle="I_crew_F";
 					player="PLAY CDG";
@@ -3624,9 +2950,9 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={55.988953,-0.024135426,139.05188};
+					position[]={25.033504,0.0062172199,115.29041};
 					special="NONE";
-					id=228;
+					id=186;
 					side="GUER";
 					vehicle="I_crew_F";
 					player="PLAY CDG";
@@ -3636,7 +2962,7 @@ class Mission
 				};
 			};
 		};
-		class Item78
+		class Item62
 		{
 			side="GUER";
 			class Vehicles
@@ -3644,9 +2970,9 @@ class Mission
 				items=3;
 				class Item0
 				{
-					position[]={86.125671,-0.0038226321,141.6925};
+					position[]={55.170227,0.0042192545,117.93103};
 					special="NONE";
-					id=229;
+					id=187;
 					side="GUER";
 					vehicle="I_crew_F";
 					player="PLAY CDG";
@@ -3658,9 +2984,9 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={82.926453,-0.0051806271,137.30969};
+					position[]={51.971008,-3.3408869e-006,113.54822};
 					special="NONE";
-					id=230;
+					id=188;
 					side="GUER";
 					vehicle="I_crew_F";
 					player="PLAY CDG";
@@ -3670,9 +2996,9 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={88.848328,-0.015793905,137.13391};
+					position[]={57.892891,0.0027890557,113.37244};
 					special="NONE";
-					id=231;
+					id=189;
 					side="GUER";
 					vehicle="I_crew_F";
 					player="PLAY CDG";
@@ -3682,7 +3008,7 @@ class Mission
 				};
 			};
 		};
-		class Item79
+		class Item63
 		{
 			side="GUER";
 			class Vehicles
@@ -3690,9 +3016,9 @@ class Mission
 				items=3;
 				class Item0
 				{
-					position[]={120.92452,0.033916727,140.98547};
+					position[]={89.969055,0.0016760199,117.224};
 					special="NONE";
-					id=232;
+					id=190;
 					side="GUER";
 					vehicle="I_crew_F";
 					player="PLAY CDG";
@@ -3704,9 +3030,9 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={117.9714,0.029631212,136.55969};
+					position[]={87.01593,-0.0019362217,112.79822};
 					special="NONE";
-					id=233;
+					id=191;
 					side="GUER";
 					vehicle="I_crew_F";
 					player="PLAY CDG";
@@ -3716,9 +3042,9 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={123.95773,0.019298941,136.65735};
+					position[]={93.002258,0.00041565055,112.89587};
 					special="NONE";
-					id=234;
+					id=192;
 					side="GUER";
 					vehicle="I_crew_F";
 					player="PLAY CDG";
@@ -3728,7 +3054,7 @@ class Mission
 				};
 			};
 		};
-		class Item80
+		class Item64
 		{
 			side="GUER";
 			class Vehicles
@@ -3736,9 +3062,9 @@ class Mission
 				items=3;
 				class Item0
 				{
-					position[]={154.24484,0.012385666,141.14954};
+					position[]={123.28938,-0.0015772214,117.38806};
 					special="NONE";
-					id=235;
+					id=193;
 					side="GUER";
 					vehicle="I_crew_F";
 					player="PLAY CDG";
@@ -3750,9 +3076,9 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={150.97531,0.021597952,137.44641};
+					position[]={120.01987,-0.0039122207,113.68494};
 					special="NONE";
-					id=236;
+					id=194;
 					side="GUER";
 					vehicle="I_crew_F";
 					player="PLAY CDG";
@@ -3762,9 +3088,9 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={156.86203,-0.011934489,136.96594};
+					position[]={125.90655,-0.0028688682,113.20447};
 					special="NONE";
-					id=237;
+					id=195;
 					side="GUER";
 					vehicle="I_crew_F";
 					player="PLAY CDG";
@@ -3774,13 +3100,679 @@ class Mission
 				};
 			};
 		};
+		class Item65
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={22.445614,0.0054114284,91.864624};
+					special="NONE";
+					id=196;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VC""], [""marker"", ""SPAAG1"", ""ColorRed""]] call hull3_unit_fnc_init;";
+					description="Group.SPAAG1; - SPAAG 1 Commander";
+				};
+				class Item1
+				{
+					position[]={19.656551,0.0065612588,87.860718};
+					special="NONE";
+					id=197;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VD""]] call hull3_unit_fnc_init;";
+					description="Group.SPAAG1; - SPAAG 1 Driver";
+				};
+				class Item2
+				{
+					position[]={25.681942,0.0056519979,87.755249};
+					special="NONE";
+					id=198;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VG""]] call hull3_unit_fnc_init;";
+					description="Group.SPAAG1; - SPAAG 1 Gunner";
+				};
+			};
+		};
+		class Item66
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={55.805,0.0053636599,90.438843};
+					special="NONE";
+					id=199;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VC""], [""marker"", ""SPAAG2"", ""ColorBlue""]] call hull3_unit_fnc_init;";
+					description="Group.SPAAG2; - SPAAG 2 Commander";
+				};
+				class Item1
+				{
+					position[]={52.623352,0.0033733249,86.063843};
+					special="NONE";
+					id=200;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VD""]] call hull3_unit_fnc_init;";
+					description="Group.SPAAG2; - SPAAG 2 Driver";
+				};
+				class Item2
+				{
+					position[]={58.570625,0.0050510643,85.856812};
+					special="NONE";
+					id=201;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VG""]] call hull3_unit_fnc_init;";
+					description="Group.SPAAG2; - SPAAG 2 Gunner";
+				};
+			};
+		};
+		class Item67
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={90.621399,0.003482861,89.71228};
+					special="NONE";
+					id=202;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VC""], [""marker"", ""SPAAG3"", ""ColorGreen""]] call hull3_unit_fnc_init;";
+					description="Group.SPAAG3; - SPAAG 3 Commander";
+				};
+				class Item1
+				{
+					position[]={87.660461,0.00051210343,85.30603};
+					special="NONE";
+					id=203;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VD""]] call hull3_unit_fnc_init;";
+					description="Group.SPAAG3; - SPAAG 3 Driver";
+				};
+				class Item2
+				{
+					position[]={93.670227,0.0028919696,85.388062};
+					special="NONE";
+					id=204;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VG""]] call hull3_unit_fnc_init;";
+					description="Group.SPAAG3; - SPAAG 3 Gunner";
+				};
+			};
+		};
+		class Item68
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={123.94367,0.0012912576,89.880249};
+					special="NONE";
+					id=205;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VC""], [""marker"", ""SPAAG4"", ""ColorBrown""]] call hull3_unit_fnc_init;";
+					description="Group.SPAAG4; - SPAAG 4 Commander";
+				};
+				class Item1
+				{
+					position[]={120.6898,-0.0023558256,86.188843};
+					special="NONE";
+					id=206;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VD""]] call hull3_unit_fnc_init;";
+					description="Group.SPAAG4; - SPAAG 4 Driver";
+				};
+				class Item2
+				{
+					position[]={126.53936,0.0003786895,85.704468};
+					special="NONE";
+					id=207;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VG""]] call hull3_unit_fnc_init;";
+					description="Group.SPAAG4; - SPAAG 4 Gunner";
+				};
+			};
+		};
+		class Item69
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={23.178036,0.0017337643,60.388062};
+					special="NONE";
+					id=208;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VC""], [""marker"", ""TNK1"", ""ColorRed""]] call hull3_unit_fnc_init;";
+					description="Group.TNK1; - Tank 1 Commander";
+				};
+				class Item1
+				{
+					position[]={19.746395,0.0050509553,57.698608};
+					special="NONE";
+					id=209;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VD""]] call hull3_unit_fnc_init;";
+					description="Group.TNK1; - Tank 1 Driver";
+				};
+				class Item2
+				{
+					position[]={25.801083,0.0015093115,57.776733};
+					special="NONE";
+					id=210;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VG""]] call hull3_unit_fnc_init;";
+					description="Group.TNK1; - Tank 1 Gunner";
+				};
+			};
+		};
+		class Item70
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={56.226875,0.0020953633,59.407593};
+					special="NONE";
+					id=211;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VC""], [""marker"", ""TNK2"", ""ColorBlue""]] call hull3_unit_fnc_init;";
+					description="Group.TNK2; - Tank 2 Commander";
+				};
+				class Item1
+				{
+					position[]={53.349915,0.0036350316,55.725952};
+					special="NONE";
+					id=212;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VD""]] call hull3_unit_fnc_init;";
+					description="Group.TNK2; - Tank 2 Driver";
+				};
+				class Item2
+				{
+					position[]={58.158516,0.0025369215,55.950562};
+					special="NONE";
+					id=213;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VG""]] call hull3_unit_fnc_init;";
+					description="Group.TNK2; - Tank 2 Gunner";
+				};
+			};
+		};
+		class Item71
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={91.957336,0.00014959311,59.31189};
+					special="NONE";
+					id=214;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VC""], [""marker"", ""TNK3"", ""ColorGreen""]] call hull3_unit_fnc_init;";
+					description="Group.TNK3; - Tank 3 Commander";
+				};
+				class Item1
+				{
+					position[]={89.197571,0.0016158553,55.415405};
+					special="NONE";
+					id=215;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VD""]] call hull3_unit_fnc_init;";
+					description="Group.TNK3; - Tank 3 Driver";
+				};
+				class Item2
+				{
+					position[]={94.14093,0.00050799991,55.866577};
+					special="NONE";
+					id=216;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VG""]] call hull3_unit_fnc_init;";
+					description="Group.TNK3; - Tank 3 Gunner";
+				};
+			};
+		};
+		class Item72
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={123.18196,0.00035988796,59.688843};
+					special="NONE";
+					id=217;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VC""], [""marker"", ""TNK4"", ""ColorBrown""]] call hull3_unit_fnc_init;";
+					description="Group.TNK4; - Tank 4 Commander";
+				};
+				class Item1
+				{
+					position[]={120.54331,-0.0010008132,55.546265};
+					special="NONE";
+					id=218;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VD""]] call hull3_unit_fnc_init;";
+					description="Group.TNK4; - Tank 4 Driver";
+				};
+				class Item2
+				{
+					position[]={126.45538,0.00026520668,55.71814};
+					special="NONE";
+					id=219;
+					side="GUER";
+					vehicle="I_crew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""VG""]] call hull3_unit_fnc_init;";
+					description="Group.TNK4; - Tank 4 Gunner";
+				};
+			};
+		};
+		class Item73
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={24.914364,-0.0024270641,27.841187};
+					special="NONE";
+					id=220;
+					side="GUER";
+					vehicle="I_helipilot_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""P""], [""marker"", ""TH1"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.TH1; - TH 1 Pilot";
+				};
+				class Item1
+				{
+					position[]={22.379208,0.00041401823,25.364624};
+					special="NONE";
+					id=221;
+					side="GUER";
+					vehicle="I_helicrew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="[this, [""faction"", ""FACTION""], [""gear"", ""PCM""]] call hull3_unit_fnc_init;";
+					description="Group.TH1; - TH 1 Crew";
+				};
+				class Item2
+				{
+					position[]={27.017879,-0.0025728908,25.536499};
+					special="NONE";
+					id=222;
+					side="GUER";
+					vehicle="I_helicrew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="[this, [""faction"", ""FACTION""], [""gear"", ""PCM""]] call hull3_unit_fnc_init;";
+					description="Group.TH1; - TH 1 Crew";
+				};
+			};
+		};
+		class Item74
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={54.279602,-2.7034781e-005,27.057983};
+					special="NONE";
+					id=223;
+					side="GUER";
+					vehicle="I_helipilot_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""P""], [""marker"", ""TH2"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.TH2; - TH 2 Pilot";
+				};
+				class Item1
+				{
+					position[]={52.461243,0.001655824,25.036499};
+					special="NONE";
+					id=224;
+					side="GUER";
+					vehicle="I_helicrew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="[this, [""faction"", ""FACTION""], [""gear"", ""PCM""]] call hull3_unit_fnc_init;";
+					description="Group.TH2; - TH 2 Crew";
+				};
+				class Item2
+				{
+					position[]={56.308907,-0.00018485961,24.973999};
+					special="NONE";
+					id=225;
+					side="GUER";
+					vehicle="I_helicrew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="[this, [""faction"", ""FACTION""], [""gear"", ""PCM""]] call hull3_unit_fnc_init;";
+					description="Group.TH2; - TH 2 Crew";
+				};
+			};
+		};
+		class Item75
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={89.107727,-0.0012513183,27.454468};
+					special="NONE";
+					id=226;
+					side="GUER";
+					vehicle="I_helipilot_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""P""], [""marker"", ""TH3"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.TH3; - TH 3 Pilot";
+				};
+				class Item1
+				{
+					position[]={87.695618,0.00012357766,25.675171};
+					special="NONE";
+					id=227;
+					side="GUER";
+					vehicle="I_helicrew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="[this, [""faction"", ""FACTION""], [""gear"", ""PCM""]] call hull3_unit_fnc_init;";
+					description="Group.TH3; - TH 3 Crew";
+				};
+				class Item2
+				{
+					position[]={90.787415,-0.0012968001,25.708374};
+					special="NONE";
+					id=228;
+					side="GUER";
+					vehicle="I_helicrew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="[this, [""faction"", ""FACTION""], [""gear"", ""PCM""]] call hull3_unit_fnc_init;";
+					description="Group.TH3; - TH 3 Crew";
+				};
+			};
+		};
+		class Item76
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={122.66244,-0.00081004179,27.479858};
+					special="NONE";
+					id=229;
+					side="GUER";
+					vehicle="I_helipilot_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""P""], [""marker"", ""TH4"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.TH4; - TH 4 Pilot";
+				};
+				class Item1
+				{
+					position[]={121.42027,-9.9462923e-006,25.272827};
+					special="NONE";
+					id=230;
+					side="GUER";
+					vehicle="I_helicrew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="[this, [""faction"", ""FACTION""], [""gear"", ""PCM""]] call hull3_unit_fnc_init;";
+					description="Group.TH4; - TH 4 Crew";
+				};
+				class Item2
+				{
+					position[]={124.06867,-0.00045827287,25.132202};
+					special="NONE";
+					id=231;
+					side="GUER";
+					vehicle="I_helicrew_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="[this, [""faction"", ""FACTION""], [""gear"", ""PCM""]] call hull3_unit_fnc_init;";
+					description="Group.TH4; - TH 4 Crew";
+				};
+			};
+		};
+		class Item77
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=2;
+				class Item0
+				{
+					position[]={156.13893,-0.0069098519,77.507202};
+					special="NONE";
+					id=232;
+					side="GUER";
+					vehicle="I_pilot_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""P""], [""marker"", ""AH1"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.AH1; - AH 1 Pilot";
+				};
+				class Item1
+				{
+					position[]={162.70927,-0.0057826466,76.770874};
+					special="NONE";
+					id=233;
+					side="GUER";
+					vehicle="I_pilot_F";
+					player="PLAY CDG";
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""P""]] call hull3_unit_fnc_init;";
+					description="Group.AH1; - AH 1 Gunner";
+				};
+			};
+		};
+		class Item78
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=2;
+				class Item0
+				{
+					position[]={187.1248,-0.0052521033,77.169312};
+					special="NONE";
+					id=234;
+					side="GUER";
+					vehicle="I_pilot_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""P""], [""marker"", ""AH2"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.AH2; - AH 2 Pilot";
+				};
+				class Item1
+				{
+					position[]={193.73418,-0.006870769,76.46814};
+					special="NONE";
+					id=235;
+					side="GUER";
+					vehicle="I_pilot_F";
+					player="PLAY CDG";
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""P""]] call hull3_unit_fnc_init;";
+					description="Group.AH2; - AH 2 Gunner";
+				};
+			};
+		};
+		class Item79
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={164.42216,-0.0056471443,39.565796};
+					special="NONE";
+					id=236;
+					side="GUER";
+					vehicle="I_pilot_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""P""], [""marker"", ""CAS1"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.CAS1; - CAS 1 Pilot";
+				};
+			};
+		};
+		class Item80
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={190.92949,-0.0045154267,39.421265};
+					special="NONE";
+					id=237;
+					side="GUER";
+					vehicle="I_pilot_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					init=" [this, [""faction"", ""FACTION""], [""gear"", ""P""], [""marker"", ""CAS2"", ""ColorOrange""]] call hull3_unit_fnc_init;";
+					description="Group.CAS2; - CAS 2 Pilot";
+				};
+			};
+		};
 	};
 	class Vehicles
 	{
 		items=41;
 		class Item0
 		{
-			position[]={52.547546,0.015430834,130.01282};
+			position[]={21.592098,9.1949478e-006,106.25134};
 			special="NONE";
 			id=238;
 			side="EMPTY";
@@ -3792,7 +3784,7 @@ class Mission
 		};
 		class Item1
 		{
-			position[]={86.115906,0.13399057,128.83313};
+			position[]={55.160461,-0.0006770792,105.07166};
 			special="NONE";
 			id=239;
 			side="EMPTY";
@@ -3804,7 +3796,7 @@ class Mission
 		};
 		class Item2
 		{
-			position[]={120.8171,0.15057424,128.37805};
+			position[]={89.861633,-0.0019246172,104.61658};
 			special="NONE";
 			id=240;
 			side="EMPTY";
@@ -3816,7 +3808,7 @@ class Mission
 		};
 		class Item3
 		{
-			position[]={153.94211,0.13244013,129.00891};
+			position[]={122.98665,-0.0028820941,105.24744};
 			special="NONE";
 			id=241;
 			side="EMPTY";
@@ -3828,7 +3820,7 @@ class Mission
 		};
 		class Item4
 		{
-			position[]={53.774109,0.25842661,75.48938};
+			position[]={22.818661,0.0051557068,51.727905};
 			special="NONE";
 			id=242;
 			side="EMPTY";
@@ -3840,7 +3832,7 @@ class Mission
 		};
 		class Item5
 		{
-			position[]={86.715515,0.16201572,73.356567};
+			position[]={55.760071,0.0020036686,49.595093};
 			special="NONE";
 			id=243;
 			side="EMPTY";
@@ -3852,7 +3844,7 @@ class Mission
 		};
 		class Item6
 		{
-			position[]={122.81319,0.15282018,73.030396};
+			position[]={91.857727,0.00011358154,49.268921};
 			special="NONE";
 			id=244;
 			side="EMPTY";
@@ -3864,7 +3856,7 @@ class Mission
 		};
 		class Item7
 		{
-			position[]={154.63547,0.03980821,73.973755};
+			position[]={123.68,-0.0025005299,50.21228};
 			special="NONE";
 			id=245;
 			side="EMPTY";
@@ -3876,7 +3868,7 @@ class Mission
 		};
 		class Item8
 		{
-			position[]={55.647156,0.27773345,38.524536};
+			position[]={24.691708,0.0029745642,14.763062};
 			special="NONE";
 			id=246;
 			side="EMPTY";
@@ -3888,7 +3880,7 @@ class Mission
 		};
 		class Item9
 		{
-			position[]={85.028015,0.10828295,38.376099};
+			position[]={54.072571,-0.00062648684,14.614624};
 			special="NONE";
 			id=247;
 			side="EMPTY";
@@ -3900,7 +3892,7 @@ class Mission
 		};
 		class Item10
 		{
-			position[]={120.23897,0.059376691,38.413208};
+			position[]={89.283508,-0.0020724609,14.651733};
 			special="NONE";
 			id=248;
 			side="EMPTY";
@@ -3912,7 +3904,7 @@ class Mission
 		};
 		class Item11
 		{
-			position[]={153.26242,-0.060747795,38.120239};
+			position[]={122.30697,-0.0040218118,14.358765};
 			special="NONE";
 			id=249;
 			side="EMPTY";
@@ -3924,7 +3916,7 @@ class Mission
 		};
 		class Item12
 		{
-			position[]={190.27243,-0.069104686,90.499146};
+			position[]={159.31667,-0.0037045027,66.737671};
 			special="NONE";
 			id=250;
 			side="EMPTY";
@@ -3935,7 +3927,7 @@ class Mission
 		};
 		class Item13
 		{
-			position[]={190.27048,-0.25643516,58.997192};
+			position[]={159.31471,-0.0054188827,35.235718};
 			special="NONE";
 			id=251;
 			side="EMPTY";
@@ -3946,7 +3938,7 @@ class Mission
 		};
 		class Item14
 		{
-			position[]={58.442078,0.070778936,156.22766};
+			position[]={27.486629,0.00015300489,132.46619};
 			special="NONE";
 			id=252;
 			side="EMPTY";
@@ -3958,7 +3950,7 @@ class Mission
 		};
 		class Item15
 		{
-			position[]={89.086609,0.2238881,156.73547};
+			position[]={58.131172,0.0018746693,132.974};
 			special="NONE";
 			id=253;
 			side="EMPTY";
@@ -3970,7 +3962,7 @@ class Mission
 		};
 		class Item16
 		{
-			position[]={125.64132,0.22612464,156.77063};
+			position[]={94.685852,0.00018408999,133.00916};
 			special="NONE";
 			id=254;
 			side="EMPTY";
@@ -3982,7 +3974,7 @@ class Mission
 		};
 		class Item17
 		{
-			position[]={152.35422,0.31886488,156.91516};
+			position[]={121.39878,0.0036588693,133.15369};
 			special="NONE";
 			id=255;
 			side="EMPTY";
@@ -3994,7 +3986,7 @@ class Mission
 		};
 		class Item18
 		{
-			position[]={47.840515,-0.22302845,219.70813};
+			position[]={16.885067,0.0042146668,195.94666};
 			special="NONE";
 			id=256;
 			side="EMPTY";
@@ -4006,7 +3998,7 @@ class Mission
 		};
 		class Item19
 		{
-			position[]={47.563171,-0.17822549,207.11047};
+			position[]={16.607723,-0.0014279312,183.349};
 			special="NONE";
 			id=257;
 			side="EMPTY";
@@ -4018,7 +4010,7 @@ class Mission
 		};
 		class Item20
 		{
-			position[]={79.104187,-0.24125165,218.77454};
+			position[]={48.14875,0.0038166181,195.01306};
 			special="NONE";
 			id=258;
 			side="EMPTY";
@@ -4030,7 +4022,7 @@ class Mission
 		};
 		class Item21
 		{
-			position[]={78.820984,0.019379601,206.17688};
+			position[]={47.865555,-0.00050377031,182.41541};
 			special="NONE";
 			id=259;
 			side="EMPTY";
@@ -4042,7 +4034,7 @@ class Mission
 		};
 		class Item22
 		{
-			position[]={116.75851,-0.11203389,218.34875};
+			position[]={85.80304,0.0056468528,194.58728};
 			special="NONE";
 			id=260;
 			side="EMPTY";
@@ -4054,7 +4046,7 @@ class Mission
 		};
 		class Item23
 		{
-			position[]={116.48898,0.042810675,205.77454};
+			position[]={85.533508,1.0418706e-005,182.01306};
 			special="NONE";
 			id=261;
 			side="EMPTY";
@@ -4066,7 +4058,7 @@ class Mission
 		};
 		class Item24
 		{
-			position[]={142.98117,-0.03457801,218.55188};
+			position[]={112.02569,0.00051598367,194.79041};
 			special="NONE";
 			id=262;
 			side="EMPTY";
@@ -4078,7 +4070,7 @@ class Mission
 		};
 		class Item25
 		{
-			position[]={142.72531,0.26728177,205.9425};
+			position[]={111.76983,0.0038007656,182.18103};
 			special="NONE";
 			id=263;
 			side="EMPTY";
@@ -4090,7 +4082,7 @@ class Mission
 		};
 		class Item26
 		{
-			position[]={179.56711,0.24749488,196.48547};
+			position[]={148.61159,0.0048973644,172.724};
 			special="NONE";
 			id=264;
 			side="EMPTY";
@@ -4102,7 +4094,7 @@ class Mission
 		};
 		class Item27
 		{
-			position[]={46.578796,-0.088720717,188.15344};
+			position[]={15.623348,0.0057779886,164.39197};
 			special="NONE";
 			id=265;
 			side="EMPTY";
@@ -4114,7 +4106,7 @@ class Mission
 		};
 		class Item28
 		{
-			position[]={78.121765,-0.10541201,187.78235};
+			position[]={47.166336,0.0062218457,164.02087};
 			special="NONE";
 			id=266;
 			side="EMPTY";
@@ -4126,7 +4118,7 @@ class Mission
 		};
 		class Item29
 		{
-			position[]={115.68235,0.098489515,188.79797};
+			position[]={84.726868,0.0069474382,165.0365};
 			special="NONE";
 			id=267;
 			side="EMPTY";
@@ -4138,7 +4130,7 @@ class Mission
 		};
 		class Item30
 		{
-			position[]={141.95383,-0.022767201,189.13782};
+			position[]={110.99834,0.002148387,165.37634};
 			special="NONE";
 			id=268;
 			side="EMPTY";
@@ -4150,7 +4142,7 @@ class Mission
 		};
 		class Item31
 		{
-			position[]={102.62766,-0.16236851,234.46204};
+			position[]={71.672188,0.0058213668,210.70056};
 			special="NONE";
 			id=269;
 			side="EMPTY";
@@ -4162,7 +4154,7 @@ class Mission
 		};
 		class Item32
 		{
-			position[]={199.13766,0.020328537,196.39172};
+			position[]={168.18193,-0.0032286148,172.63025};
 			special="NONE";
 			id=270;
 			side="EMPTY";
@@ -4174,7 +4166,7 @@ class Mission
 		};
 		class Item33
 		{
-			position[]={216.78412,-0.10108301,58.889771};
+			position[]={185.8279,0.00066466606,35.128296};
 			special="NONE";
 			id=271;
 			side="EMPTY";
@@ -4185,7 +4177,7 @@ class Mission
 		};
 		class Item34
 		{
-			position[]={221.2529,-0.045531057,90.190552};
+			position[]={190.29668,-0.00055552018,66.429077};
 			special="NONE";
 			id=272;
 			side="EMPTY";
@@ -4196,7 +4188,7 @@ class Mission
 		};
 		class Item35
 		{
-			position[]={218.2724,0.29646486,196.13};
+			position[]={187.31621,0.0024583293,172.36853};
 			special="NONE";
 			id=273;
 			side="EMPTY";
@@ -4208,7 +4200,7 @@ class Mission
 		};
 		class Item36
 		{
-			position[]={237.84479,-0.053674787,196.0011};
+			position[]={206.88844,-0.0047673061,172.23962};
 			special="NONE";
 			id=274;
 			side="EMPTY";
@@ -4220,7 +4212,7 @@ class Mission
 		};
 		class Item37
 		{
-			position[]={53.557312,0.017397009,104.02844};
+			position[]={22.601864,0.0042942925,80.266968};
 			special="NONE";
 			id=275;
 			side="EMPTY";
@@ -4232,7 +4224,7 @@ class Mission
 		};
 		class Item38
 		{
-			position[]={87.151062,0.018639117,102.84485};
+			position[]={56.195625,0.0006546806,79.083374};
 			special="NONE";
 			id=276;
 			side="EMPTY";
@@ -4244,7 +4236,7 @@ class Mission
 		};
 		class Item39
 		{
-			position[]={122.58468,0.012994245,102.36047};
+			position[]={91.629211,-0.0018712057,78.598999};
 			special="NONE";
 			id=277;
 			side="EMPTY";
@@ -4256,7 +4248,7 @@ class Mission
 		};
 		class Item40
 		{
-			position[]={154.57492,-0.066234492,102.98157};
+			position[]={123.61946,-0.0050528562,79.220093};
 			special="NONE";
 			id=278;
 			side="EMPTY";
