@@ -53,7 +53,6 @@ function getPlayableUnitCount(missionAst: Parser.Node): number {
 }
 
 function generateMissionSqm(missionAst: Parser.Node, mission: Mission) {
-    Ast.select(missionAst, 'Mission.Intel.briefingName')[0].value = mission.briefingName;
     Ast.select(missionAst, 'Mission.Intel.overviewText')[0].value = mission.overviewText;
     mergeGroupsAndVehicles(missionAst, getFactionMissionAsts(mission.factions));
 }
@@ -117,10 +116,12 @@ export function generateMission(mission: Mission): GeneratedMission {
     generateMissionSqm(missionAst, mission);
     var maxPlayers = getPlayableUnitCount(missionAst);
     var missionId = nextMissionId();
-    var missionDirName = `ark_${missionTypeToMissionNamePrefix(missionType)}${maxPlayers}_${mission.briefingName.toLowerCase()}.${mission.terrainId}`;
+    var fullMissionName = `ark_${missionTypeToMissionNamePrefix(missionType)}${maxPlayers}_${mission.briefingName.toLowerCase()}`;
+    var missionDirName = `${fullMissionName}.${mission.terrainId}`;
     var missionWorkingDir = `${Settings.PATH.Mission.WORKING_DIR}/${missionId}`;
     var missionDir = `${missionWorkingDir}/${missionDirName}`;
     fs.copySync(Hull3.getSampleMissionPath(), missionDir);
+    Ast.select(missionAst, 'Mission.Intel.briefingName')[0].value = fullMissionName;
     fs.writeFileSync(`${missionDir}/mission.sqm`, PrettyPrinter.create('\t').print(missionAst), 'UTF-8');
     generateHull3Header(missionDir, mission);
     generateDescriptionExt(missionDir, mission, missionType, maxPlayers);
