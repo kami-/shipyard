@@ -62,7 +62,7 @@
             "IFV": "CUP_B_LAV25M240_USMC",
             "SPAAG": "CUP_B_HMMWV_Avenger_USMC",
             "TNK": "CUP_B_M1A1_Woodland_USMC",
-            "TH": "CUP_B_CH47F_USA",
+            "TH": "CUP_B_CH53E_USMC",
             "AH": "CUP_B_AH1Z",
             "CAS": "CUP_B_AV8B_Hydra19"
         }
@@ -79,7 +79,7 @@
             "IFV": "CUP_B_LAV25M240_USMC",
             "SPAAG": "CUP_B_HMMWV_Avenger_USA",
             "TNK": "CUP_B_M1A1_DES_USMC",
-            "TH": "CUP_B_CH47F_USA",
+            "TH": "CUP_B_CH53E_USMC",
             "AH": "CUP_B_AH1Z",
             "CAS": "CUP_B_AV8B_Hydra19"
         }
@@ -164,6 +164,74 @@
             "IFV": "CUP_B_M2Bradley_USA_D",
             "SPAAG": "CUP_B_M6LineBacker_USA_D",
             "TNK": "CUP_B_M1A1_DES_US_Army",
+            "TH": "CUP_B_UH60M_US",
+            "AH": "CUP_B_AH64D_USA",
+            "CAS": "CUP_B_A10_CAS_USA"
+        }
+    },
+    "MNP_US_RAN_SCO": {
+        "rolePrefix": "US Rangers",
+        "vehicleClassnames": {        
+            "CO": "CUP_B_HMMWV_Unarmed_USA",
+            "SL": "CUP_B_HMMWV_Unarmed_USA",
+            "FT": "CUP_B_HMMWV_Unarmed_USA",
+            "ATTCH": "CUP_B_HMMWV_Transport_USA",
+            "ENG": "B_Truck_01_Repair_F",
+            "APC": "CUP_B_M2Bradley_USA_D",
+            "IFV": "CUP_B_M2A3Bradley_USA_D",
+            "SPAAG": "CUP_B_HMMWV_Avenger_USA",
+            "TNK": "CUP_B_M1A2_TUSK_MG_DES_US_Army",
+            "TH": "CUP_B_UH60M_US",
+            "AH": "CUP_B_AH64D_USA",
+            "CAS": "CUP_B_A10_CAS_USA"
+        }
+    },
+    "MNP_US_SCO": {
+        "rolePrefix": "US Army",
+        "vehicleClassnames": {        
+            "CO": "CUP_B_HMMWV_Unarmed_USA",
+            "SL": "CUP_B_HMMWV_Unarmed_USA",
+            "FT": "CUP_B_HMMWV_Unarmed_USA",
+            "ATTCH": "CUP_B_HMMWV_Transport_USA",
+            "ENG": "B_Truck_01_Repair_F",
+            "APC": "CUP_B_M2Bradley_USA_D",
+            "IFV": "CUP_B_M2A3Bradley_USA_D",
+            "SPAAG": "CUP_B_M6LineBacker_USA_D",
+            "TNK": "CUP_B_M1A2_TUSK_MG_DES_US_Army",
+            "TH": "CUP_B_UH60M_US",
+            "AH": "CUP_B_AH64D_USA",
+            "CAS": "CUP_B_A10_CAS_USA"
+        }
+    },
+    "MNP_US_MC": {
+        "rolePrefix": "US Army",
+        "vehicleClassnames": {        
+            "CO": "CUP_B_HMMWV_Unarmed_USA",
+            "SL": "CUP_B_HMMWV_Unarmed_USA",
+            "FT": "CUP_B_HMMWV_Unarmed_USA",
+            "ATTCH": "CUP_B_HMMWV_Transport_USA",
+            "ENG": "B_Truck_01_Repair_F",
+            "APC": "CUP_B_M2Bradley_USA_D",
+            "IFV": "CUP_B_M2A3Bradley_USA_D",
+            "SPAAG": "CUP_B_M6LineBacker_USA_D",
+            "TNK": "CUP_B_M1A2_TUSK_MG_DES_US_Army",
+            "TH": "CUP_B_UH60M_US",
+            "AH": "CUP_B_AH64D_USA",
+            "CAS": "CUP_B_A10_CAS_USA"
+        }
+    },
+    "MNP_US_MC_DRK": {
+        "rolePrefix": "US Army",
+        "vehicleClassnames": {        
+            "CO": "CUP_B_HMMWV_Unarmed_USA",
+            "SL": "CUP_B_HMMWV_Unarmed_USA",
+            "FT": "CUP_B_HMMWV_Unarmed_USA",
+            "ATTCH": "CUP_B_HMMWV_Transport_USA",
+            "ENG": "B_Truck_01_Repair_F",
+            "APC": "CUP_B_M2Bradley_USA_W",
+            "IFV": "CUP_B_M2A3Bradley_USA_W",
+            "SPAAG": "CUP_B_M6LineBacker_USA_W",
+            "TNK": "CUP_B_M1A2_TUSK_MG_US_Army",
             "TH": "CUP_B_UH60M_US",
             "AH": "CUP_B_AH64D_USA",
             "CAS": "CUP_B_A10_CAS_USA"
@@ -254,6 +322,23 @@
             "CAS": "CUP_B_AV8B_Hydra19"
         }
     },
+    "MNP_AUS_AMCU": {
+        "rolePrefix": "Australian Army",
+        "vehicleClassnames": {        
+            "CO": "CUP_B_HMMWV_Unarmed_USMC",
+            "SL": "CUP_B_HMMWV_Unarmed_USMC",
+            "FT": "CUP_B_HMMWV_Unarmed_USMC",
+            "ATTCH": "CUP_B_HMMWV_Unarmed_USMC",
+            "ENG": "B_Truck_01_Repair_F",
+            "APC": "CUP_B_M113_USA",
+            "IFV": "CUP_B_LAV25M240_USMC",
+            "SPAAG": "CUP_B_M163_USA",
+            "TNK": "I_MBT_03_cannon_F",
+            "TH": "CUP_B_UH60M_US",
+            "AH": "CUP_B_UH1Y_GUNSHIP_USMC",
+            "CAS": "CUP_B_AV8B_Hydra19"
+        }
+    },
     "MNP_ROK": {
         "rolePrefix": "ROK Army",
         "vehicleClassnames": {        
@@ -269,6 +354,23 @@
             "TH": "CUP_B_UH60M_US",
             "AH": "CUP_B_AH1Z",
             "CAS": "CUP_B_AV8B_Hydra19"
+        }
+    },
+    "MNP_UKR_TTSKO": {
+        "rolePrefix": "Ukrainian Army",
+        "vehicleClassnames": {        
+            "CO": "CUP_B_UAZ_Unarmed_CDF",
+            "SL": "CUP_B_UAZ_Unarmed_CDF",
+            "FT": "CUP_B_UAZ_Unarmed_CDF",
+            "ATTCH": "CUP_B_UAZ_Unarmed_CDF",
+            "ENG": "CUP_B_Ural_Repair_CDF",
+            "APC": "CUP_I_BMP1_TK_GUE",
+            "IFV": "CUP_B_BMP2_CDF",
+            "SPAAG": "CUP_B_ZSU23_CDF",
+            "TNK": "CUP_B_T72_CDF",
+            "TH": "CUP_B_Mi17_CDF",
+            "AH": "CUP_B_Mi24_D_CDF",
+            "CAS": "CUP_B_Su25_CDF"
         }
     },
     "MNP_PMC": {
@@ -340,6 +442,23 @@
         }
     },
     "MNP_CH_DE": {
+        "rolePrefix": "PLA Ground Forces",
+        "vehicleClassnames": {        
+            "CO": "CUP_O_UAZ_Unarmed_RU",
+            "SL": "CUP_O_UAZ_Unarmed_RU",
+            "FT": "CUP_O_UAZ_Unarmed_RU",
+            "ATTCH": "CUP_O_UAZ_Unarmed_RU",
+            "ENG": "CUP_O_Ural_Repair_SLA",
+            "APC": "CUP_O_BRDM2_SLA",
+            "IFV": "CUP_I_BMP1_TK_GUE",
+            "SPAAG": "CUP_O_ZSU23_SLA",
+            "TNK": "CUP_O_T72_SLA",
+            "TH": "CUP_O_Mi8_SLA_1",
+            "AH": "O_Heli_Light_02_v2_F",
+            "CAS": "CUP_O_Su25_SLA"
+        }
+    },
+    "MNP_CH_WD2": {
         "rolePrefix": "PLA Ground Forces",
         "vehicleClassnames": {        
             "CO": "CUP_O_UAZ_Unarmed_RU",
@@ -526,6 +645,23 @@
             "CAS": "CUP_O_Su25_RU_3"
         }
     },
+    "MNP_RU_REED": {
+        "rolePrefix": "Russian MVD",
+        "vehicleClassnames": {        
+            "CO": "CUP_O_UAZ_Unarmed_RU",
+            "SL": "CUP_O_UAZ_Unarmed_RU",
+            "FT": "CUP_O_UAZ_Unarmed_RU",
+            "ATTCH": "CUP_O_UAZ_Unarmed_RU",
+            "ENG": "CUP_O_Ural_Repair_SLA",
+            "APC": "CUP_O_BTR90_RU",
+            "IFV": "CUP_O_BMP2_RU",
+            "SPAAG": "CUP_O_ZSU23_SLA",
+            "TNK": "CUP_O_T72_RU",
+            "TH": "CUP_O_Mi8_RU",
+            "AH": "CUP_O_Mi24_V_RU",
+            "CAS": "CUP_O_Su25_RU_3"
+        }
+    },
     "MNP_KOR_OD": {
         "rolePrefix": "KPA Conscripts",
         "vehicleClassnames": {        
@@ -555,6 +691,142 @@
             "IFV": "CUP_I_BMP1_TK_GUE",
             "SPAAG": "CUP_O_ZSU23_SLA",
             "TNK": "CUP_O_T72_RU",
+            "TH": "CUP_O_Mi8_RU",
+            "AH": "CUP_O_Mi24_V_RU",
+            "CAS": "CUP_O_Su25_RU_3"
+        }
+    },
+     "MNP_IRN_WD": {
+        "rolePrefix": "Iranian Army",
+        "vehicleClassnames": {        
+            "CO": "CUP_O_UAZ_Unarmed_RU",
+            "SL": "CUP_O_UAZ_Unarmed_RU",
+            "FT": "CUP_O_UAZ_Unarmed_RU",
+            "ATTCH": "CUP_O_UAZ_Unarmed_RU",
+            "ENG": "CUP_O_Ural_Repair_SLA",
+            "APC": "CUP_O_BRDM2_SLA",
+            "IFV": "CUP_I_BMP1_TK_GUE",
+            "SPAAG": "CUP_O_Ural_ZU23_SLA",
+            "TNK": "CUP_I_T55_TK_GUE",
+            "TH": "CUP_O_Mi8_RU",
+            "AH": "CUP_O_Mi24_V_RU",
+            "CAS": "CUP_O_Su25_RU_3"
+        }
+    },
+    "MNP_IRN_RG_WD": {
+        "rolePrefix": "Iranian Revolutionary Guard",
+        "vehicleClassnames": {        
+            "CO": "CUP_O_UAZ_Unarmed_RU",
+            "SL": "CUP_O_UAZ_Unarmed_RU",
+            "FT": "CUP_O_UAZ_Unarmed_RU",
+            "ATTCH": "CUP_O_UAZ_Unarmed_RU",
+            "ENG": "CUP_O_Ural_Repair_SLA",
+            "APC": "CUP_O_BRDM2_SLA",
+            "IFV": "CUP_I_BMP1_TK_GUE",
+            "SPAAG": "CUP_O_ZSU23_SLA",
+            "TNK": "CUP_O_T72_RU",
+            "TH": "CUP_O_Mi8_RU",
+            "AH": "CUP_O_Mi24_V_RU",
+            "CAS": "CUP_O_Su25_RU_3"
+        }
+    },
+    "MNP_IRN_QF_WD": {
+        "rolePrefix": "Iranian Quds Force",
+        "vehicleClassnames": {        
+            "CO": "CUP_O_UAZ_Unarmed_RU",
+            "SL": "CUP_O_UAZ_Unarmed_RU",
+            "FT": "CUP_O_UAZ_Unarmed_RU",
+            "ATTCH": "CUP_O_UAZ_Unarmed_RU",
+            "ENG": "CUP_O_Ural_Repair_SLA",
+            "APC": "CUP_O_BRDM2_SLA",
+            "IFV": "CUP_I_BMP1_TK_GUE",
+            "SPAAG": "CUP_O_Ural_ZU23_SLA",
+            "TNK": "CUP_I_T55_TK_GUE",
+            "TH": "CUP_O_Mi8_RU",
+            "AH": "CUP_O_Mi24_V_RU",
+            "CAS": "CUP_O_Su25_RU_3"
+        }
+    },
+    "MNP_IRN_DE": {
+        "rolePrefix": "Iranian Army",
+        "vehicleClassnames": {        
+            "CO": "CUP_O_UAZ_Unarmed_RU",
+            "SL": "CUP_O_UAZ_Unarmed_RU",
+            "FT": "CUP_O_UAZ_Unarmed_RU",
+            "ATTCH": "CUP_O_UAZ_Unarmed_RU",
+            "ENG": "CUP_O_Ural_Repair_SLA",
+            "APC": "CUP_O_BRDM2_SLA",
+            "IFV": "CUP_I_BMP1_TK_GUE",
+            "SPAAG": "CUP_O_ZSU23_SLA",
+            "TNK": "CUP_O_T72_RU",
+            "TH": "CUP_O_Mi8_RU",
+            "AH": "CUP_O_Mi24_V_RU",
+            "CAS": "CUP_O_Su25_RU_3"
+        }
+    },
+    "MNP_IRN_RG_DE": {
+        "rolePrefix": "Iranian Revolutionary Guard",
+        "vehicleClassnames": {        
+            "CO": "CUP_O_UAZ_Unarmed_RU",
+            "SL": "CUP_O_UAZ_Unarmed_RU",
+            "FT": "CUP_O_UAZ_Unarmed_RU",
+            "ATTCH": "CUP_O_UAZ_Unarmed_RU",
+            "ENG": "CUP_O_Ural_Repair_SLA",
+            "APC": "CUP_O_BRDM2_SLA",
+            "IFV": "CUP_I_BMP1_TK_GUE",
+            "SPAAG": "CUP_O_Ural_ZU23_SLA",
+            "TNK": "CUP_I_T55_TK_GUE",
+            "TH": "CUP_O_Mi8_RU",
+            "AH": "CUP_O_Mi24_V_RU",
+            "CAS": "CUP_O_Su25_RU_3"
+        }
+    },
+    "MNP_IRN_QF_DE": {
+        "rolePrefix": "Iranian Quds Force",
+        "vehicleClassnames": {        
+            "CO": "CUP_O_UAZ_Unarmed_RU",
+            "SL": "CUP_O_UAZ_Unarmed_RU",
+            "FT": "CUP_O_UAZ_Unarmed_RU",
+            "ATTCH": "CUP_O_UAZ_Unarmed_RU",
+            "ENG": "CUP_O_Ural_Repair_SLA",
+            "APC": "CUP_O_BRDM2_SLA",
+            "IFV": "CUP_I_BMP1_TK_GUE",
+            "SPAAG": "CUP_O_ZSU23_SLA",
+            "TNK": "CUP_O_T72_RU",
+            "TH": "CUP_O_Mi8_RU",
+            "AH": "CUP_O_Mi24_V_RU",
+            "CAS": "CUP_O_Su25_RU_3"
+        }
+    },
+    "MNP_DPR_SUM": {
+        "rolePrefix": "Donetsk People's Republic",
+        "vehicleClassnames": {        
+            "CO": "CUP_O_UAZ_Unarmed_RU",
+            "SL": "CUP_O_UAZ_Unarmed_RU",
+            "FT": "CUP_O_UAZ_Unarmed_RU",
+            "ATTCH": "CUP_O_UAZ_Unarmed_RU",
+            "ENG": "CUP_O_Ural_Repair_SLA",
+            "APC": "CUP_O_BRDM2_SLA",
+            "IFV": "CUP_O_BMP2_SLA",
+            "SPAAG": "CUP_O_ZSU23_SLA",
+            "TNK": "CUP_O_T72_SLA",
+            "TH": "CUP_O_Mi8_RU",
+            "AH": "CUP_O_Mi24_V_RU",
+            "CAS": "CUP_O_Su25_RU_3"
+        }
+    },
+    "MNP_DPR_AUT": {
+        "rolePrefix": "Donetsk People's Republic",
+        "vehicleClassnames": {        
+            "CO": "CUP_O_UAZ_Unarmed_RU",
+            "SL": "CUP_O_UAZ_Unarmed_RU",
+            "FT": "CUP_O_UAZ_Unarmed_RU",
+            "ATTCH": "CUP_O_UAZ_Unarmed_RU",
+            "ENG": "CUP_O_Ural_Repair_SLA",
+            "APC": "CUP_O_BRDM2_SLA",
+            "IFV": "CUP_O_BMP2_SLA",
+            "SPAAG": "CUP_O_ZSU23_SLA",
+            "TNK": "CUP_O_T72_SLA",
             "TH": "CUP_O_Mi8_RU",
             "AH": "CUP_O_Mi24_V_RU",
             "CAS": "CUP_O_Su25_RU_3"
