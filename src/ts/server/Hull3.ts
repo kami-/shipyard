@@ -31,8 +31,8 @@ function parseFile(path: string): Parser.Node {
 function factionNodeToFaction(node: Parser.Node): Faction {
     return {
         id: node.fieldName,
-        name: node.fieldName,
-        description: '',
+        name: Ast.select(node, 'name')[0].value,
+        description: Ast.select(node, 'description')[0].value,
         gearTemplateId:  Ast.select(node, 'gear')[0].value,
         uniformTemplateId: Ast.select(node, 'uniform')[0].value
     }
@@ -103,7 +103,7 @@ export function getFactionRolePrefixById(id: string): string {
 
 export function updateFactions() {
     var factionsAst = parseFile(FACTION_PATH);
-    factions = Ast.select(factionsAst, 'Faction.*').map(factionNodeToFaction);
+    factions = _.sortBy(Ast.select(factionsAst, 'Faction.*').map(factionNodeToFaction), 'name');
 }
 
 export function updateFactionConfigs() {

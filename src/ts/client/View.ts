@@ -72,7 +72,7 @@ function sideToOption(s: Mission.Side): Option {
 }
 
 function factionToOption(f: Hull3.Faction): Option {
-    return { value: f.id, text: f.name }    
+    return { value: f.id, text: `${f.name} (${f.id})` };
 }
 
 function templateToOption(t: Hull3.Template): Option {
@@ -119,8 +119,10 @@ function addFaction(container: JQuery) {
             selectedValue: ''
         })),
         removeFooter = $(`<div class="remove-footer"></div>`),
-        removeButton = $(`<button class="remove-button">Remove</button>`);
+        removeButton = $(`<button class="remove-button">Remove</button>`),
+        factionDescription = $('<div class="faction description">    </div>');
     factionFieldContainer.append(factionField);
+    factionFieldContainer.append(factionDescription);
     factionFieldContainer.append(sideField);
     factionFieldContainer.append(gearField);
     factionFieldContainer.append(uniformField);
@@ -141,6 +143,7 @@ function addFactionChangeHandling(factionContainer: JQuery, factionConfigs: { [i
         var selectedFactionId = $(e.target).find(':selected').val();
         var faction = Hull3.getFactionById(selectedFactionId),
             vehicleClassnames = factionConfigs[selectedFactionId].vehicleClassnames;
+        factionContainer.find('.faction.description').text(faction.description);
         factionContainer.find('select.gearTemplate').val(faction.gearTemplateId);
         factionContainer.find('select.uniformTemplate').val(faction.uniformTemplateId);
         factionContainer.find('input.vehicle-classname').each((idx, el) => {
