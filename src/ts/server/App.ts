@@ -3,11 +3,15 @@
 import express = require('express');
 import bodyParser = require('body-parser');
 import Settings = require('./Settings');
-import Hull3 = require('./Hull3');
-import Mission = require('./Mission');
 import fs = require('fs-extra');
 import cp = require('child_process');
 import mime = require('mime');
+import _ = require('lodash');
+
+pullAddons();
+
+import Hull3 = require('./Hull3');
+import Mission = require('./Mission');
 
 function registerRoutes(app: express.Express) {
     app.get(Settings.CONTEXT_PATH, (request, response) => {
@@ -90,6 +94,21 @@ function zipMission(missionDir: string, missionDirName: string): string {
 
 function removeMissionWorkingDir(missionWorkingDir: string) {
     fs.removeSync(missionWorkingDir);
+}
+
+function pullAddons() {
+    var addonPaths = [Settings.PATH.Hull3.HOME, Settings.PATH.Admiral.HOME];
+    _.each(addonPaths, a => {
+        console.log(`Pulling addon '${a}.'`);
+        var path = `${Settings.PATH.SERVER_RESOURCES_HOME}/${a}`;
+        if (process.platform === 'linux') {
+            cp.execSync(`(git reset --hard HEAD; git pull)`, { cwd: path });
+        } else {
+            cp.execSync(`git reset --hard HEAD`, { cwd: path });
+            cp.execSync(`git pull`, { cwd: path });
+            cp.execSync(`git status > asd.txt`, { cwd: path });
+        }
+    })
 }
 
 export function start() {
