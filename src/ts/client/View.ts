@@ -192,10 +192,10 @@ function getSelectedFactions(): Hull3.FactionRequest[] {
     return FACIONS_CONTAINER.find('.faction-container').map((idx, container) => {
         var ffcChildren = $(container).find('.faction-field-container').children();
         return {
-            factionId: ffcChildren.eq(0).find('select :selected').val(),
-            sideName: ffcChildren.eq(1).find('select :selected').val(),
-            gearTemplateId: ffcChildren.eq(2).find('select :selected').val(),
-            uniformTemplateId: ffcChildren.eq(3).find('select :selected').val(),
+            factionId: ffcChildren.find('select.faction :selected').val(),
+            sideName: ffcChildren.find('select.side :selected').val(),
+            gearTemplateId: ffcChildren.find('select.gearTemplate :selected').val(),
+            uniformTemplateId: ffcChildren.find('select.uniformTemplate :selected').val(),
             groupTemplateIds: getSelectedGroupTemplateIds($(container)),
             vehicleClassnames: getVehicleClassnames($(container))
         } 
