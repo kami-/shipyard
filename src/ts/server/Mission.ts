@@ -67,7 +67,7 @@ function generateDescriptionExt(missionDir: string, mission: Mission, missionTyp
     var descriptionExt = fs.readFileSync(`${missionDir}/description.ext`, 'UTF-8')
         .replace(/onLoadName = "[^"]*";/g, `onLoadName = "${mission.onLoadName}";`)
         .replace(/author = "[^"]*";/g, `author = "${mission.author}";`)
-        .replace(/gametype = [^;]*;/g, `gametype = ${missionTypeToGameType(missionType)};`)
+        .replace(/gameType = [^;]*;/g, `gameType = ${missionTypeToGameType(missionType)};`)
         .replace(/maxPlayers = [^;]*;/g, `maxPlayers = ${maxPlayers.toString()};`);
     descriptionExt = tryAddAdmiralInclude(descriptionExt, mission);
     fs.writeFileSync(`${missionDir}/description.ext`, descriptionExt, 'UTF-8');
