@@ -15,6 +15,7 @@
         "./Hull3.ts",
         "./Mission.ts",
         "./View.ts",
+        "./re/RandomEngagements.ts",
         "./typings/tsd.d.ts"
     ]
 }

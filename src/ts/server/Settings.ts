@@ -20,6 +20,10 @@ export var PATH = {
     Plank: {
         HOME: 'addon/plank'  
     },
+    RE: {
+        HOME: 're',
+        SAMPLE_MISSION_HOME: 're.Altis',
+    },
     SERVER_RESOURCES_HOME: 'src/resources/server',
     CLIENT_RESOURCES_HOME: 'src/resources/client'
 }

@@ -12,6 +12,7 @@ pullAddons();
 
 import Hull3 = require('./Hull3');
 import Mission = require('./Mission');
+import RE = require('./re/RandomEngagements');
 
 function registerRoutes(app: express.Express) {
     app.get(Settings.CONTEXT_PATH, (request, response) => {
@@ -61,12 +62,27 @@ function registerRoutes(app: express.Express) {
         Hull3.updateUniformTemplates();
         response.sendStatus(200);
     });
+
+    // RE
+    app.route(Settings.CONTEXT_PATH + '/re/generate').post((request, response) => {
+        generateReMission(request, response);
+    });
+    app.route(Settings.CONTEXT_PATH + '/re/generate/:id/:zip').get((request, response) => {
+        sendMission(request, response, request.params.id, request.params.zip);
+    });
 }
 
 function generateMission(request, response) {
     var mission = request.body;
     mission.briefingName = mission.briefingName.replace(/[^a-z0-9_]*/g, '');
     var generatedMission = Mission.generateMission(mission);
+    var missionZipName = zipMission(generatedMission.missionDir, generatedMission.missionDirName);
+    response.json({ id: generatedMission.missionId, zip: missionZipName });
+}
+
+function generateReMission(request, response) {
+    var missionSqm = request.body.missionSqm;
+    var generatedMission = RE.generateMission(missionSqm);
     var missionZipName = zipMission(generatedMission.missionDir, generatedMission.missionDirName);
     response.json({ id: generatedMission.missionId, zip: missionZipName });
 }
@@ -99,7 +115,7 @@ function removeMissionWorkingDir(missionWorkingDir: string) {
 function pullAddons() {
     var addonPaths = [Settings.PATH.Hull3.HOME, Settings.PATH.Admiral.HOME];
     _.each(addonPaths, a => {
-        console.log(`Pulling addon '${a}.'`);
+        console.log(`Pulling addon '${a}'.`);
         var path = `${Settings.PATH.SERVER_RESOURCES_HOME}/${a}`;
         if (process.platform === 'linux') {
             cp.execSync(`(git reset --hard HEAD; git pull)`, { cwd: path });

@@ -15,11 +15,6 @@ var missionIdCounter: number = 0,
 
 var terrains: Terrain[] = [];
 
-function nextMissionId(): number {
-    missionIdCounter = missionIdCounter + 1;
-    return missionIdCounter;
-}
-
 function parseFile(path: string): Parser.Node {
     var factionFile: string = fs.readFileSync(path, 'UTF-8');
     return Parser.create(factionFile, Lexer.create(factionFile)).parse();
@@ -48,10 +43,6 @@ function mergeGroupsAndVehicles(missionAst: Parser.Node, factionAsts: Parser.Nod
     CpMission.mergeItems(missionVehicles, vehicleItems);
 }
 
-function getPlayableUnitCount(missionAst: Parser.Node): number {
-    return _.foldl(Ast.select(missionAst, 'Mission.Groups.Item*'), (acc, g) => acc + Ast.select(g, 'Vehicles.Item*').length, 0);
-}
-
 function generateMissionSqm(missionAst: Parser.Node, mission: Mission) {
     Ast.select(missionAst, 'Mission.Intel.overviewText')[0].value = mission.overviewText;
     mergeGroupsAndVehicles(missionAst, getFactionMissionAsts(mission.factions));
@@ -61,16 +52,6 @@ function generateHull3Header(missionDir: string, mission: Mission) {
     var hull3Ast = parseFile(`${Hull3.getSampleMissionPath()}/hull3/hull3.h`);
     Hull3.addFactionsToHull3Config(hull3Ast, mission.factions);
     fs.writeFileSync(`${missionDir}/hull3/hull3.h`, PrettyPrinter.create('    ').print(hull3Ast), 'UTF-8');
-}
-
-function generateDescriptionExt(missionDir: string, mission: Mission, missionType: MissionType, maxPlayers: number) {
-    var descriptionExt = fs.readFileSync(`${missionDir}/description.ext`, 'UTF-8')
-        .replace(/onLoadName = "[^"]*";/g, `onLoadName = "${mission.onLoadName}";`)
-        .replace(/author = "[^"]*";/g, `author = "${mission.author}";`)
-        .replace(/gameType = [^;]*;/g, `gameType = ${missionTypeToGameType(missionType)};`)
-        .replace(/maxPlayers = [^;]*;/g, `maxPlayers = ${maxPlayers.toString()};`);
-    descriptionExt = tryAddAdmiralInclude(descriptionExt, mission);
-    fs.writeFileSync(`${missionDir}/description.ext`, descriptionExt, 'UTF-8');
 }
 
 function tryAddAdmiralInclude(descriptionExt: string, mission: Mission): string {
@@ -84,6 +65,25 @@ function tryAddAdmiralDirectory(mission: Mission, missionDir: string) {
     if (mission.addons.admiral) {
         fs.copySync(`${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Admiral.HOME}/${Settings.PATH.Admiral.SAMPLE_MISSION_HOME}/admiral`, `${missionDir}/admiral`);   
     }
+}
+
+export function nextMissionId(): number {
+    missionIdCounter = missionIdCounter + 1;
+    return missionIdCounter;
+}
+
+export function getPlayableUnitCount(missionAst: Parser.Node): number {
+    return _.foldl(Ast.select(missionAst, 'Mission.Groups.Item*'), (acc, g) => acc + Ast.select(g, 'Vehicles.Item*').length, 0);
+}
+
+export function generateDescriptionExt(missionDir: string, mission: Mission, missionType: MissionType, maxPlayers: number) {
+    var descriptionExt = fs.readFileSync(`${missionDir}/description.ext`, 'UTF-8')
+        .replace(/onLoadName = "[^"]*";/g, `onLoadName = "${mission.onLoadName}";`)
+        .replace(/author = "[^"]*";/g, `author = "${mission.author}";`)
+        .replace(/gameType = [^;]*;/g, `gameType = ${missionTypeToGameType(missionType)};`)
+        .replace(/maxPlayers = [^;]*;/g, `maxPlayers = ${maxPlayers.toString()};`);
+    descriptionExt = tryAddAdmiralInclude(descriptionExt, mission);
+    fs.writeFileSync(`${missionDir}/description.ext`, descriptionExt, 'UTF-8');
 }
 
 export function getTerrains(): Terrain[] {
