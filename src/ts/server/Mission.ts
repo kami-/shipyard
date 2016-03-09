@@ -43,6 +43,16 @@ function mergeGroupsAndVehicles(missionAst: Parser.Node, factionAsts: Parser.Nod
     missionVehicles.fields = [];
     CpMission.mergeItems(missionGroups, groupItems);
     CpMission.mergeItems(missionVehicles, vehicleItems);
+    makeFirstUnitPlayerFor3DEN(missionAst);
+}
+
+function makeFirstUnitPlayerFor3DEN(missionAst: Parser.Node) {
+    var groups = Ast.select(missionAst, 'Mission.Groups.Item*');
+    var units = Ast.select(groups[0], 'Vehicles.Item*');
+    console.log(units);
+    if (units.length > 0) {
+        Ast.select(units[0], 'player')[0].value = 'PLAYER COMMANDER';
+    }
 }
 
 function getPlayableUnitCount(missionAst: Parser.Node): number {
