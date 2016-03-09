@@ -17,17 +17,12 @@ export interface Faction {
     description: string;
     gearTemplateId: string;
     uniformTemplateId: string;
-}
-
-export interface FactionConfig {
-    factionId: string;
     rolePrefix: string;
     vehicleClassnames: { [id: string]: string };
 }
 
 export interface Config {
     factions: Faction[];
-    factionConfigs: { [id: string]: FactionConfig };
     gearTemplates: GearTemplate[];
     uniformTemplates: UniformTemplate[];
     groupTemplates: GroupTemplate[];

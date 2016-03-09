@@ -49,7 +49,6 @@ function mergeGroupsAndVehicles(missionAst: Parser.Node, factionAsts: Parser.Nod
 function makeFirstUnitPlayerFor3DEN(missionAst: Parser.Node) {
     var groups = Ast.select(missionAst, 'Mission.Groups.Item*');
     var units = Ast.select(groups[0], 'Vehicles.Item*');
-    console.log(units);
     if (units.length > 0) {
         Ast.select(units[0], 'player')[0].value = 'PLAYER COMMANDER';
     }
@@ -110,7 +109,6 @@ export function getMissionConfig(): Config {
         terrains: getTerrains(),
         Hull3: {
             factions: Hull3.getFactions(),
-            factionConfigs: Hull3.getFactionConfigs(),
             gearTemplates: Hull3.getGearTemplates(),
             uniformTemplates: Hull3.getUniformTemplates(),
             groupTemplates: Hull3.getGroupTemplates(),

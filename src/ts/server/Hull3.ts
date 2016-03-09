@@ -7,8 +7,8 @@ import _ = require('lodash');
 import {Ast, Lexer, Mission, Parser, PrettyPrinter} from 'config-parser';
 import {parseFile} from './Common';
 import {Template} from '../common/Common';
-import {GearTemplate, UniformTemplate, GroupTemplate, VehicleClassnameTemplate, Faction, FactionConfig, Config, FactionRequest} from '../common/Hull3';
-export {GearTemplate, UniformTemplate, GroupTemplate, VehicleClassnameTemplate, Faction, FactionConfig, Config, FactionRequest} from '../common/Hull3';
+import {GearTemplate, UniformTemplate, GroupTemplate, VehicleClassnameTemplate, Faction, Config, FactionRequest} from '../common/Hull3';
+export {GearTemplate, UniformTemplate, GroupTemplate, VehicleClassnameTemplate, Faction, Config, FactionRequest} from '../common/Hull3';
 
 var SAMPLE_MISSION_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.SAMPLE_MISSION_HOME}`, 
     FACTION_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.FACTION}`,
@@ -19,7 +19,6 @@ var SAMPLE_MISSION_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PAT
     VEHICLE_CLASSNAMES_JSON_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/vehicle-classnames.json`;
 
 var factions: Faction[] = [],
-    factionConfigs: { [id: string]: FactionConfig } = {},
     gearTemplates: GearTemplate[] = [],
     uniformTemplates: UniformTemplate[] = [],
     groupTemplates: GroupTemplate[] = [],
@@ -35,14 +34,28 @@ function getTemplate(homePath: string, filename: string): Template {
     }
 }
 
+function getFactionById(id: string): Faction {
+    return _.find<Faction>(factions, '.id', id);
+}
+
 function factionNodeToFaction(node: Parser.Node): Faction {
     return {
         id: node.fieldName,
         name: Ast.select(node, 'name')[0].value,
         description: Ast.select(node, 'description')[0].value,
         gearTemplateId:  Ast.select(node, 'gear')[0].value,
-        uniformTemplateId: Ast.select(node, 'uniform')[0].value
-    }
+        uniformTemplateId: Ast.select(node, 'uniform')[0].value,
+        rolePrefix: Ast.select(node, 'rolePrefix')[0].value,
+        vehicleClassnames: getVehicleClassnames(node)
+    };
+}
+
+function getVehicleClassnames(node: Parser.Node): { [id: string]: string } {
+    var vehicleClassnamesNode = Ast.select(node, 'vehicleClassnames')[0];
+    return _.foldl(vehicleClassnamesNode.values, (acc, pair) => {
+        acc[pair.values[0].value] = pair.values[1].value;
+        return acc;
+    }, <{ [id: string]: string }>{});
 }
 
 function shiftPosition(node: Parser.Node, xShift: number) {
@@ -95,19 +108,12 @@ function removeUnselectedVehicles(ast: Parser.Node, factionId: string, rolePrefi
 }
 
 export function getFactionRolePrefixById(id: string): string {
-    return factionConfigs[id].rolePrefix;
+    return getFactionById(id).rolePrefix;
 }
 
 export function updateFactions() {
     var factionsAst = parseFile(FACTION_PATH);
     factions = _.sortBy(Ast.select(factionsAst, 'Faction.*').map(factionNodeToFaction), 'name');
-}
-
-export function updateFactionConfigs() {
-    factionConfigs = JSON.parse(fs.readFileSync(FACTION_CONFIGS_JSON_PATH, 'UTF-8'));
-    _.forOwn(factionConfigs, (rc, factionId) => {
-        rc.factionId = factionId;
-    });
 }
 
 export function updateGearTemplates() {
@@ -130,10 +136,6 @@ export function updateVehicleClassnameTemplates() {
 
 export function getFactions(): Faction[] {
     return factions;
-}
-
-export function getFactionConfigs(): { [id: string]: FactionConfig } {
-    return factionConfigs;
 }
 
 export function getGearTemplates(): GearTemplate[] {
@@ -182,7 +184,6 @@ export function addFactionsToHull3Config(ast: Parser.Node, factions: FactionRequ
 }
 
 updateFactions();
-updateFactionConfigs();
 updateGearTemplates();
 updateUniformTemplates();
 updateGroupTemplates();

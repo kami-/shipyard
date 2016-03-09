@@ -138,20 +138,19 @@ function addFaction(container: JQuery) {
     removeFooter.append($('<div style="clear: both;"></div>'));
     factionContainer.append(removeFooter);
     container.append(factionContainer);
-    addFactionChangeHandling(factionContainer, Hull3.getFactionConfigs());
+    addFactionChangeHandling(factionContainer);
     factionField.find('select.faction').trigger('change');
 }
 
-function addFactionChangeHandling(factionContainer: JQuery, factionConfigs: { [id: string]: Hull3.FactionConfig }) {
+function addFactionChangeHandling(factionContainer: JQuery) {
     factionContainer.find('select.faction').change(e => {
         var selectedFactionId = $(e.target).find(':selected').val();
-        var faction = Hull3.getFactionById(selectedFactionId),
-            vehicleClassnames = factionConfigs[selectedFactionId].vehicleClassnames;
+        var faction = Hull3.getFactionById(selectedFactionId);
         factionContainer.find('.faction.description').text(faction.description);
         factionContainer.find('select.gearTemplate').val(faction.gearTemplateId);
         factionContainer.find('select.uniformTemplate').val(faction.uniformTemplateId);
         factionContainer.find('input.vehicle-classname').each((idx, el) => {
-            $(el).val(vehicleClassnames[$(el).data('id')]);
+            $(el).val(faction.vehicleClassnames[$(el).data('id')]);
         });
     });
 }
