@@ -12,6 +12,7 @@
     },
     "files": [
         "./App.ts",
+        "./Admiral.ts",
         "./Hull3.ts",
         "./Mission.ts",
         "./View.ts",

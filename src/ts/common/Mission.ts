@@ -1,4 +1,5 @@
 import Hull3 = require('./Hull3');
+import Admiral = require('./Admiral');
 
 export enum Side {
     BLUFOR,
@@ -26,7 +27,7 @@ export interface Faction {
 }
 
 export interface Addons {
-    admiral: boolean;
+    Admiral: Admiral.Request;
     plank: boolean;
 }
 
@@ -46,6 +47,7 @@ export interface Config {
     missionTypeNames: string[];
     terrains: Terrain[];
     Hull3: Hull3.Config;
+    Admiral: Admiral.Config;
 }
 
 export interface GeneratedMission {

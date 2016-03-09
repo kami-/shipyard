@@ -1,11 +1,13 @@
 /// <reference path="./typings/tsd.d.ts" />
 
+import Admiral = require('./Admiral');
 import Hull3 = require('./Hull3');
 import Settings = require('./Settings');
 import fs = require('fs-extra');
 import _ = require('lodash');
 
 import {Ast, Lexer, Parser, PrettyPrinter, Mission as CpMission} from 'config-parser';
+import {parseFile} from './Common'
 import {Side, MissionType, Terrain, Faction, Addons, Mission, Config, GeneratedMission, getSideNames, getMissionTypeNames, stringToMissionType, missionTypeToGameType, missionTypeToMissionNamePrefix} from '../common/Mission';
 export {Side, MissionType, Terrain, Faction, Addons, Mission, Config, GeneratedMission, getSideNames, getMissionTypeNames, stringToMissionType, missionTypeToGameType} from '../common/Mission';
 
@@ -18,11 +20,6 @@ var terrains: Terrain[] = [];
 function nextMissionId(): number {
     missionIdCounter = missionIdCounter + 1;
     return missionIdCounter;
-}
-
-function parseFile(path: string): Parser.Node {
-    var factionFile: string = fs.readFileSync(path, 'UTF-8');
-    return Parser.create(factionFile, Lexer.create(factionFile)).parse();
 }
 
 function cleanWorkingDir() {
@@ -74,16 +71,18 @@ function generateDescriptionExt(missionDir: string, mission: Mission, missionTyp
 }
 
 function tryAddAdmiralInclude(descriptionExt: string, mission: Mission): string {
-    if (mission.addons.admiral) {
+    if (mission.addons.Admiral.isEnabled) {
         return '#include "admiral\\admiral.h"\n' + descriptionExt;
     }
     return descriptionExt;
 }
 
-function tryAddAdmiralDirectory(mission: Mission, missionDir: string) {
-    if (mission.addons.admiral) {
-        fs.copySync(`${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Admiral.HOME}/${Settings.PATH.Admiral.SAMPLE_MISSION_HOME}/admiral`, `${missionDir}/admiral`);   
-    }
+function tryAddAdmiral(mission: Mission, missionDir: string) {
+    if (!mission.addons.Admiral.isEnabled) { return; }
+    fs.copySync(`${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Admiral.HOME}/${Settings.PATH.Admiral.SAMPLE_MISSION_HOME}/admiral`, `${missionDir}/admiral`);
+    var admiralAst = parseFile(`${missionDir}/admiral/admiral.h`);
+    Admiral.replaceTemplates(admiralAst, mission.addons.Admiral);
+    fs.writeFileSync(`${missionDir}/admiral/admiral.h`, PrettyPrinter.create('    ').print(admiralAst), 'UTF-8');
 }
 
 export function getTerrains(): Terrain[] {
@@ -106,6 +105,10 @@ export function getMissionConfig(): Config {
             uniformTemplates: Hull3.getUniformTemplates(),
             groupTemplates: Hull3.getGroupTemplates(),
             vehicleClassnameTemplates: Hull3.getVehicleClassnameTemplates()
+        },
+        Admiral: {
+            unitTemplates: Admiral.getUnitTemplates(),
+            zoneTemplates: Admiral.getZoneTemplates()
         }
     }
 }
@@ -125,7 +128,7 @@ export function generateMission(mission: Mission): GeneratedMission {
     fs.writeFileSync(`${missionDir}/mission.sqm`, PrettyPrinter.create('\t').print(missionAst), 'UTF-8');
     generateHull3Header(missionDir, mission);
     generateDescriptionExt(missionDir, mission, missionType, maxPlayers);
-    tryAddAdmiralDirectory(mission, missionDir);
+    tryAddAdmiral(mission, missionDir);
     return {
         missionId: missionId,
         missionWorkingDir: missionWorkingDir,

@@ -2,7 +2,9 @@
 
 import $ = require('jquery');
 import _ = require('lodash');
+import Common = require('../common/Common');
 import Hull3 = require('./Hull3');
+import Admiral = require('./Admiral');
 import Mission = require('./Mission');
 
 var factionIdCounter = 0; 
@@ -17,7 +19,9 @@ var TERRAIN_FIELD: JQuery = null,
     FACTION_VEHICLE_CLASSNAME_FIELDS_TEMPLATE: _.TemplateExecutor = null,
     ADD_FACTION_BUTTON: JQuery = null,
     FACIONS_CONTAINER: JQuery = null,
-    ADMIRAL_FIELD: JQuery = null,
+    ADMIRAL_CONTAINER: JQuery = null,
+    ADMIRAL_IS_ENABLED: JQuery = null,
+    ADMIRAL_SELECT_FIELD_TEMPLATE: _.TemplateExecutor = null,
     PLANK_FIELD: JQuery = null,
     GENERATE_MISSION_BUTTON: JQuery = null,
     DOWNLOAD_MISSION_FORM: JQuery = null;
@@ -75,7 +79,7 @@ function factionToOption(f: Hull3.Faction): Option {
     return { value: f.id, text: `${f.name} (${f.id})` };
 }
 
-function templateToOption(t: Hull3.Template): Option {
+function templateToOption(t: Common.Template): Option {
     return { value: t.id, text: t.name }    
 }
 
@@ -226,8 +230,58 @@ function getVehicleClassnames(container: JQuery): { [id: string]: string } {
 }
 
 function initAddons() {
-    ADMIRAL_FIELD = $('#admiral').eq(0);
+    initAdmiral();
     PLANK_FIELD = $('#plank').eq(0);
+}
+
+function initAdmiral() {
+    ADMIRAL_CONTAINER = $('#admiral').eq(0);
+    ADMIRAL_IS_ENABLED = $('#admiralIsEnabled').eq(0);
+    ADMIRAL_IS_ENABLED.change(() => {
+        if (ADMIRAL_IS_ENABLED.is(':checked')) {
+            console.log('showing');
+            ADMIRAL_CONTAINER.show();
+        } else {
+            console.log('hiding');
+            ADMIRAL_CONTAINER.hide();
+        }
+    });
+    ADMIRAL_SELECT_FIELD_TEMPLATE = _.template($('#admiral-select-field-template').html());
+    initAdmiralSelects(ADMIRAL_CONTAINER);
+}
+
+function initAdmiralSelects(container: JQuery) {
+    var unitTemplateOptions = Admiral.getUnitTemplates().map(templateToOption),
+        zoneTemplateOptions = Admiral.getZoneTemplates().map(templateToOption);
+    var admiralTemplates = [
+        { templateName: 'campUnitTemplateId', label: 'Camp unit template', options: unitTemplateOptions },
+        { templateName: 'campZoneTemplateId', label: 'Camp zone template', options: zoneTemplateOptions },
+        { templateName: 'patrolUnitTemplateId', label: 'Patrol unit template', options: unitTemplateOptions },
+        { templateName: 'patrolZoneTemplateId', label: 'Patrol zone template', options: zoneTemplateOptions },
+        { templateName: 'cqcUnitTemplateId', label: 'CQC unit template', options: unitTemplateOptions },
+        { templateName: 'cqcZoneTemplateId', label: 'CQC zone template', options: zoneTemplateOptions },
+    ];
+    _.each(admiralTemplates, t => {
+        var select = $(ADMIRAL_SELECT_FIELD_TEMPLATE({
+            templateName: t.templateName,
+            label: t.label,
+            options: t.options,
+            selectedValue: ''
+        }));
+        container.append(select);
+    });
+}
+
+function getAdmiralRequest(): Admiral.Request {
+    return {
+        isEnabled: ADMIRAL_IS_ENABLED.prop('checked'),
+        campUnitTemplateId: $('#campUnitTemplateId').find(':selected').val(),
+        campZoneTemplateId: $('#campZoneTemplateId').find(':selected').val(),
+        patrolUnitTemplateId: $('#patrolUnitTemplateId').find(':selected').val(),
+        patrolZoneTemplateId: $('#patrolZoneTemplateId').find(':selected').val(),
+        cqcUnitTemplateId: $('#cqcUnitTemplateId').find(':selected').val(),
+        cqcZoneTemplateId: $('#cqcZoneTemplateId').find(':selected').val()
+    };
 }
 
 function initGenerateMission() {
@@ -246,7 +300,7 @@ function getMission(): Mission.Mission {
         overviewText: OVERVIEW_TEXT_FIELD.val(),
         factions: getSelectedFactions(),
         addons: {
-            admiral: ADMIRAL_FIELD.prop('checked'),
+            Admiral: getAdmiralRequest(),
             plank: PLANK_FIELD.prop('checked')
         }
     }

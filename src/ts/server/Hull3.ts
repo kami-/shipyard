@@ -5,8 +5,10 @@ import fs = require('fs-extra');
 import _ = require('lodash');
 
 import {Ast, Lexer, Mission, Parser, PrettyPrinter} from 'config-parser';
-import {Template, GearTemplate, UniformTemplate, GroupTemplate, VehicleClassnameTemplate, Faction, FactionConfig, Config, FactionRequest} from '../common/Hull3';
-export {Template, GearTemplate, UniformTemplate, GroupTemplate, VehicleClassnameTemplate, Faction, FactionConfig, Config, FactionRequest} from '../common/Hull3';
+import {parseFile} from './Common';
+import {Template} from '../common/Common';
+import {GearTemplate, UniformTemplate, GroupTemplate, VehicleClassnameTemplate, Faction, FactionConfig, Config, FactionRequest} from '../common/Hull3';
+export {GearTemplate, UniformTemplate, GroupTemplate, VehicleClassnameTemplate, Faction, FactionConfig, Config, FactionRequest} from '../common/Hull3';
 
 var SAMPLE_MISSION_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.SAMPLE_MISSION_HOME}`, 
     FACTION_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.FACTION}`,
@@ -23,9 +25,14 @@ var factions: Faction[] = [],
     groupTemplates: GroupTemplate[] = [],
     vehicleClassnameTemplates: VehicleClassnameTemplate[] = [];
 
-function parseFile(path: string): Parser.Node {
-    var factionFile: string = fs.readFileSync(path, 'UTF-8');
-    return Parser.create(factionFile, Lexer.create(factionFile)).parse();
+function getTemplate(homePath: string, filename: string): Template {
+    var ast = parseFile(`${homePath}/${filename}`);
+    var templateAst = Ast.select(ast, '*')[0];
+    return {
+        id: templateAst.fieldName,
+        name: templateAst.fieldName,
+        description: ''
+    }
 }
 
 function factionNodeToFaction(node: Parser.Node): Faction {
@@ -35,16 +42,6 @@ function factionNodeToFaction(node: Parser.Node): Faction {
         description: Ast.select(node, 'description')[0].value,
         gearTemplateId:  Ast.select(node, 'gear')[0].value,
         uniformTemplateId: Ast.select(node, 'uniform')[0].value
-    }
-}
-
-function getTemplate(homePath: string, filename: string): Template {
-    var ast = parseFile(`${homePath}/${filename}`);
-    var templateAst = Ast.select(ast, '*')[0];
-    return {
-        id: templateAst.fieldName,
-        name: templateAst.fieldName,
-        description: ''
     }
 }
 

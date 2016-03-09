@@ -56,6 +56,17 @@
             <% }); %>
         </div> 
     </script>
+
+    <script id="admiral-select-field-template" type="text/template">
+        <div class="field-group">
+            <label for="<%- templateName %>"><%- label %></label>
+            <select id="<%- templateName %>" name="<%- templateName %>">
+                <% _.forEach(options, function(o) { %>
+                    <option value="<%- o.value %>" <% o.value == selectedValue ? 'selected="selected"' : '' %> ><%- o.text %></option>
+                <% }); %>
+            </select>
+        </div>
+    </script>
 </head>
 
 <body>
@@ -102,9 +113,12 @@
             
             <h3 class="before after">Addons</h3>
             <div class="field-group">
-                <label for="admiral">Admiral</label>
-                <input id="admiral" name="admiral" type="checkbox">
+                <label for="admiralIsEnabled">Admiral</label>
+                <input id="admiralIsEnabled" name="admiralIsEnabled" type="checkbox">
             </div>
+            <div id="admiral" style="display: none">
+            </div>
+
             <div class="field-group" style="display: none;">
                 <label for="plank">Plank</label>
                 <input id="plank" name="plank" type="checkbox">

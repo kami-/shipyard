@@ -1,17 +1,13 @@
-export interface Template {
-    id: string;
-    name: string;
-    description: string;
-}
+import Common = require('./Common');
 
-export interface GearTemplate extends Template {}
-export interface UniformTemplate extends Template {}
+export interface GearTemplate extends Common.Template {}
+export interface UniformTemplate extends Common.Template {}
 
-export interface GroupTemplate extends Template {
+export interface GroupTemplate extends Common.Template {
     groupingId: string;    
 }
 
-export interface VehicleClassnameTemplate extends Template {
+export interface VehicleClassnameTemplate extends Common.Template {
     classname: string;
 }
 

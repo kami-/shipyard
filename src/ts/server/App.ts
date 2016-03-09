@@ -11,6 +11,7 @@ import _ = require('lodash');
 pullAddons();
 
 import Hull3 = require('./Hull3');
+import Admiral = require('./Admiral');
 import Mission = require('./Mission');
 
 function registerRoutes(app: express.Express) {
@@ -53,12 +54,27 @@ function registerRoutes(app: express.Express) {
         response.sendStatus(200);
     });
     
-    // Uniform
     app.route(Settings.CONTEXT_PATH + '/hull3/uniform').get((request, response) => {
         response.json(Hull3.getUniformTemplates());
     });
     app.route(Settings.CONTEXT_PATH + '/hull3/uniform/update').post((request, response) => {
         Hull3.updateUniformTemplates();
+        response.sendStatus(200);
+    });
+
+    app.route(Settings.CONTEXT_PATH + '/admiral/unit').get((request, response) => {
+        response.json(Admiral.getUnitTemplates());
+    });
+    app.route(Settings.CONTEXT_PATH + '/admiral/unit/update').post((request, response) => {
+        Admiral.updateUnitTemplates();
+        response.sendStatus(200);
+    });
+
+    app.route(Settings.CONTEXT_PATH + '/admiral/zone').get((request, response) => {
+        response.json(Admiral.getZoneTemplates());
+    });
+    app.route(Settings.CONTEXT_PATH + '/admiral/zone/update').post((request, response) => {
+        Admiral.updateZoneTemplates();
         response.sendStatus(200);
     });
 }
