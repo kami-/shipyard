@@ -238,10 +238,8 @@ function initAdmiral() {
     ADMIRAL_IS_ENABLED = $('#admiralIsEnabled').eq(0);
     ADMIRAL_IS_ENABLED.change(() => {
         if (ADMIRAL_IS_ENABLED.is(':checked')) {
-            console.log('showing');
             ADMIRAL_CONTAINER.show();
         } else {
-            console.log('hiding');
             ADMIRAL_CONTAINER.hide();
         }
     });
@@ -254,11 +252,11 @@ function initAdmiralSelects(container: JQuery) {
         zoneTemplateOptions = Admiral.getZoneTemplates().map(templateToOption);
     var admiralTemplates = [
         { templateName: 'campUnitTemplateId', label: 'Camp unit template', options: unitTemplateOptions },
-        { templateName: 'campZoneTemplateId', label: 'Camp zone template', options: zoneTemplateOptions },
+        //{ templateName: 'campZoneTemplateId', label: 'Camp zone template', options: zoneTemplateOptions },
         { templateName: 'patrolUnitTemplateId', label: 'Patrol unit template', options: unitTemplateOptions },
-        { templateName: 'patrolZoneTemplateId', label: 'Patrol zone template', options: zoneTemplateOptions },
-        { templateName: 'cqcUnitTemplateId', label: 'CQC unit template', options: unitTemplateOptions },
-        { templateName: 'cqcZoneTemplateId', label: 'CQC zone template', options: zoneTemplateOptions },
+        //{ templateName: 'patrolZoneTemplateId', label: 'Patrol zone template', options: zoneTemplateOptions },
+        { templateName: 'cqcUnitTemplateId', label: 'CQC unit template', options: unitTemplateOptions }
+        //{ templateName: 'cqcZoneTemplateId', label: 'CQC zone template', options: zoneTemplateOptions },
     ];
     _.each(admiralTemplates, t => {
         var select = $(ADMIRAL_SELECT_FIELD_TEMPLATE({
@@ -275,11 +273,11 @@ function getAdmiralRequest(): Admiral.Request {
     return {
         isEnabled: ADMIRAL_IS_ENABLED.prop('checked'),
         campUnitTemplateId: $('#campUnitTemplateId').find(':selected').val(),
-        campZoneTemplateId: $('#campZoneTemplateId').find(':selected').val(),
+        campZoneTemplateId: 'Camp',//$('#campZoneTemplateId').find(':selected').val(),
         patrolUnitTemplateId: $('#patrolUnitTemplateId').find(':selected').val(),
-        patrolZoneTemplateId: $('#patrolZoneTemplateId').find(':selected').val(),
+        patrolZoneTemplateId: 'Patrol',//$('#patrolZoneTemplateId').find(':selected').val(),
         cqcUnitTemplateId: $('#cqcUnitTemplateId').find(':selected').val(),
-        cqcZoneTemplateId: $('#cqcZoneTemplateId').find(':selected').val()
+        cqcZoneTemplateId: 'Cqc'//$('#cqcZoneTemplateId').find(':selected').val()
     };
 }
 
