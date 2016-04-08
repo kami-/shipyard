@@ -58,11 +58,6 @@ function getPlayableUnitCount(missionAst: Parser.Node): number {
     return _.foldl(Ast.select(missionAst, 'Mission.Groups.Item*'), (acc, g) => acc + Ast.select(g, 'Vehicles.Item*').length, 0);
 }
 
-function generateMissionSqm(missionAst: Parser.Node, mission: Mission) {
-    Ast.select(missionAst, 'Mission.Intel.overviewText')[0].value = mission.overviewText;
-    mergeGroupsAndVehicles(missionAst, getFactionMissionAsts(mission.factions));
-}
-
 function generateHull3Header(missionDir: string, mission: Mission) {
     var hull3Ast = parseFile(`${Hull3.getSampleMissionPath()}/hull3/hull3.h`);
     Hull3.addFactionsToHull3Config(hull3Ast, mission.factions);
@@ -124,19 +119,29 @@ export function getMissionConfig(): Config {
 export function generateMission(mission: Mission): GeneratedMission {
     var missionAst = parseFile(`${Hull3.getSampleMissionPath()}/mission.sqm`),
         missionType = stringToMissionType(mission.missionTypeName);
-    generateMissionSqm(missionAst, mission);
+
+    mergeGroupsAndVehicles(missionAst, getFactionMissionAsts(mission.factions));
+
     var maxPlayers = getPlayableUnitCount(missionAst);
     var missionId = nextMissionId();
     var fullMissionName = `ark_${missionTypeToMissionNamePrefix(missionType)}${maxPlayers}_${mission.briefingName.toLowerCase()}`;
     var missionDirName = `${fullMissionName}.${mission.terrainId}`;
     var missionWorkingDir = `${Settings.PATH.Mission.WORKING_DIR}/${missionId}`;
     var missionDir = `${missionWorkingDir}/${missionDirName}`;
-    fs.copySync(Hull3.getSampleMissionPath(), missionDir);
+
+    Ast.select(missionAst, 'ScenarioData.author')[0].value = mission.author;
+    Ast.select(missionAst, 'ScenarioData.Header.gameType')[0].value = missionTypeToGameType(missionType);
+    Ast.select(missionAst, 'ScenarioData.Header.maxPlayers')[0].value = maxPlayers;
     Ast.select(missionAst, 'Mission.Intel.briefingName')[0].value = fullMissionName;
+    Ast.select(missionAst, 'Mission.Intel.overviewText')[0].value = mission.overviewText;
+
+    fs.copySync(Hull3.getSampleMissionPath(), missionDir);
     fs.writeFileSync(`${missionDir}/mission.sqm`, PrettyPrinter.create('\t').print(missionAst), 'UTF-8');
+
     generateHull3Header(missionDir, mission);
     generateDescriptionExt(missionDir, mission, missionType, maxPlayers);
     tryAddAdmiral(mission, missionDir);
+
     return {
         missionId: missionId,
         missionWorkingDir: missionWorkingDir,
