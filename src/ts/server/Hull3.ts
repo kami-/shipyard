@@ -59,52 +59,61 @@ function getVehicleClassnames(node: Parser.Node): { [id: string]: string } {
 }
 
 function shiftPosition(node: Parser.Node, xShift: number) {
-    var positionX = Ast.select(node, 'position')[0].values[0];
-    positionX.value = (parseInt(positionX.value) + xShift).toString();       
+    var position = Ast.select(node, 'PositionInfo.position')[0];
+    var x = position.values[0];
+    var z = position.values[1];
+    x.value = parseFloat(x.value) + xShift;
+    z.value = 1000;
 }
 
 function removeUnselectedGroups(ast: Parser.Node, factionId: string, rolePrefix: string, selectedGroupIds: string[], xShift: number) {
-    var groupItems = Ast.select(ast, 'Mission.Groups.Item*');
-    var removableGroupItemIndices = [];
+    var groupItems = Ast.select(ast, 'Mission.Entities.Item*').filter(e => Ast.select(e, 'dataType')[0].value == 'Group');
+    var removableItemIds: number[] = [];
     for (var i = 0, glen = groupItems.length; i < glen; i++) {
-        var vehicleItems = Ast.select(groupItems[i], 'Vehicles.Item*');
-        for (var j = 0, vlen = vehicleItems.length; j < vlen; j++) {
-            var description = Ast.select(vehicleItems[j], 'description')[0],
-                init = Ast.select(vehicleItems[j], 'init')[0];
+        var entitiesItems = Ast.select(groupItems[i], 'Entities.Item*');
+        for (var j = 0, elen = entitiesItems.length; j < elen; j++) {
+            var description = Ast.select(entitiesItems[j], 'Attributes.description')[0],
+                init = Ast.select(entitiesItems[j], 'Attributes.init')[0];
             var groupId = description.value.split(';')[0].split('.')[1];
             if (!_.contains(selectedGroupIds, groupId)) {
-                removableGroupItemIndices.push(i + 1); // 'Groups' has an 'items' field so we need to add one to the indices
+                removableItemIds.push(Ast.select(groupItems[i], 'id')[0].value);
                 break;
             }
             description.value = (<string>description.value).replace(`Group.${groupId};`, rolePrefix);
             init.value = (<string>init.value).replace('["faction", "FACTION"]', `["faction", "${factionId}"]`);
-            shiftPosition(vehicleItems[j], xShift);
+            shiftPosition(entitiesItems[j], xShift);
         }
     }
-    _.remove(Ast.select(ast, 'Mission.Groups')[0].fields, (n, idx) => _.contains(removableGroupItemIndices, idx));
+    _.remove(Ast.select(ast, 'Mission.Entities')[0].fields, n => {
+        var id = Ast.select(n, 'id')[0];
+        return id && _.contains(removableItemIds, id.value);
+    });
 }
 
 function removeUnselectedVehicles(ast: Parser.Node, factionId: string, rolePrefix: string, selectedGroupIds: string[], vehicleClassnames: { [id: string]: string }, xShift: number) {
-    var vehicleItems = Ast.select(ast, 'Mission.Vehicles.Item*');
-    var removableVehicleItemIndices = [];
+    var vehicleItems = Ast.select(ast, 'Mission.Entities.Item*').filter(e => Ast.select(e, 'dataType')[0].value == 'Object');
+    var removableItemIds: number[] = [];
     for (var i = 0, len = vehicleItems.length; i < len; i++) {
-        var description = Ast.select(vehicleItems[i], 'description')[0],
-            init = Ast.select(vehicleItems[i], 'init')[0],
-            vehicle = Ast.select(vehicleItems[i], 'vehicle')[0];
+        var description = Ast.select(vehicleItems[i], 'Attributes.description')[0],
+            init = Ast.select(vehicleItems[i], 'Attributes.init')[0],
+            type = Ast.select(vehicleItems[i], 'type')[0];
         var groupId = description.value.split(';')[0].split('.')[1],
             vehicleClassnameId = description.value.split(';')[1].split('.')[1];
         if (!_.contains(selectedGroupIds, groupId)) {
-            removableVehicleItemIndices.push(i + 1); // 'Vehicles' has an 'items' field so we need to add one to the indices
+            removableItemIds.push(Ast.select(vehicleItems[i], 'id')[0].value);
             continue;
         }
         description.value = '';
         if (init) {
             init.value = (<string>init.value).replace('["faction", "FACTION"]', `["faction", "${factionId}"]`);
         }
-        vehicle.value = vehicleClassnames[vehicleClassnameId];
+        type.value = vehicleClassnames[vehicleClassnameId];
         shiftPosition(vehicleItems[i], xShift);
     }
-    _.remove(Ast.select(ast, 'Mission.Vehicles')[0].fields, (n, idx) => _.contains(removableVehicleItemIndices, idx));
+    _.remove(Ast.select(ast, 'Mission.Entities')[0].fields, n => {
+        var id = Ast.select(n, 'id')[0];
+        return id && _.contains(removableItemIds, id.value);
+    });
 }
 
 export function getFactionRolePrefixById(id: string): string {

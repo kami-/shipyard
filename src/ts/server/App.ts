@@ -127,6 +127,7 @@ function pullAddons() {
     })
 }
 
+
 export function start() {
     if (process.platform !== 'linux' && process.platform !== 'win32') { throw 'Unsupported platform!' }
 
@@ -139,4 +140,5 @@ export function start() {
     var server = app.listen(Settings.PORT, () => {
         console.log(`Shipyard is listening in port ${server.address().port}.`);
     });
+
 }
