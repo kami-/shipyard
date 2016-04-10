@@ -44,9 +44,11 @@ function mergeGroupsAndVehicles(missionAst: Parser.Node, factionAsts: Parser.Nod
 
 function makeFirstUnitPlayerFor3DEN(missionAst: Parser.Node) {
     var groups = Ast.select(missionAst, 'Mission.Entities.Item*').filter(e => Ast.select(e, 'dataType')[0].value == 'Group');
-    var units = Ast.select(groups[0], 'Entities.Item*');
-    if (units.length > 0) {
-        Ast.addLiteralNode(Ast.select(units[0], 'Attributes')[0], 'isPlayer', 1, Parser.NodeType.NUMBER_FIELD);
+    if (groups.length > 0) {
+        var units = Ast.select(groups[0], 'Entities.Item*');
+        if (units.length > 0) {
+            Ast.addLiteralNode(Ast.select(units[0], 'Attributes')[0], 'isPlayer', 1, Parser.NodeType.NUMBER_FIELD);
+        }
     }
 }
 
