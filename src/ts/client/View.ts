@@ -161,7 +161,26 @@ function addGroups(container: JQuery, factionId: number) {
             groupings: _.groupBy(Hull3.getGroupTemplates(), 'groupingId')
         }));
     container.append($('<h4 class="before">Groups</h4>'));
+    var checkAllGroupsButton = $('<button class="check-all-groups all">Uncheck all</button>');
+    container.append(checkAllGroupsButton);
     container.append(factionGroups);
+    checkAllGroupsButton.click(e => {
+        var button = $(e.target),
+            newState = 'none',
+            oldState = 'all',
+            newLabel = 'Check all',
+            newCheckState = false;
+        if (button.hasClass('none')) {
+            newState = 'all'
+            oldState = 'none',
+            newLabel = 'Uncheck all';
+            newCheckState = true;
+        }
+        button.addClass(newState).removeClass(oldState);
+        button.text(newLabel);
+        factionGroups.find('button.grouping-select').addClass(newState).removeClass(oldState);
+        factionGroups.find('input').prop('checked', newCheckState)
+    });
     factionGroups.find('.faction-grouping').each((idx, fg) => {
         $(fg).find('.grouping-select').click(e => {
             checkGroups($(e.target), $(fg).find('input'));
