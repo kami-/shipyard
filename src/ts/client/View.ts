@@ -58,7 +58,7 @@ function initFactions() {
 }
 
 function terrainToOption(t: Mission.Terrain): Option {
-    return { value: t.id, text: t.name }    
+    return { value: t.id, text: t.name }
 }
 
 function missionTypeToOption(mt: Mission.MissionType): Option {
@@ -80,7 +80,7 @@ function factionToOption(f: Hull3.Faction): Option {
 }
 
 function templateToOption(t: Common.Template): Option {
-    return { value: t.id, text: t.name }    
+    return { value: t.id, text: t.name }
 }
 
 function initSelectField(field: JQuery, options: Option[], selectedValue?: string) {
@@ -147,6 +147,7 @@ function addFactionChangeHandling(factionContainer: JQuery) {
         var selectedFactionId = $(e.target).find(':selected').val();
         var faction = Hull3.getFactionById(selectedFactionId);
         factionContainer.find('.faction.description').text(faction.description);
+        factionContainer.find('select.side').val(Common.sideToString(faction.side));
         factionContainer.find('select.gearTemplate').val(faction.gearTemplateId);
         factionContainer.find('select.uniformTemplate').val(faction.uniformTemplateId);
         factionContainer.find('input.vehicle-classname').each((idx, el) => {

@@ -4,8 +4,9 @@ import $ = require('jquery');
 import Hull3 = require('./Hull3');
 import Settings = require('./Settings');
 
-import {Side, MissionType, Terrain, Faction, Addons, Mission, Config, GeneratedMission, missionTypeToString, sideToString, getSides, getMissionTypes} from '../common/Mission';
-export {Side, MissionType, Terrain, Faction, Addons, Mission, Config, GeneratedMission, missionTypeToString, sideToString, getSides, getMissionTypes} from '../common/Mission';
+export {Side, sideToString, getSides} from "../common/Common"
+import {MissionType, Terrain, Faction, Addons, Mission, Config, GeneratedMission, missionTypeToString, getMissionTypes} from '../common/Mission';
+export {MissionType, Terrain, Faction, Addons, Mission, Config, GeneratedMission, missionTypeToString, getMissionTypes} from '../common/Mission';
 
 var MISSION_PATH = `${Settings.CONTEXT_PATH}/mission`;
 

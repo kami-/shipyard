@@ -7,9 +7,11 @@ import fs = require('fs-extra');
 import _ = require('lodash');
 
 import {Ast, Lexer, Parser, PrettyPrinter, Mission as CpMission} from 'config-parser';
+import {Side, getSideNames} from '../common/Common'
+export {getSideNames} from '../common/Common'
 import {parseFile} from './Common'
-import {Side, MissionType, Terrain, Faction, Addons, Mission, Config, GeneratedMission, getSideNames, getMissionTypeNames, stringToMissionType, missionTypeToGameType, missionTypeToMissionNamePrefix} from '../common/Mission';
-export {Side, MissionType, Terrain, Faction, Addons, Mission, Config, GeneratedMission, getSideNames, getMissionTypeNames, stringToMissionType, missionTypeToGameType} from '../common/Mission';
+import {MissionType, Terrain, Faction, Addons, Mission, Config, GeneratedMission, getMissionTypeNames, stringToMissionType, missionTypeToGameType, missionTypeToMissionNamePrefix} from '../common/Mission';
+export {MissionType, Terrain, Faction, Addons, Mission, Config, GeneratedMission, getMissionTypeNames, stringToMissionType, missionTypeToGameType} from '../common/Mission';
 
 var missionIdCounter: number = 0,
     TERRAINS_JSON_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/terrains.json`,

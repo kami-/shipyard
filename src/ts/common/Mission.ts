@@ -1,11 +1,7 @@
+import Common = require('./Common');
+
 import Hull3 = require('./Hull3');
 import Admiral = require('./Admiral');
-
-export enum Side {
-    BLUFOR,
-    OPFOR,
-    INDFOR
-}
 
 export enum MissionType {
     COOP,
@@ -20,7 +16,7 @@ export interface Terrain {
 }
 
 export interface Faction {
-    side: Side;
+    side: Common.Side;
     faction: Hull3.Faction;
     gearTemplateId: string;
     uniformTemplateId: string;
@@ -55,18 +51,6 @@ export interface GeneratedMission {
     missionWorkingDir: string;
     missionDirName: string;
     missionDir: string;
-}
-
-export function getSides(): Side[] {
-    return [Side.BLUFOR, Side.OPFOR, Side.INDFOR];
-}
-
-export function sideToString(s: Side): string {
-    return Side[s];
-}
-
-export function getSideNames(): string[] {
-    return getSides().map(sideToString);
 }
 
 export function getMissionTypes(): MissionType[] {

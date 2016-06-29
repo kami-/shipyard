@@ -4,7 +4,7 @@ export interface GearTemplate extends Common.Template {}
 export interface UniformTemplate extends Common.Template {}
 
 export interface GroupTemplate extends Common.Template {
-    groupingId: string;    
+    groupingId: string;
 }
 
 export interface VehicleClassnameTemplate extends Common.Template {
@@ -17,6 +17,8 @@ export interface Faction {
     description: string;
     gearTemplateId: string;
     uniformTemplateId: string;
+    side: Common.Side;
+    camouflage: string[];
     rolePrefix: string;
     vehicleClassnames: { [id: string]: string };
 }

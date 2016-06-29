@@ -6,7 +6,7 @@ import _ = require('lodash');
 
 import {Ast, Lexer, Mission, Parser, PrettyPrinter} from 'config-parser';
 import {parseFile} from './Common';
-import {Template} from '../common/Common';
+import {Template, armaStringToSide} from '../common/Common';
 import {GearTemplate, UniformTemplate, GroupTemplate, VehicleClassnameTemplate, Faction, Config, FactionRequest} from '../common/Hull3';
 export {GearTemplate, UniformTemplate, GroupTemplate, VehicleClassnameTemplate, Faction, Config, FactionRequest} from '../common/Hull3';
 
@@ -45,6 +45,8 @@ function factionNodeToFaction(node: Parser.Node): Faction {
         description: Ast.select(node, 'description')[0].value,
         gearTemplateId:  Ast.select(node, 'gear')[0].value,
         uniformTemplateId: Ast.select(node, 'uniform')[0].value,
+        side: armaStringToSide(Ast.select(node, 'side')[0].value),
+        camouflage: Ast.select(node, 'camouflage')[0].values.map(n => n.value),
         rolePrefix: Ast.select(node, 'rolePrefix')[0].value,
         vehicleClassnames: getVehicleClassnames(node)
     };
