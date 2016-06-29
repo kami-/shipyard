@@ -34,33 +34,27 @@ function getFactionMissionAsts(factions: Hull3.FactionRequest[]): Parser.Node[] 
     });
 }
 
-function mergeGroupsAndVehicles(missionAst: Parser.Node, factionAsts: Parser.Node[]) {
-    var groupItems = _.foldl(factionAsts, (acc, fa) => acc.concat(Ast.select(fa, 'Mission.Groups.Item*')), <Parser.Node[]>[]),
-        vehicleItems = _.foldl(factionAsts, (acc, fa) => acc.concat(Ast.select(fa, 'Mission.Vehicles.Item*')), <Parser.Node[]>[]),
-        missionGroups = Ast.select(missionAst, 'Mission.Groups')[0],
-        missionVehicles = Ast.select(missionAst, 'Mission.Vehicles')[0];
-    missionGroups.fields = [];
-    missionVehicles.fields = [];
-    CpMission.mergeItems(missionGroups, groupItems);
-    CpMission.mergeItems(missionVehicles, vehicleItems);
-    makeFirstUnitPlayerFor3DEN(missionAst);
+function mergeGroupsAndVehicles(missionAst: Parser.Node, factionAsts: Parser.Node[]): number {
+    var groupEntities = _.foldl(factionAsts, (acc, fa) => acc.concat(Ast.select(fa, 'Mission.Entities.Item*').filter(e => Ast.select(e, 'dataType')[0].value == 'Group')), <Parser.Node[]>[]),
+        vehicleEntities = _.foldl(factionAsts, (acc, fa) => acc.concat(Ast.select(fa, 'Mission.Entities.Item*').filter(e => Ast.select(e, 'dataType')[0].value == 'Object')), <Parser.Node[]>[]),
+        missionEntities = Ast.select(missionAst, 'Mission.Entities')[0];
+    missionEntities.fields = [];
+    return CpMission.mergeItems(missionEntities, groupEntities.concat(vehicleEntities));
 }
 
 function makeFirstUnitPlayerFor3DEN(missionAst: Parser.Node) {
-    var groups = Ast.select(missionAst, 'Mission.Groups.Item*');
-    var units = Ast.select(groups[0], 'Vehicles.Item*');
-    if (units.length > 0) {
-        Ast.select(units[0], 'player')[0].value = 'PLAYER COMMANDER';
+    var groups = Ast.select(missionAst, 'Mission.Entities.Item*').filter(e => Ast.select(e, 'dataType')[0].value == 'Group');
+    if (groups.length > 0) {
+        var units = Ast.select(groups[0], 'Entities.Item*');
+        if (units.length > 0) {
+            Ast.addLiteralNode(Ast.select(units[0], 'Attributes')[0], 'isPlayer', 1, Parser.NodeType.NUMBER_FIELD);
+        }
     }
 }
 
 function getPlayableUnitCount(missionAst: Parser.Node): number {
-    return _.foldl(Ast.select(missionAst, 'Mission.Groups.Item*'), (acc, g) => acc + Ast.select(g, 'Vehicles.Item*').length, 0);
-}
-
-function generateMissionSqm(missionAst: Parser.Node, mission: Mission) {
-    Ast.select(missionAst, 'Mission.Intel.overviewText')[0].value = mission.overviewText;
-    mergeGroupsAndVehicles(missionAst, getFactionMissionAsts(mission.factions));
+    var groupEntities = Ast.select(missionAst, 'Mission.Entities.Item*').filter(e => Ast.select(e, 'dataType')[0].value == 'Group');
+    return _.foldl(groupEntities, (acc, g) => acc + Ast.select(g, 'Entities.Item*').length, 0);
 }
 
 function generateHull3Header(missionDir: string, mission: Mission) {
@@ -124,19 +118,31 @@ export function getMissionConfig(): Config {
 export function generateMission(mission: Mission): GeneratedMission {
     var missionAst = parseFile(`${Hull3.getSampleMissionPath()}/mission.sqm`),
         missionType = stringToMissionType(mission.missionTypeName);
-    generateMissionSqm(missionAst, mission);
+
+    var idCount = mergeGroupsAndVehicles(missionAst, getFactionMissionAsts(mission.factions));
+    makeFirstUnitPlayerFor3DEN(missionAst);
+
     var maxPlayers = getPlayableUnitCount(missionAst);
     var missionId = nextMissionId();
     var fullMissionName = `ark_${missionTypeToMissionNamePrefix(missionType)}${maxPlayers}_${mission.briefingName.toLowerCase()}`;
     var missionDirName = `${fullMissionName}.${mission.terrainId}`;
     var missionWorkingDir = `${Settings.PATH.Mission.WORKING_DIR}/${missionId}`;
     var missionDir = `${missionWorkingDir}/${missionDirName}`;
-    fs.copySync(Hull3.getSampleMissionPath(), missionDir);
+
+    Ast.select(missionAst, 'EditorData.ItemIDProvider.nextID')[0].value = idCount + 1;
+    Ast.select(missionAst, 'ScenarioData.author')[0].value = mission.author;
+    Ast.select(missionAst, 'ScenarioData.Header.gameType')[0].value = missionTypeToGameType(missionType);
+    Ast.select(missionAst, 'ScenarioData.Header.maxPlayers')[0].value = maxPlayers;
     Ast.select(missionAst, 'Mission.Intel.briefingName')[0].value = fullMissionName;
+    Ast.select(missionAst, 'Mission.Intel.overviewText')[0].value = mission.overviewText;
+
+    fs.copySync(Hull3.getSampleMissionPath(), missionDir);
     fs.writeFileSync(`${missionDir}/mission.sqm`, PrettyPrinter.create('\t').print(missionAst), 'UTF-8');
+
     generateHull3Header(missionDir, mission);
     generateDescriptionExt(missionDir, mission, missionType, maxPlayers);
     tryAddAdmiral(mission, missionDir);
+
     return {
         missionId: missionId,
         missionWorkingDir: missionWorkingDir,

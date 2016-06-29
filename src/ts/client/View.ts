@@ -161,7 +161,26 @@ function addGroups(container: JQuery, factionId: number) {
             groupings: _.groupBy(Hull3.getGroupTemplates(), 'groupingId')
         }));
     container.append($('<h4 class="before">Groups</h4>'));
+    var checkAllGroupsButton = $('<button class="check-all-groups all">Uncheck all</button>');
+    container.append(checkAllGroupsButton);
     container.append(factionGroups);
+    checkAllGroupsButton.click(e => {
+        var button = $(e.target),
+            newState = 'none',
+            oldState = 'all',
+            newLabel = 'Check all',
+            newCheckState = false;
+        if (button.hasClass('none')) {
+            newState = 'all'
+            oldState = 'none',
+            newLabel = 'Uncheck all';
+            newCheckState = true;
+        }
+        button.addClass(newState).removeClass(oldState);
+        button.text(newLabel);
+        factionGroups.find('button.grouping-select').addClass(newState).removeClass(oldState);
+        factionGroups.find('input').prop('checked', newCheckState)
+    });
     factionGroups.find('.faction-grouping').each((idx, fg) => {
         $(fg).find('.grouping-select').click(e => {
             checkGroups($(e.target), $(fg).find('input'));
@@ -306,6 +325,8 @@ function getMission(): Mission.Mission {
 function generateMission() {
     var mission = getMission();
     console.log(mission);
+    $('#download-progress').css('display', 'inline-block');
+    $('#generate-mission').prop("disabled", true);
     $.ajax({
         url: Mission.getGeneratePath(),
         method: 'POST',
@@ -316,7 +337,12 @@ function generateMission() {
     }).done(generatedMission => {
         DOWNLOAD_MISSION_FORM.attr('action', Mission.getDownloadPath(generatedMission.id, generatedMission.zip));
         DOWNLOAD_MISSION_FORM.submit();
-    }); 
+    }).fail(e => {
+        prompt('There was an error generating the mission! Show this to a programmer:', `Mission: ${JSON.stringify(mission)}; Error: ${e.responseText}`);
+    }).always(() => {
+        $('#download-progress').css('display', 'none');
+        $('#generate-mission').prop("disabled", false);
+    });
 }
 
 export function init() {
