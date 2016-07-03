@@ -16,6 +16,8 @@
         "./Hull3.ts",
         "./Mission.ts",
         "./View.ts",
+        "./extra/ts/App.ts",
+        "./extra/ts/View.ts",
         "./typings/tsd.d.ts"
     ]
 }

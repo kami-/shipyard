@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Shipyard</title>
+    <link href="styles.css" rel="stylesheet">
+    <script type="text/javascript" src="town-sweep.js"></script>
+</head>
+
+<body>
+<div>
+    <div class="header">
+        <div class="header-text">Shipyard</div>
+        <ul class="menu">
+            <li class="menu-item"><a href="/shipyard">Mission</a></li>
+            <li class="menu-item active"><a href="/shipyard/town-sweep">Town Sweep</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="form">
+            <h3 class="after">Town Sweep</h3>
+            <div class="field-group">
+                <label for="terrain">Terrain</label>
+                <select id="terrain">
+                </select>
+            </div>
+
+            <div class="description">Mission is generated with units floating in the air!</div>
+            <div>
+                <button id="generate-mission">Generate mission</button>
+                <img id="download-progress" src="progress.gif" width="24" height="24" style="display: none; margin-bottom: -5px;" />
+            </div>
+            <form id="download-mission" method="GET" action="" style="display: none;"></form>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

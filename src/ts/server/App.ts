@@ -13,6 +13,7 @@ pullAddons();
 import Hull3 = require('./Hull3');
 import Admiral = require('./Admiral');
 import Mission = require('./Mission');
+import TownSweep = require('./extra/TownSweep');
 
 function registerRoutes(app: express.Express) {
     app.get(Settings.CONTEXT_PATH, (request, response) => {
@@ -77,12 +78,25 @@ function registerRoutes(app: express.Express) {
         Admiral.updateZoneTemplates();
         response.sendStatus(200);
     });
+
+    app.get(Settings.CONTEXT_PATH + '/town-sweep', (request, response) => {
+        response.sendFile(Settings.PATH.CLIENT_RESOURCES_HOME + '/town-sweep.html', { root: './' });
+    });
+    app.route(Settings.CONTEXT_PATH + '/town-sweep/generate').post((request, response) => {
+        generateTownSweep(request, response);
+    });
 }
 
 function generateMission(request, response) {
     var mission = request.body;
     mission.briefingName = mission.briefingName.replace(/[^a-z0-9_]*/g, '');
     var generatedMission = Mission.generateMission(mission);
+    var missionZipName = zipMission(generatedMission.missionDir, generatedMission.missionDirName);
+    response.json({ id: generatedMission.missionId, zip: missionZipName });
+}
+
+function generateTownSweep(request, response) {
+    var generatedMission = TownSweep.generateMission(request.body.terrainId);
     var missionZipName = zipMission(generatedMission.missionDir, generatedMission.missionDirName);
     response.json({ id: generatedMission.missionId, zip: missionZipName });
 }
