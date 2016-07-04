@@ -113,6 +113,7 @@ label {
 .menu {
     height: 45px;
     line-height: 45px;
+    font-size: 0;
     margin: 0;
 }
 
