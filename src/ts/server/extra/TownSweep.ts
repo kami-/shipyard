@@ -9,6 +9,8 @@ import Settings = require('../Settings');
 
 import {Ast, Lexer, Parser, PrettyPrinter} from 'config-parser';
 
+const TS_HOME = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.ArkInhouse.HOME}/town_sweep`;
+
 function removeRolePrefix(vehicle: Parser.Node) {
     var despription = Ast.select(vehicle, 'Attributes.description')[0];
     despription.value = despription.value.split('-')[1].substring(1);
@@ -63,43 +65,11 @@ function updateMissionSqm(missionSqmPath: string) {
 }
 
 function updateDescriptionExt(descriptionExtPath: string) {
-    var camouflageParam = `
-        class TownSweep_Camouflage {
-            title = "Camouflage";
-            values[] = {0,1,2};
-            texts[] = {"Woodland", "Desert", "Snow"};
-            default = 0;
-        };
-    `;
-    var descriptionExt = fs.readFileSync(descriptionExtPath, 'UTF-8')
-        .replace(/class Params {/g, "class Params {" + camouflageParam);
+    const enableClass = fs.readFileSync(`${TS_HOME}/ts_enable_class.h`, 'UTF-8');
+    const camouflageParam = fs.readFileSync(`${TS_HOME}/ts_camouflage_param.h`, 'UTF-8');
+    const descriptionExt = fs.readFileSync(descriptionExtPath, 'UTF-8')
+        .replace(/class Params {/g, `\n${enableClass}\n\nclass Params {\n${camouflageParam}\n\n`);
     fs.writeFileSync(descriptionExtPath, descriptionExt, 'UTF-8');
-}
-
-function updateHull3(hull3Path: string) {
-    var events = `
-
-    class Events {
-        hull3_initialized = "src\\preinit.sqf";
-    };
-    `;
-
-    var hull3 = fs.readFileSync(hull3Path, 'UTF-8')
-        .replace(/isEnabled = 1;/g, "isEnabled = 1;" + events);
-    fs.writeFileSync(hull3Path, hull3, 'UTF-8');
-}
-
-function updateAdmiral(admiralPath: string) {
-    var events = `
-
-    class Events {
-        admiral_initialized = "src\\admiral_initialized.sqf";
-    };
-    `;
-
-    var admiral = fs.readFileSync(admiralPath, 'UTF-8')
-        .replace(/isEnabled = 1;/g, "isEnabled = 1;" + events);
-    fs.writeFileSync(admiralPath, admiral, 'UTF-8');
 }
 
 export function generateMission(terrainId: string): Mission.GeneratedMission {
@@ -107,9 +77,6 @@ export function generateMission(terrainId: string): Mission.GeneratedMission {
     var generatedMission = Mission.generateMission(mission);
     updateMissionSqm(`${generatedMission.missionDir}/mission.sqm`);
     updateDescriptionExt(`${generatedMission.missionDir}/description.ext`);
-    updateHull3(`${generatedMission.missionDir}/hull3/hull3.h`);
-    updateAdmiral(`${generatedMission.missionDir}/admiral/admiral.h`);
-    fs.copySync(`${Settings.PATH.SERVER_RESOURCES_HOME}/extra/ts/src`, `${generatedMission.missionDir}/src`);
-    fs.copySync(`${Settings.PATH.SERVER_RESOURCES_HOME}/extra/ts/hull3/briefing/blufor.sqf`, `${generatedMission.missionDir}/hull3/briefing/blufor.sqf`);
+    fs.copySync(`${TS_HOME}/blufor_briefing.sqf`, `${generatedMission.missionDir}/hull3/briefing/blufor.sqf`);
     return generatedMission;
 }

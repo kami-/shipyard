@@ -127,7 +127,7 @@ function removeMissionWorkingDir(missionWorkingDir: string) {
 }
 
 function pullAddons() {
-    var addonPaths = [Settings.PATH.Hull3.HOME, Settings.PATH.Admiral.HOME];
+    var addonPaths = [Settings.PATH.Hull3.HOME, Settings.PATH.Admiral.HOME, Settings.PATH.ArkInhouse.HOME];
     _.each(addonPaths, a => {
         console.log(`Pulling addon '${a}.'`);
         var path = `${Settings.PATH.SERVER_RESOURCES_HOME}/${a}`;

@@ -20,6 +20,9 @@ export var PATH = {
     Plank: {
         HOME: 'addon/plank'  
     },
+    ArkInhouse: {
+        HOME: 'addon/ark_inhouse',
+    },
     SERVER_RESOURCES_HOME: 'src/resources/server',
     CLIENT_RESOURCES_HOME: 'src/resources/client'
 }
