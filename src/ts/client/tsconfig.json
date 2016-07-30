@@ -18,6 +18,8 @@
         "./View.ts",
         "./extra/ts/App.ts",
         "./extra/ts/View.ts",
+        "./extra/re/App.ts",
+        "./extra/re/View.ts",
         "./typings/tsd.d.ts"
     ]
 }

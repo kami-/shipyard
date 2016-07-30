@@ -2,120 +2,113 @@
 
 import fs = require('fs-extra');
 import _ = require('lodash');
-import PrettyPrinter = require('./EvalPrettyPrinter');
+import Common = require('../../common/Common');
+import Hull3 = require('../Hull3');
 import Mission = require('../Mission');
 import Settings = require('../Settings');
 
-import {Ast, Lexer, Parser} from 'config-parser';
+import {Ast, Lexer, Parser, PrettyPrinter} from 'config-parser';
 
-var SAMPLE_MISSION_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.RE.HOME}/${Settings.PATH.RE.SAMPLE_MISSION_HOME}`;
-var VARNAMES = {
-    OVERVIEW_TEXT: 'ark_re_overviewText',
-    ATTACKER_FACTION: 'ark_re_attacker_faction',
-    ATTACKER_SIDE: 'ark_re_attacker_side',
-    ATTACKER_SIDE_PREFIX: 'ark_re_attacker_sidePrefix',
-    ATTACKER_ROLE_PREFIX: 'ark_re_attacker_rolePrefix',
-    DEFENDER_FACTION: 'ark_re_attacker_faction',
-    DEFENDER_SIDE: 'ark_re_defender_side',
-    DEFENDER_SIDE_PREFIX: 'ark_re_defender_sidePrefix',
-    DEFENDER_ROLE_PREFIX: 'ark_re_defender_rolePrefix',
+const RE_HOME = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.ArkInhouse.HOME}/random_engagements`;
+
+function removeRolePrefix(vehicle: Parser.Node) {
+    var despription = Ast.select(vehicle, 'Attributes.description')[0];
+    despription.value = despription.value.split('-')[1].substring(1);
 }
 
-function setOverviewText(ast: Parser.Node) {
-    var overviewText = Ast.select(ast, 'Mission.Intel.overviewText')[0];
-    overviewText.value = `__EVAL(${VARNAMES.OVERVIEW_TEXT})`;
-}
-
-function setSide(vehicle: Parser.Node, sideVarName: string) {
-    var side = Ast.select(vehicle, 'side')[0];
-    side.value = `__EVAL(${sideVarName})`;
-}
-
-function setDescription(vehicle: Parser.Node, rolePrefixVarName: string) {
-    var despription = Ast.select(vehicle, 'description')[0];
-    despription.value = `__EVAL(${rolePrefixVarName} + " -${despription.value.split('-')[1]}")`;
-}
-
-function setInit(vehicle: Parser.Node, factionVarName: string) {
-    var init = Ast.select(vehicle, 'init')[0];
-    var replacedFactionInit = (<string>init.value).replace(/"/g, '""').replace(/\[""faction"", ""[^"]*""\]/g, `[""faction"", """ + ${factionVarName} + """]`);
-    init.value = `__EVAL("${replacedFactionInit.replace(/;/g, '')}")`; 
-}
-
-function setClassname(vehicle: Parser.Node, sidePrefixVarName: string) {
-    var vehicleField = Ast.select(vehicle, 'vehicle')[0];
-    vehicleField.value = `__EVAL(${sidePrefixVarName} + "${(<string>vehicleField.value).substring(1)}")`; 
-}
-
-function defaultMission(briefingName: string): Mission.Mission {
-    return  {
-        terrainId: '',
+function defaultMission(terrainId: string): Mission.Mission {
+    var attackerfaction = Hull3.getFactions()[0];
+    var defenderfaction = Hull3.getFactions()[1];
+    return {
+        terrainId: terrainId,
         missionTypeName: 'TVT',
-        onLoadName: 'Random Engegaments',
-        author: 'Someone',
-        briefingName: briefingName,
-        overviewText: '',
-        factions: [],
+        onLoadName: 'Random Engagements',
+        author: 'Ark',
+        briefingName: 'random_engagements',
+        overviewText: 'Random Engagements (Set camouflage) | Slot HMG for attacker when Planking',
+        factions: [{
+            factionId: attackerfaction.id,
+            sideName: Common.sideToString(Common.Side.BLUFOR),
+            gearTemplateId: attackerfaction.gearTemplateId,
+            uniformTemplateId: attackerfaction.uniformTemplateId,
+            groupTemplateIds: ['CO', 'ASL', 'A1', 'A2', 'A3', 'BSL', 'B1', 'B2', 'B3', 'CSL', 'C1', 'C2', 'C3', 'DSL', 'D1', 'D2', 'D3', 'MMG1', 'MMG2', 'MMG3', 'MMG4', 'HMG1', 'HMG2', 'HMG3', 'HMG4'],
+            vehicleClassnames: attackerfaction.vehicleClassnames
+        },
+        {
+            factionId: defenderfaction.id,
+            sideName: Common.sideToString(Common.Side.OPFOR),
+            gearTemplateId: defenderfaction.gearTemplateId,
+            uniformTemplateId: defenderfaction.uniformTemplateId,
+            groupTemplateIds: ['CO', 'ASL', 'A1', 'A2', 'A3', 'BSL', 'B1', 'B2', 'B3', 'CSL', 'C1', 'C2', 'C3', 'DSL', 'D1', 'D2', 'D3', 'MMG1', 'MMG2', 'MMG3', 'MMG4'],
+            vehicleClassnames: defenderfaction.vehicleClassnames
+        }],
         addons: {
-            admiral: false,
+            Admiral: {
+                isEnabled: false,
+                campUnitTemplateId: 'Base',
+                campZoneTemplateId: 'Camp',
+                patrolUnitTemplateId: 'Base',
+                patrolZoneTemplateId: 'Patrol',
+                cqcUnitTemplateId: 'Base',
+                cqcZoneTemplateId: 'Cqc'
+            },
             plank: false
         }
-    }
+    };
 }
 
-function generate(missionSqm: string): Parser.Node {
+function updateMissionSqm(missionSqmPath: string): Parser.Node {
+    var missionSqm = fs.readFileSync(missionSqmPath, 'UTF-8');
     var ast = Parser.create(missionSqm, Lexer.create(missionSqm)).parse();
-    console.log(ast);
-    var groupItems = Ast.select(ast, 'Mission.Groups.Item*');
-    console.log('groupItems', groupItems[0]);
-    var originalAttackerSide = Ast.select(groupItems[0], 'Vehicles.Item0.side')[0].value;
-    console.log('originalAttackerSide');
-    setOverviewText(ast);
-    console.log('setOverviewText');
+    _.remove(Ast.select(ast, 'Mission.Entities')[0].fields, n => {
+        var dataType = Ast.select(n, 'dataType')[0];
+        return dataType && dataType.value != 'Group';
+    });
+
+    var groupItems = Ast.select(ast, 'Mission.Entities.Item*').filter(e => Ast.select(e, 'dataType')[0].value == 'Group');
     _.each(groupItems, g => {
-        var groupSide = Ast.select(g, 'side')[0];
-        groupSide.value = originalAttackerSide.toLocaleLowerCase() == groupSide.value.toLowerCase() ? `__EVAL(${VARNAMES.ATTACKER_SIDE})` : `__EVAL(${VARNAMES.DEFENDER_SIDE})` ;
-        _.chain(Ast.select(g, 'Vehicles.Item*'))
-        .filter(v => Ast.select(v, 'player').length > 0)
-        .each(v => {
-            var side = Ast.select(v, 'side')[0],
-                factionVarName = VARNAMES.DEFENDER_FACTION,
-                sideVarName = VARNAMES.DEFENDER_SIDE,
-                sidePrefixVarName = VARNAMES.DEFENDER_SIDE_PREFIX,
-                rolePrefixVarName = VARNAMES.DEFENDER_ROLE_PREFIX;
-            if (originalAttackerSide.toLocaleLowerCase() == side.value.toLowerCase()) {
-                factionVarName = VARNAMES.ATTACKER_FACTION,
-                sideVarName = VARNAMES.ATTACKER_SIDE,
-                sidePrefixVarName = VARNAMES.ATTACKER_SIDE_PREFIX,
-                rolePrefixVarName = VARNAMES.ATTACKER_ROLE_PREFIX;
-            };
-            setClassname(v, sidePrefixVarName);
-            setSide(v, sideVarName);
-            setDescription(v, rolePrefixVarName);
-            setInit(v, factionVarName);
-        })
+        _.chain(Ast.select(g, 'Entities.Item*'))
+        .each(v => { removeRolePrefix(v); })
         .value();
+    });
+
+    var hmgGroups = Ast.select(ast, 'Mission.Entities.Item*')
+        .filter(e => Ast.select(e, 'dataType')[0].value == 'Group')
+        .filter(e => Ast.select(e, 'Entities.Item0.Attributes.description')[0].value.indexOf('HMG') >= 0);
+    _.each(hmgGroups, g => {
+        _.remove(Ast.select(g, 'Entities')[0].fields, u => {
+            var description = Ast.select(u, 'Attributes.description')[0];
+            return description && description.value.indexOf('Assistant') >= 0;
+        });
     });
     return ast;
 }
 
-export function generateMission(missionSqm: string): Mission.GeneratedMission {
-    var briefingName = 'random_engegaments';
-    var missionAst = generate(missionSqm);
-    var missionId = Mission.nextMissionId();
+function updateDescriptionExt(descriptionExtPath: string, maxPlayers: number) {
+    const enableClass = fs.readFileSync(`${RE_HOME}/re_enable_class.h`, 'UTF-8');
+    const camouflageParam = fs.readFileSync(`${RE_HOME}/re_camouflage_param.h`, 'UTF-8');
+    const descriptionExt = fs.readFileSync(descriptionExtPath, 'UTF-8')
+        .replace(/maxPlayers = [^;]*;/g, `maxPlayers = ${maxPlayers.toString()};`)
+        .replace(/class Params {/g, `\n${enableClass}\n\nclass Params {\n${camouflageParam}\n\n`);
+    fs.writeFileSync(descriptionExtPath, descriptionExt, 'UTF-8');
+}
+
+export function generateMission(terrainId: string): Mission.GeneratedMission {
+    var mission = defaultMission(terrainId);
+    var generatedMission = Mission.generateMission(mission);
+    var missionSqmPath = `${generatedMission.missionDir}/mission.sqm`;
+    var missionAst = updateMissionSqm(missionSqmPath);
     var maxPlayers = Mission.getPlayableUnitCount(missionAst);
-    var fullMissionName = `ark_tvt${maxPlayers}_${briefingName}`;
-    var missionDirName = `${fullMissionName}.Altis`;
-    var missionWorkingDir = `${Settings.PATH.Mission.WORKING_DIR}/${missionId}`;
-    var missionDir = `${missionWorkingDir}/${missionDirName}`;
-    fs.copySync(SAMPLE_MISSION_PATH, missionDir);
+    var fullMissionName = `ark_${Mission.missionTypeToMissionNamePrefix(Mission.stringToMissionType(mission.missionTypeName))}${maxPlayers}_${mission.briefingName.toLowerCase()}`;
+    updateDescriptionExt(`${generatedMission.missionDir}/description.ext`, maxPlayers);
+
+    generatedMission.downloadMissionName = `${fullMissionName}.${mission.terrainId}`;
+    Ast.select(missionAst, 'ScenarioData.Header.maxPlayers')[0].value = maxPlayers;
     Ast.select(missionAst, 'Mission.Intel.briefingName')[0].value = fullMissionName;
-    fs.writeFileSync(`${missionDir}/mission.sqm`, '#include "re.h"\n\n' + PrettyPrinter.create('\t').print(missionAst), 'UTF-8');
-    Mission.generateDescriptionExt(missionDir, defaultMission(briefingName), Mission.MissionType.TVT, maxPlayers);
-    return {
-        missionId: missionId,
-        missionWorkingDir: missionWorkingDir,
-        missionDirName: missionDirName,
-        missionDir: missionDir
-    }
+
+    fs.writeFileSync(missionSqmPath, PrettyPrinter.create('\t').print(missionAst), 'UTF-8');
+    fs.copySync(`${RE_HOME}/blufor_briefing.sqf`, `${generatedMission.missionDir}/hull3/briefing/blufor.sqf`);
+    fs.copySync(`${RE_HOME}/opfor_briefing.sqf`, `${generatedMission.missionDir}/hull3/briefing/opfor.sqf`);
+
+    return generatedMission;
 }

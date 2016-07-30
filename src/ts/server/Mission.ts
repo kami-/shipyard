@@ -11,7 +11,7 @@ import {Side, getSideNames} from '../common/Common'
 export {getSideNames} from '../common/Common'
 import {parseFile} from './Common'
 import {MissionType, Terrain, Faction, Addons, Mission, Config, GeneratedMission, getMissionTypeNames, stringToMissionType, missionTypeToGameType, missionTypeToMissionNamePrefix} from '../common/Mission';
-export {MissionType, Terrain, Faction, Addons, Mission, Config, GeneratedMission, getMissionTypeNames, stringToMissionType, missionTypeToGameType} from '../common/Mission';
+export {MissionType, Terrain, Faction, Addons, Mission, Config, GeneratedMission, getMissionTypeNames, stringToMissionType, missionTypeToGameType, missionTypeToMissionNamePrefix} from '../common/Mission';
 
 var missionIdCounter: number = 0,
     TERRAINS_JSON_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/terrains.json`,
@@ -52,11 +52,6 @@ function makeFirstUnitPlayerFor3DEN(missionAst: Parser.Node) {
             Ast.addLiteralNode(Ast.select(units[0], 'Attributes')[0], 'isPlayer', 1, Parser.NodeType.NUMBER_FIELD);
         }
     }
-}
-
-function getPlayableUnitCount(missionAst: Parser.Node): number {
-    var groupEntities = Ast.select(missionAst, 'Mission.Entities.Item*').filter(e => Ast.select(e, 'dataType')[0].value == 'Group');
-    return _.foldl(groupEntities, (acc, g) => acc + Ast.select(g, 'Entities.Item*').length, 0);
 }
 
 function generateHull3Header(missionDir: string, mission: Mission) {
@@ -117,6 +112,11 @@ export function getMissionConfig(): Config {
     }
 }
 
+export function getPlayableUnitCount(missionAst: Parser.Node): number {
+    var groupEntities = Ast.select(missionAst, 'Mission.Entities.Item*').filter(e => Ast.select(e, 'dataType')[0].value == 'Group');
+    return _.foldl(groupEntities, (acc, g) => acc + Ast.select(g, 'Entities.Item*').length, 0);
+}
+
 export function generateMission(mission: Mission): GeneratedMission {
     var missionAst = parseFile(`${Hull3.getSampleMissionPath()}/mission.sqm`),
         missionType = stringToMissionType(mission.missionTypeName);
@@ -149,7 +149,8 @@ export function generateMission(mission: Mission): GeneratedMission {
         missionId: missionId,
         missionWorkingDir: missionWorkingDir,
         missionDirName: missionDirName,
-        missionDir: missionDir
+        missionDir: missionDir,
+        downloadMissionName: missionDirName
     }
 }
 

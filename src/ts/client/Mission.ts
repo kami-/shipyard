@@ -26,8 +26,8 @@ export function getGeneratePath(): string {
     return `${MISSION_PATH}/generate`;
 }
 
-export function getDownloadPath(id: number, zip: string): string {
-    return `${getGeneratePath()}/${id}/${zip}`;
+export function getDownloadPath(id: number, zip: string, name: string): string {
+    return `${getGeneratePath()}/${id}/${zip}/${name}`;
 }
 
 export function updateFromConfig(config: Config) {

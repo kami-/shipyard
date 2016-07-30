@@ -336,7 +336,7 @@ function generateMission() {
         data: JSON.stringify(mission),
         processData: false
     }).done(generatedMission => {
-        DOWNLOAD_MISSION_FORM.attr('action', Mission.getDownloadPath(generatedMission.id, generatedMission.zip));
+        DOWNLOAD_MISSION_FORM.attr('action', Mission.getDownloadPath(generatedMission.id, generatedMission.zip, generatedMission.downloadName));
         DOWNLOAD_MISSION_FORM.submit();
     }).fail(e => {
         prompt('There was an error generating the mission! Show this to a programmer:', `Mission: ${JSON.stringify(mission)}; Error: ${e.responseText}`);

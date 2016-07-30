@@ -41,7 +41,7 @@ function generateMission() {
     $('#download-progress').css('display', 'inline-block');
     $('#generate-mission').prop("disabled", true);
     $.ajax({
-        url: `${Settings.CONTEXT_PATH}/town-sweep/generate`,
+        url: `${Settings.CONTEXT_PATH}/random-engagements/generate`,
         method: 'POST',
         dataType: 'json',
         contentType: "application/json",

@@ -51,6 +51,7 @@ export interface GeneratedMission {
     missionWorkingDir: string;
     missionDirName: string;
     missionDir: string;
+    downloadMissionName: string;
 }
 
 export function getMissionTypes(): MissionType[] {

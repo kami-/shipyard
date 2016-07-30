@@ -14,6 +14,7 @@ import Hull3 = require('./Hull3');
 import Admiral = require('./Admiral');
 import Mission = require('./Mission');
 import TownSweep = require('./extra/TownSweep');
+import RandomEngagements = require('./extra/RandomEngagements');
 
 function registerRoutes(app: express.Express) {
     app.get(Settings.CONTEXT_PATH, (request, response) => {
@@ -23,8 +24,8 @@ function registerRoutes(app: express.Express) {
     app.route(Settings.CONTEXT_PATH + '/mission/generate').post((request, response) => {
         generateMission(request, response);
     });
-    app.route(Settings.CONTEXT_PATH + '/mission/generate/:id/:zip').get((request, response) => {
-        sendMission(request, response, request.params.id, request.params.zip);
+    app.route(Settings.CONTEXT_PATH + '/mission/generate/:id/:zip/:name').get((request, response) => {
+        sendMission(request, response, request.params.id, request.params.zip, request.params.name);
     });
     app.route(Settings.CONTEXT_PATH + '/mission/config').get((request, response) => {
         response.json(Mission.getMissionConfig());
@@ -85,6 +86,13 @@ function registerRoutes(app: express.Express) {
     app.route(Settings.CONTEXT_PATH + '/town-sweep/generate').post((request, response) => {
         generateTownSweep(request, response);
     });
+
+    app.get(Settings.CONTEXT_PATH + '/random-engagements', (request, response) => {
+        response.sendFile(Settings.PATH.CLIENT_RESOURCES_HOME + '/random-engagements.html', { root: './' });
+    });
+    app.route(Settings.CONTEXT_PATH + '/random-engagements/generate').post((request, response) => {
+        generateRandomEngagements(request, response);
+    });
 }
 
 function generateMission(request, response) {
@@ -92,19 +100,25 @@ function generateMission(request, response) {
     mission.briefingName = mission.briefingName.replace(/[^a-z0-9_]*/g, '');
     var generatedMission = Mission.generateMission(mission);
     var missionZipName = zipMission(generatedMission.missionDir, generatedMission.missionDirName);
-    response.json({ id: generatedMission.missionId, zip: missionZipName });
+    response.json({ id: generatedMission.missionId, zip: missionZipName, downloadName: generatedMission.downloadMissionName });
 }
 
 function generateTownSweep(request, response) {
     var generatedMission = TownSweep.generateMission(request.body.terrainId);
     var missionZipName = zipMission(generatedMission.missionDir, generatedMission.missionDirName);
-    response.json({ id: generatedMission.missionId, zip: missionZipName });
+    response.json({ id: generatedMission.missionId, zip: missionZipName, downloadName: generatedMission.downloadMissionName });
 }
 
-function sendMission(request, response, missionId, missionZip) {
+function generateRandomEngagements(request, response) {
+    var generatedMission = RandomEngagements.generateMission(request.body.terrainId);
+    var missionZipName = zipMission(generatedMission.missionDir, generatedMission.missionDirName);
+    response.json({ id: generatedMission.missionId, zip: missionZipName, downloadName: generatedMission.downloadMissionName });
+}
+
+function sendMission(request, response, missionId: number, missionZip: string, downloadMissionName: string) {
     var missionWorkingDir = `${Settings.PATH.Mission.WORKING_DIR}/${missionId}`;
     var missionZipPath = `${missionWorkingDir}/${missionZip}`;
-    response.setHeader('Content-disposition', `attachment; filename=${missionZip}`);
+    response.setHeader('Content-disposition', `attachment; filename=${downloadMissionName}.zip`);
     response.setHeader('Content-type', mime.lookup(missionZipPath));
     response.sendFile(missionZipPath, { root: './' }, () => removeMissionWorkingDir(missionWorkingDir) );
 }
