@@ -22,6 +22,7 @@ var TERRAIN_FIELD: JQuery = null,
     ADMIRAL_CONTAINER: JQuery = null,
     ADMIRAL_IS_ENABLED: JQuery = null,
     ADMIRAL_SELECT_FIELD_TEMPLATE: _.TemplateExecutor = null,
+    NAVY_IS_ENABLED: JQuery = null,
     PLANK_FIELD: JQuery = null,
     GENERATE_MISSION_BUTTON: JQuery = null,
     DOWNLOAD_MISSION_FORM: JQuery = null;
@@ -250,6 +251,7 @@ function getVehicleClassnames(container: JQuery): { [id: string]: string } {
 
 function initAddons() {
     initAdmiral();
+    initNavy();
     PLANK_FIELD = $('#plank').eq(0);
 }
 
@@ -261,6 +263,17 @@ function initAdmiral() {
             ADMIRAL_CONTAINER.show();
         } else {
             ADMIRAL_CONTAINER.hide();
+        }
+    });
+    ADMIRAL_SELECT_FIELD_TEMPLATE = _.template($('#admiral-select-field-template').html());
+    initAdmiralSelects(ADMIRAL_CONTAINER);
+}
+
+function initNavy() {
+    NAVY_IS_ENABLED = $('#navy').eq(0);
+    NAVY_IS_ENABLED.change(() => {
+        if (NAVY_IS_ENABLED.is(':checked') && !ADMIRAL_IS_ENABLED.is(':checked')) {
+            ADMIRAL_IS_ENABLED.click();
         }
     });
     ADMIRAL_SELECT_FIELD_TEMPLATE = _.template($('#admiral-select-field-template').html());
@@ -318,6 +331,7 @@ function getMission(): Mission.Mission {
         factions: getSelectedFactions(),
         addons: {
             Admiral: getAdmiralRequest(),
+            Navy: NAVY_IS_ENABLED.prop('checked'),
             plank: PLANK_FIELD.prop('checked')
         }
     }
@@ -325,6 +339,10 @@ function getMission(): Mission.Mission {
 
 function generateMission() {
     var mission = getMission();
+    if (mission.addons.Navy && !mission.addons.Admiral.isEnabled) {
+        alert('Navy requires Admiral! Select Admiral as well!');
+        return;
+    }
     console.log(mission);
     $('#download-progress').css('display', 'inline-block');
     $('#generate-mission').prop("disabled", true);

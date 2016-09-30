@@ -66,15 +66,19 @@ function generateDescriptionExt(missionDir: string, mission: Mission, missionTyp
         .replace(/author = "[^"]*";/g, `author = "${mission.author}";`)
         .replace(/gameType = [^;]*;/g, `gameType = ${missionTypeToGameType(missionType)};`)
         .replace(/maxPlayers = [^;]*;/g, `maxPlayers = ${maxPlayers.toString()};`);
-    descriptionExt = tryAddAdmiralInclude(descriptionExt, mission);
+    descriptionExt = tryAddAddonIncludes(descriptionExt, mission);
     fs.writeFileSync(`${missionDir}/description.ext`, descriptionExt, 'UTF-8');
 }
 
-function tryAddAdmiralInclude(descriptionExt: string, mission: Mission): string {
+function tryAddAddonIncludes(descriptionExt: string, mission: Mission): string {
+    var includes = "";
     if (mission.addons.Admiral.isEnabled) {
-        return '#include "admiral\\admiral.h"\n' + descriptionExt;
+        includes += '#include "admiral\\admiral.h"\n';
     }
-    return descriptionExt;
+    if (mission.addons.Navy) {
+        includes += '#include "navy\\navy.h"\n';
+    }
+    return includes += descriptionExt;
 }
 
 function tryAddAdmiral(mission: Mission, missionDir: string) {
@@ -83,6 +87,20 @@ function tryAddAdmiral(mission: Mission, missionDir: string) {
     var admiralAst = parseFile(`${missionDir}/admiral/admiral.h`);
     Admiral.replaceTemplates(admiralAst, mission.addons.Admiral);
     fs.writeFileSync(`${missionDir}/admiral/admiral.h`, PrettyPrinter.create('    ').print(admiralAst), 'UTF-8');
+}
+
+function tryAddNavy(mission: Mission, missionDir: string) {
+    if (!mission.addons.Navy) { return; }
+    var content = `
+class Navy {
+    class Settings {
+        isEnabled = 1;
+    };
+};
+    `;
+    var file = `${missionDir}/navy/navy.h`;
+    fs.createFileSync(file);
+    fs.writeFileSync(file, content, 'UTF-8');
 }
 
 export function getTerrains(): Terrain[] {
@@ -144,6 +162,7 @@ export function generateMission(mission: Mission): GeneratedMission {
     generateHull3Header(missionDir, mission);
     generateDescriptionExt(missionDir, mission, missionType, maxPlayers);
     tryAddAdmiral(mission, missionDir);
+    tryAddNavy(mission, missionDir);
 
     return {
         missionId: missionId,

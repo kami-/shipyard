@@ -225,3 +225,8 @@ label {
 .remove-button {
     float: right;
 }
+
+.addon-config {
+    margin-bottom: 30px;
+    padding-left: 15px;
+}
