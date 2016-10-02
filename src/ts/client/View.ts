@@ -276,8 +276,6 @@ function initNavy() {
             ADMIRAL_IS_ENABLED.click();
         }
     });
-    ADMIRAL_SELECT_FIELD_TEMPLATE = _.template($('#admiral-select-field-template').html());
-    initAdmiralSelects(ADMIRAL_CONTAINER);
 }
 
 function initAdmiralSelects(container: JQuery) {
