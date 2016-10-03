@@ -6,3 +6,4 @@
 /src/ts/server/typings
 /src/resources/server/addon
 .vscode
+/src/elm/client/elm-stuff
