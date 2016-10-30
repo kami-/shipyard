@@ -1,0 +1,12 @@
+root = true
+
+[*.{elm,ts,html,css}]
+charset = utf-8
+
+[*.elm]
+indent_style = space
+indent_size = 2
+
+[*.{ts,html,css}]
+indent_style = space
+indent_size = 4
