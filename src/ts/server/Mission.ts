@@ -40,8 +40,32 @@ function mergeGroupsAndVehicles(missionAst: Parser.Node, factionAsts: Parser.Nod
     var groupEntities = _.foldl(factionAsts, (acc, fa) => acc.concat(Ast.select(fa, 'Mission.Entities.Item*').filter(e => Ast.select(e, 'dataType')[0].value == 'Group')), <Parser.Node[]>[]),
         vehicleEntities = _.foldl(factionAsts, (acc, fa) => acc.concat(Ast.select(fa, 'Mission.Entities.Item*').filter(e => Ast.select(e, 'dataType')[0].value == 'Object')), <Parser.Node[]>[]),
         missionEntities = Ast.select(missionAst, 'Mission.Entities')[0];
+    vehicleEntities.push(getHcEntityAst());
     missionEntities.fields = [];
     return CpMission.mergeItems(missionEntities, groupEntities.concat(vehicleEntities));
+}
+
+function getHcEntityAst(): Parser.Node {
+    return {
+        type: Parser.NodeType.CLASS_FIELD,
+        fieldName: 'Item',
+        inheritsFrom: '',
+        fields: [
+            { type: Parser.NodeType.STRING_FIELD, fieldName: "dataType", value: "Logic" },
+            { type: Parser.NodeType.CLASS_FIELD, fieldName: "PositionInfo", inheritsFrom: '', fields: [
+                { type: Parser.NodeType.ARRAY_FIELD, fieldName: "position", values: [
+                    { type: Parser.NodeType.NUMBER, fieldName: "", value: "0" },
+                    { type: Parser.NodeType.NUMBER, fieldName: "", value: "1000" },
+                    { type: Parser.NodeType.NUMBER, fieldName: "", value: "0" }
+                ] }
+            ] },
+            { type: Parser.NodeType.STRING_FIELD, fieldName: "name", value: "adm_hc_unit" },
+            { type: Parser.NodeType.NUMBER_FIELD, fieldName: "isPlayable", value: "1" },
+            { type: Parser.NodeType.STRING_FIELD, fieldName: "description", value: "HC" },
+            { type: Parser.NodeType.NUMBER_FIELD, fieldName: "id", value: "1" },
+            { type: Parser.NodeType.STRING_FIELD, fieldName: "type", value: "HeadlessClient_F" }
+        ]
+    };
 }
 
 function makeFirstUnitPlayerFor3DEN(missionAst: Parser.Node) {
