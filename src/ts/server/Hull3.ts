@@ -1,8 +1,6 @@
-/// <reference path="./typings/tsd.d.ts" />
-
-import Settings = require('./Settings');
-import fs = require('fs-extra');
-import _ = require('lodash');
+import * as Settings from './Settings';
+import * as fs from 'fs-extra';
+import * as _ from 'lodash';
 
 import {Ast, Lexer, Mission, Parser, PrettyPrinter} from 'config-parser';
 import {parseFile} from './Common';
@@ -10,7 +8,7 @@ import {Template, armaStringToSide} from '../common/Common';
 import {GearTemplate, UniformTemplate, GroupTemplate, VehicleClassnameTemplate, Faction, Config, FactionRequest} from '../common/Hull3';
 export {GearTemplate, UniformTemplate, GroupTemplate, VehicleClassnameTemplate, Faction, Config, FactionRequest} from '../common/Hull3';
 
-var SAMPLE_MISSION_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.SAMPLE_MISSION_HOME}`, 
+var SAMPLE_MISSION_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.SAMPLE_MISSION_HOME}`,
     FACTION_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.FACTION}`,
     GEAR_HOME_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.GEAR_HOME}`,
     UNIFORM_HOME_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.UNIFORM_HOME}`,
@@ -35,7 +33,7 @@ function getTemplate(homePath: string, filename: string): Template {
 }
 
 function getFactionById(id: string): Faction {
-    return _.find<Faction>(factions, '.id', id);
+    return _.find<Faction>(factions, f => f.id == id);
 }
 
 function factionNodeToFaction(node: Parser.Node): Faction {
@@ -54,7 +52,7 @@ function factionNodeToFaction(node: Parser.Node): Faction {
 
 function getVehicleClassnames(node: Parser.Node): { [id: string]: string } {
     var vehicleClassnamesNode = Ast.select(node, 'vehicleClassnames')[0];
-    return _.foldl(vehicleClassnamesNode.values, (acc, pair) => {
+    return _.reduce(vehicleClassnamesNode.values, (acc, pair) => {
         acc[pair.values[0].value] = pair.values[1].value;
         return acc;
     }, <{ [id: string]: string }>{});
@@ -77,7 +75,7 @@ function removeUnselectedGroups(ast: Parser.Node, factionId: string, rolePrefix:
             var description = Ast.select(entitiesItems[j], 'Attributes.description')[0],
                 init = Ast.select(entitiesItems[j], 'Attributes.init')[0];
             var groupId = description.value.split(';')[0].split('.')[1];
-            if (!_.contains(selectedGroupIds, groupId)) {
+            if (!_.includes(selectedGroupIds, groupId)) {
                 removableItemIds.push(Ast.select(groupItems[i], 'id')[0].value);
                 break;
             }
@@ -88,7 +86,7 @@ function removeUnselectedGroups(ast: Parser.Node, factionId: string, rolePrefix:
     }
     _.remove(Ast.select(ast, 'Mission.Entities')[0].fields, n => {
         var id = Ast.select(n, 'id')[0];
-        return id && _.contains(removableItemIds, id.value);
+        return id && _.includes(removableItemIds, id.value);
     });
 }
 
@@ -101,7 +99,7 @@ function removeUnselectedVehicles(ast: Parser.Node, factionId: string, rolePrefi
             type = Ast.select(vehicleItems[i], 'type')[0];
         var groupId = description.value.split(';')[0].split('.')[1],
             vehicleClassnameId = description.value.split(';')[1].split('.')[1];
-        if (!_.contains(selectedGroupIds, groupId)) {
+        if (!_.includes(selectedGroupIds, groupId)) {
             removableItemIds.push(Ast.select(vehicleItems[i], 'id')[0].value);
             continue;
         }
@@ -114,7 +112,7 @@ function removeUnselectedVehicles(ast: Parser.Node, factionId: string, rolePrefi
     }
     _.remove(Ast.select(ast, 'Mission.Entities')[0].fields, n => {
         var id = Ast.select(n, 'id')[0];
-        return id && _.contains(removableItemIds, id.value);
+        return id && _.includes(removableItemIds, id.value);
     });
 }
 

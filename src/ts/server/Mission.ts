@@ -1,10 +1,8 @@
-/// <reference path="./typings/tsd.d.ts" />
-
-import Admiral = require('./Admiral');
-import Hull3 = require('./Hull3');
-import Settings = require('./Settings');
-import fs = require('fs-extra');
-import _ = require('lodash');
+import * as Admiral from './Admiral';
+import * as Hull3 from './Hull3';
+import * as Settings from './Settings';
+import * as fs from 'fs-extra';
+import * as _ from 'lodash';
 
 import {Ast, Lexer, Parser, PrettyPrinter, Mission as CpMission} from 'config-parser';
 import {Side, getSideNames} from '../common/Common'
@@ -37,8 +35,8 @@ function getFactionMissionAsts(factions: Hull3.FactionRequest[]): Parser.Node[] 
 }
 
 function mergeGroupsAndVehicles(missionAst: Parser.Node, factionAsts: Parser.Node[]): number {
-    var groupEntities = _.foldl(factionAsts, (acc, fa) => acc.concat(Ast.select(fa, 'Mission.Entities.Item*').filter(e => Ast.select(e, 'dataType')[0].value == 'Group')), <Parser.Node[]>[]),
-        vehicleEntities = _.foldl(factionAsts, (acc, fa) => acc.concat(Ast.select(fa, 'Mission.Entities.Item*').filter(e => Ast.select(e, 'dataType')[0].value == 'Object')), <Parser.Node[]>[]),
+    var groupEntities = _.reduce(factionAsts, (acc, fa) => acc.concat(Ast.select(fa, 'Mission.Entities.Item*').filter(e => Ast.select(e, 'dataType')[0].value == 'Group')), <Parser.Node[]>[]),
+        vehicleEntities = _.reduce(factionAsts, (acc, fa) => acc.concat(Ast.select(fa, 'Mission.Entities.Item*').filter(e => Ast.select(e, 'dataType')[0].value == 'Object')), <Parser.Node[]>[]),
         missionEntities = Ast.select(missionAst, 'Mission.Entities')[0];
     vehicleEntities.push(getHcEntityAst());
     missionEntities.fields = [];
@@ -156,7 +154,7 @@ export function getMissionConfig(): Config {
 
 export function getPlayableUnitCount(missionAst: Parser.Node): number {
     var groupEntities = Ast.select(missionAst, 'Mission.Entities.Item*').filter(e => Ast.select(e, 'dataType')[0].value == 'Group');
-    return _.foldl(groupEntities, (acc, g) => acc + Ast.select(g, 'Entities.Item*').length, 0);
+    return _.reduce(groupEntities, (acc, g) => acc + Ast.select(g, 'Entities.Item*').length, 0);
 }
 
 export function generateMission(mission: Mission): GeneratedMission {

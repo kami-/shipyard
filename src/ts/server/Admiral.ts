@@ -1,8 +1,6 @@
-/// <reference path="./typings/tsd.d.ts" />
-
-import Settings = require('./Settings');
-import fs = require('fs-extra');
-import _ = require('lodash');
+import * as Settings from './Settings';
+import * as fs from 'fs-extra';
+import * as _ from 'lodash';
 
 import {Ast, Lexer, Mission, Parser, PrettyPrinter} from 'config-parser';
 import {parseFile} from './Common';

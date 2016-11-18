@@ -1,13 +1,11 @@
-/// <reference path="./typings/tsd.d.ts" />
+import * as $ from 'jquery';
+import * as _ from 'lodash';
+import * as Common from '../common/Common';
+import * as Hull3 from './Hull3';
+import * as Admiral from './Admiral';
+import * as Mission from './Mission';
 
-import $ = require('jquery');
-import _ = require('lodash');
-import Common = require('../common/Common');
-import Hull3 = require('./Hull3');
-import Admiral = require('./Admiral');
-import Mission = require('./Mission');
-
-var factionIdCounter = 0; 
+var factionIdCounter = 0;
 var TERRAIN_FIELD: JQuery = null,
     MISSION_TYPE_FIELD: JQuery = null,
     ON_LOAD_NAME_FIELD: JQuery = null,
@@ -66,7 +64,7 @@ function missionTypeToOption(mt: Mission.MissionType): Option {
     return {
         value: Mission.missionTypeToString(mt),
         text: Mission.missionTypeToString(mt)
-    }    
+    }
 }
 
 function sideToOption(s: Mission.Side): Option {
@@ -222,8 +220,8 @@ function getSelectedFactions(): Hull3.FactionRequest[] {
             uniformTemplateId: ffcChildren.find('select.uniformTemplate :selected').val(),
             groupTemplateIds: getSelectedGroupTemplateIds($(container)),
             vehicleClassnames: getVehicleClassnames($(container))
-        } 
-    }).toArray();
+        }
+    }).toArray() as any;
 }
 
 function getSelectedGroupTemplateIds(container: JQuery): string[] {
@@ -233,7 +231,7 @@ function getSelectedGroupTemplateIds(container: JQuery): string[] {
             checked: $(inp).prop('checked')
         }
     }).toArray();
-    return _.pluck(_.filter(groups, 'checked'), 'id');
+    return _.map(_.filter(groups, 'checked'), g => g.id);
 }
 
 function getVehicleClassnames(container: JQuery): { [id: string]: string } {
@@ -243,8 +241,8 @@ function getVehicleClassnames(container: JQuery): { [id: string]: string } {
             classname: $(inp).val()
         }
     }).toArray();
-    return _.foldl(vehicleClassnames, (res, vcn) => {
-        res[vcn.id] = vcn.classname;
+    return _.reduce(vehicleClassnames, (res, vcn) => {
+        res[vcn.id] = (vcn as any).classname;
         return res;
     }, <{ [id: string]: string }>{});
 }

@@ -1,7 +1,5 @@
-/// <reference path="../../typings/tsd.d.ts" />
-
-import Mission = require('../../Mission');
-import View = require('./View');
+import * as Mission from '../../Mission';
+import * as View from './View';
 
 
 export function init() {

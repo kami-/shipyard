@@ -1,7 +1,5 @@
-/// <reference path="./typings/tsd.d.ts" />
-
-import Settings = require('./Settings');
-import _ = require('lodash');
+import * as Settings from './Settings';
+import * as _ from 'lodash';
 
 import {Config, UnitTemplate, ZoneTemplate, Request} from '../common/Admiral';
 export {Config, UnitTemplate, ZoneTemplate, Request} from '../common/Admiral';

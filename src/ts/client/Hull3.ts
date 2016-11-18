@@ -1,7 +1,5 @@
-/// <reference path="./typings/tsd.d.ts" />
-
-import Settings = require('./Settings');
-import _ = require('lodash');
+import * as Settings from './Settings';
+import * as _ from 'lodash';
 
 import {GearTemplate, UniformTemplate, GroupTemplate, VehicleClassnameTemplate, Faction, Config, FactionRequest} from '../common/Hull3';
 export {GearTemplate, UniformTemplate, GroupTemplate, VehicleClassnameTemplate, Faction, Config, FactionRequest} from '../common/Hull3';
@@ -17,7 +15,7 @@ export function getFactions(): Faction[] {
 }
 
 export function getFactionById(id: string): Faction {
-    return _.find<Faction>(factions, '.id', id);
+    return _.find<Faction>(factions, f => f.id == id);
 }
 
 export function getGearTemplates(): GearTemplate[] {

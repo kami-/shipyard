@@ -1,11 +1,9 @@
-/// <reference path="../typings/tsd.d.ts" />
-
-import fs = require('fs-extra');
-import _ = require('lodash');
-import Common = require('../../common/Common');
-import Hull3 = require('../Hull3');
-import Mission = require('../Mission');
-import Settings = require('../Settings');
+import * as fs from 'fs-extra';
+import * as _ from 'lodash';
+import * as Common from '../../common/Common';
+import * as Hull3 from '../Hull3';
+import * as Mission from '../Mission';
+import * as Settings from '../Settings'
 
 import {Ast, Lexer, Parser, PrettyPrinter} from 'config-parser';
 

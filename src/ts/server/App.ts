@@ -1,26 +1,24 @@
-/// <reference path="./typings/tsd.d.ts" />
-
-import express = require('express');
-import bodyParser = require('body-parser');
-import Settings = require('./Settings');
-import fs = require('fs-extra');
-import cp = require('child_process');
-import mime = require('mime');
-import _ = require('lodash');
+import * as express from 'express';
+import * as bodyParser from 'body-parser';
+import * as Settings from './Settings';
+import * as fs from 'fs-extra';
+import * as cp from 'child_process';
+import * as mime from'mime';
+import * as _ from 'lodash';
 
 pullAddons();
 
-import Hull3 = require('./Hull3');
-import Admiral = require('./Admiral');
-import Mission = require('./Mission');
-import TownSweep = require('./extra/TownSweep');
-import RandomEngagements = require('./extra/RandomEngagements');
+import * as Hull3 from './Hull3';
+import * as Admiral from './Admiral';
+import * as Mission from './Mission';
+import * as TownSweep from './extra/TownSweep';
+import * as RandomEngagements from './extra/RandomEngagements';
 
 function registerRoutes(app: express.Express) {
     app.get(Settings.CONTEXT_PATH, (request, response) => {
         response.sendFile(Settings.PATH.CLIENT_RESOURCES_HOME + '/index.html');
     });
-    
+
     app.route(Settings.CONTEXT_PATH + '/mission/generate').post((request, response) => {
         generateMission(request, response);
     });
@@ -39,7 +37,7 @@ function registerRoutes(app: express.Express) {
     app.route(Settings.CONTEXT_PATH + '/mission/terrain').get((request, response) => {
         response.json(Mission.getTerrains());
     });
-    
+
     app.route(Settings.CONTEXT_PATH + '/hull3/faction').get((request, response) => {
         response.json(Hull3.getFactions());
     });
@@ -47,7 +45,7 @@ function registerRoutes(app: express.Express) {
         Hull3.updateFactions();
         response.sendStatus(200);
     });
-    
+
     app.route(Settings.CONTEXT_PATH + '/hull3/gear').get((request, response) => {
         response.json(Hull3.getGearTemplates());
     });
@@ -55,7 +53,7 @@ function registerRoutes(app: express.Express) {
         Hull3.updateGearTemplates();
         response.sendStatus(200);
     });
-    
+
     app.route(Settings.CONTEXT_PATH + '/hull3/uniform').get((request, response) => {
         response.json(Hull3.getUniformTemplates());
     });

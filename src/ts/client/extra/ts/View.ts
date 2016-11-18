@@ -1,8 +1,6 @@
-/// <reference path="../../typings/tsd.d.ts" />
-
-import $ = require('jquery');
-import Settings = require('../../Settings');
-import Mission = require('../../Mission');
+import * as $ from 'jquery';
+import * as Settings from '../../Settings';
+import * as Mission from '../../Mission';
 
 var TERRAIN_FIELD: JQuery = null,
     GENERATE_MISSION_BUTTON: JQuery = null,

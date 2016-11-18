@@ -1,7 +1,5 @@
-/// <reference path="./typings/tsd.d.ts" />
-
-import Settings = require('./Settings');
-import fs = require('fs-extra');
+import * as Settings from './Settings';
+import * as fs from 'fs-extra';
 
 import {Lexer, Parser} from 'config-parser';
 import {Template} from '../common/Common';

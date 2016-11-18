@@ -1,9 +1,7 @@
-/// <reference path="./typings/tsd.d.ts" />
-
-import Admiral = require('./Admiral');
-import Hull3 = require('./Hull3');
-import Mission = require('./Mission');
-import View = require('./View');
+import * as Admiral from './Admiral';
+import * as Hull3 from './Hull3';
+import * as Mission from './Mission';
+import * as View from './View';
 
 
 export function init() {

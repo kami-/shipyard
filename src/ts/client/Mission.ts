@@ -1,8 +1,6 @@
-/// <reference path="./typings/tsd.d.ts" />
-
-import $ = require('jquery');
-import Hull3 = require('./Hull3');
-import Settings = require('./Settings');
+import * as $ from 'jquery';
+import * as _ from 'lodash';
+import * as Settings from './Settings';
 
 export {Side, sideToString, getSides} from "../common/Common"
 import {MissionType, Terrain, Faction, Addons, Mission, Config, GeneratedMission, missionTypeToString, getMissionTypes} from '../common/Mission';
