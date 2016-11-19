@@ -34,11 +34,17 @@ function getFactionMissionAsts(factions: Hull3.FactionRequest[]): Parser.Node[] 
     });
 }
 
-function mergeGroupsAndVehicles(missionAst: Parser.Node, factionAsts: Parser.Node[]): number {
+function shouldIncludeHc(missionType: MissionType) {
+    return missionType == MissionType.COOP || missionType == MissionType.COTVT;
+}
+
+function mergeGroupsAndVehicles(missionType: MissionType, missionAst: Parser.Node, factionAsts: Parser.Node[]): number {
     var groupEntities = _.reduce(factionAsts, (acc, fa) => acc.concat(Ast.select(fa, 'Mission.Entities.Item*').filter(e => Ast.select(e, 'dataType')[0].value == 'Group')), <Parser.Node[]>[]),
         vehicleEntities = _.reduce(factionAsts, (acc, fa) => acc.concat(Ast.select(fa, 'Mission.Entities.Item*').filter(e => Ast.select(e, 'dataType')[0].value == 'Object')), <Parser.Node[]>[]),
         missionEntities = Ast.select(missionAst, 'Mission.Entities')[0];
-    vehicleEntities.push(getHcEntityAst());
+    if (shouldIncludeHc(missionType)) {
+        vehicleEntities.push(getHcEntityAst());
+    }
     missionEntities.fields = [];
     return CpMission.mergeItems(missionEntities, groupEntities.concat(vehicleEntities));
 }
@@ -83,11 +89,12 @@ function generateHull3Header(missionDir: string, mission: Mission) {
 }
 
 function generateDescriptionExt(missionDir: string, mission: Mission, missionType: MissionType, maxPlayers: number) {
+    let hcMaxPlayers = shouldIncludeHc(missionType) ? maxPlayers + 1 : maxPlayers;
     var descriptionExt = fs.readFileSync(`${missionDir}/description.ext`, 'UTF-8')
         .replace(/onLoadName = "[^"]*";/g, `onLoadName = "${mission.onLoadName}";`)
         .replace(/author = "[^"]*";/g, `author = "${mission.author}";`)
         .replace(/gameType = [^;]*;/g, `gameType = ${missionTypeToGameType(missionType)};`)
-        .replace(/maxPlayers = [^;]*;/g, `maxPlayers = ${maxPlayers.toString()};`);
+        .replace(/maxPlayers = [^;]*;/g, `maxPlayers = ${hcMaxPlayers.toString()};`);
     descriptionExt = tryAddAddonIncludes(descriptionExt, mission);
     fs.writeFileSync(`${missionDir}/description.ext`, descriptionExt, 'UTF-8');
 }
@@ -159,7 +166,7 @@ export function generateMission(mission: Mission): GeneratedMission {
     var missionAst = parseFile(`${Hull3.getSampleMissionPath()}/mission.sqm`),
         missionType = stringToMissionType(mission.missionTypeName);
 
-    var idCount = mergeGroupsAndVehicles(missionAst, getFactionMissionAsts(mission.factions));
+    var idCount = mergeGroupsAndVehicles(missionType, missionAst, getFactionMissionAsts(mission.factions));
     makeFirstUnitPlayerFor3DEN(missionAst);
 
     var maxPlayers = getPlayableUnitCount(missionAst);
