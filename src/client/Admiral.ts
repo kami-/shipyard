@@ -1,6 +1,7 @@
 import * as Settings from './Settings';
 import * as _ from 'lodash';
 
+import {templateSorter} from '../common/Common';
 import {Config, UnitTemplate, ZoneTemplate, Request} from '../common/Admiral';
 export {Config, UnitTemplate, ZoneTemplate, Request} from '../common/Admiral';
 
@@ -16,6 +17,6 @@ export function getZoneTemplates(): ZoneTemplate[] {
 }
 
 export function updateFromConfig(config: Config) {
-    unitTemplates = config.unitTemplates;
-    zoneTemplates = config.zoneTemplates;
+    unitTemplates = config.unitTemplates.sort(templateSorter);
+    zoneTemplates = config.zoneTemplates.sort(templateSorter);
 }

@@ -36,3 +36,9 @@ export function armaStringToSide(s: string): Side {
             return Side.BLUFOR;
     }
 }
+
+export function templateSorter(a: Template, b: Template) {
+    if (a.name < b.name) { return -1; }
+    if (a.name > b.name) { return 1; }
+    return 0;
+}
