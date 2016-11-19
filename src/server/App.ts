@@ -41,41 +41,21 @@ function registerRoutes(app: express.Express) {
     app.route(Settings.CONTEXT_PATH + '/hull3/faction').get((request, response) => {
         response.json(Hull3.getFactions());
     });
-    app.route(Settings.CONTEXT_PATH + '/hull3/faction/update').post((request, response) => {
-        Hull3.updateFactions();
-        response.sendStatus(200);
-    });
 
     app.route(Settings.CONTEXT_PATH + '/hull3/gear').get((request, response) => {
         response.json(Hull3.getGearTemplates());
-    });
-    app.route(Settings.CONTEXT_PATH + '/hull3/gear/update').post((request, response) => {
-        Hull3.updateGearTemplates();
-        response.sendStatus(200);
     });
 
     app.route(Settings.CONTEXT_PATH + '/hull3/uniform').get((request, response) => {
         response.json(Hull3.getUniformTemplates());
     });
-    app.route(Settings.CONTEXT_PATH + '/hull3/uniform/update').post((request, response) => {
-        Hull3.updateUniformTemplates();
-        response.sendStatus(200);
-    });
 
     app.route(Settings.CONTEXT_PATH + '/admiral/unit').get((request, response) => {
         response.json(Admiral.getUnitTemplates());
     });
-    app.route(Settings.CONTEXT_PATH + '/admiral/unit/update').post((request, response) => {
-        Admiral.updateUnitTemplates();
-        response.sendStatus(200);
-    });
 
     app.route(Settings.CONTEXT_PATH + '/admiral/zone').get((request, response) => {
         response.json(Admiral.getZoneTemplates());
-    });
-    app.route(Settings.CONTEXT_PATH + '/admiral/zone/update').post((request, response) => {
-        Admiral.updateZoneTemplates();
-        response.sendStatus(200);
     });
 
     app.get(Settings.CONTEXT_PATH + '/town-sweep', (request, response) => {
@@ -162,6 +142,8 @@ export function start() {
     app.use(bodyParser.json());
 
     registerRoutes(app);
+
+    Admiral.init();
 
     var server = app.listen(Settings.PORT, () => {
         console.log(`Shipyard is listening in port ${server.address().port}.`);

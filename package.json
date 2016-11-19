@@ -18,6 +18,7 @@
     "@types/jquery": "^2.0.34",
     "@types/lodash": "^4.14.39",
     "@types/mime": "0.0.29",
+    "copy-webpack-plugin": "^4.0.1",
     "json-loader": "^0.5.4",
     "source-map-loader": "^0.1.5",
     "ts-loader": "^1.2.2",

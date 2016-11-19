@@ -1,7 +1,7 @@
-import * as Settings from './Settings';
 import * as fs from 'fs-extra';
-
 import {Lexer, Parser} from 'config-parser';
+
+import * as Settings from './Settings';
 import {Template} from '../common/Common';
 
 export function parseFile(path: string): Parser.Node {

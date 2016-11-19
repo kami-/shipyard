@@ -1,21 +1,21 @@
+import * as fs from 'fs-extra';
+import * as _ from 'lodash';
+import {Ast, Lexer, Parser, PrettyPrinter, Mission as CpMission} from 'config-parser';
+
 import * as Admiral from './Admiral';
 import * as Hull3 from './Hull3';
 import * as Settings from './Settings';
-import * as fs from 'fs-extra';
-import * as _ from 'lodash';
 
-import {Ast, Lexer, Parser, PrettyPrinter, Mission as CpMission} from 'config-parser';
 import {Side, getSideNames} from '../common/Common'
 export {getSideNames} from '../common/Common'
 import {parseFile} from './Common'
 import {MissionType, Terrain, Faction, Addons, Mission, Config, GeneratedMission, getMissionTypeNames, stringToMissionType, missionTypeToGameType, missionTypeToMissionNamePrefix} from '../common/Mission';
 export {MissionType, Terrain, Faction, Addons, Mission, Config, GeneratedMission, getMissionTypeNames, stringToMissionType, missionTypeToGameType, missionTypeToMissionNamePrefix} from '../common/Mission';
 
-var missionIdCounter: number = 0,
-    TERRAINS_JSON_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/terrains.json`,
-    POSITION_X_SHIFT = 350;
+const terrains: Terrain[] = require("./resources/vehicle-classnames.json"); 
 
-var terrains: Terrain[] = [];
+var missionIdCounter: number = 0,
+    POSITION_X_SHIFT = 350;
 
 function nextMissionId(): number {
     missionIdCounter = missionIdCounter + 1;
@@ -129,10 +129,6 @@ export function getTerrains(): Terrain[] {
     return terrains
 }
 
-export function updateTerrains() {
-    terrains = <Terrain[]>JSON.parse(fs.readFileSync(TERRAINS_JSON_PATH, 'UTF-8'));
-}
-
 export function getMissionConfig(): Config {
     return {
         sideNames: getSideNames(),
@@ -196,4 +192,3 @@ export function generateMission(mission: Mission): GeneratedMission {
 }
 
 cleanWorkingDir();
-updateTerrains();

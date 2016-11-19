@@ -23,6 +23,6 @@ export var PATH = {
     ArkInhouse: {
         HOME: 'addon/ark_inhouse',
     },
-    SERVER_RESOURCES_HOME: 'src/resources/server',
-    CLIENT_RESOURCES_HOME: 'src/resources/client'
+    SERVER_RESOURCES_HOME: 'resources/server',
+    CLIENT_RESOURCES_HOME: 'resources/client'
 }

@@ -1,8 +1,7 @@
-import * as Settings from './Settings';
 import * as fs from 'fs-extra';
-import * as _ from 'lodash';
-
 import {Ast, Lexer, Mission, Parser, PrettyPrinter} from 'config-parser';
+
+import * as Settings from './Settings';
 import {parseFile} from './Common';
 import {Template} from '../common/Common';
 import {Config, Request, UnitTemplate, ZoneTemplate} from '../common/Admiral';
@@ -24,6 +23,16 @@ function getTemplates(filePath: string, parentSelector: string): Template[] {
     }));
 }
 
+function updateUnitTemplates() {
+    unitTemplates = getTemplates(UNIT_TEMPLATE_PATH, 'UnitTemplates');
+}
+
+function updateZoneTemplates() {
+    zoneTemplates = getTemplates(ZONE_TEMPLATE_PATH, 'ZoneTemplates');
+}
+
+
+
 export function replaceTemplates(admiralAst: Parser.Node, request: Request) {
     var templates = [
         { selector: 'Camp.defaultUnitTemplate' , value: request.campUnitTemplateId },
@@ -38,14 +47,6 @@ export function replaceTemplates(admiralAst: Parser.Node, request: Request) {
     })
 }
 
-export function updateUnitTemplates() {
-    unitTemplates = getTemplates(UNIT_TEMPLATE_PATH, 'UnitTemplates');
-}
-
-export function updateZoneTemplates() {
-    zoneTemplates = getTemplates(ZONE_TEMPLATE_PATH, 'ZoneTemplates');
-}
-
 export function getUnitTemplates(): UnitTemplate[] {
     return unitTemplates;
 }
@@ -54,5 +55,7 @@ export function getZoneTemplates(): ZoneTemplate[] {
     return zoneTemplates;
 }
 
-updateUnitTemplates();
-updateZoneTemplates();
+export function init() {
+    updateUnitTemplates();
+    updateZoneTemplates();
+}

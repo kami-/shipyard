@@ -1,26 +1,26 @@
-import * as Settings from './Settings';
 import * as fs from 'fs-extra';
 import * as _ from 'lodash';
-
 import {Ast, Lexer, Mission, Parser, PrettyPrinter} from 'config-parser';
+
+import * as Settings from './Settings';
 import {parseFile} from './Common';
 import {Template, armaStringToSide} from '../common/Common';
 import {GearTemplate, UniformTemplate, GroupTemplate, VehicleClassnameTemplate, Faction, Config, FactionRequest} from '../common/Hull3';
 export {GearTemplate, UniformTemplate, GroupTemplate, VehicleClassnameTemplate, Faction, Config, FactionRequest} from '../common/Hull3';
 
+const groupTemplates: GroupTemplate[] = require("./resources/groups.json");
+const vehicleClassnameTemplates: VehicleClassnameTemplate[] = require("./resources/vehicle-classnames.json");
+
 var SAMPLE_MISSION_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.SAMPLE_MISSION_HOME}`,
     FACTION_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.FACTION}`,
     GEAR_HOME_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.GEAR_HOME}`,
     UNIFORM_HOME_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.UNIFORM_HOME}`,
-    FACTION_CONFIGS_JSON_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/factions.json`,
     GROUPS_JSON_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/groups.json`,
     VEHICLE_CLASSNAMES_JSON_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/vehicle-classnames.json`;
 
 var factions: Faction[] = [],
     gearTemplates: GearTemplate[] = [],
-    uniformTemplates: UniformTemplate[] = [],
-    groupTemplates: GroupTemplate[] = [],
-    vehicleClassnameTemplates: VehicleClassnameTemplate[] = [];
+    uniformTemplates: UniformTemplate[] = [];
 
 function getTemplate(homePath: string, filename: string): Template {
     var ast = parseFile(`${homePath}/${filename}`);
@@ -52,7 +52,7 @@ function factionNodeToFaction(node: Parser.Node): Faction {
 
 function getVehicleClassnames(node: Parser.Node): { [id: string]: string } {
     var vehicleClassnamesNode = Ast.select(node, 'vehicleClassnames')[0];
-    return _.reduce(vehicleClassnamesNode.values, (acc, pair) => {
+    return vehicleClassnamesNode.values.reduce((acc, pair) => {
         acc[pair.values[0].value] = pair.values[1].value;
         return acc;
     }, <{ [id: string]: string }>{});
@@ -116,31 +116,25 @@ function removeUnselectedVehicles(ast: Parser.Node, factionId: string, rolePrefi
     });
 }
 
-export function getFactionRolePrefixById(id: string): string {
-    return getFactionById(id).rolePrefix;
-}
-
-export function updateFactions() {
+function updateFactions() {
     var factionsAst = parseFile(FACTION_PATH);
     factions = _.sortBy(Ast.select(factionsAst, 'Faction.*').map(factionNodeToFaction), 'name');
 }
 
-export function updateGearTemplates() {
+function updateGearTemplates() {
     var gearTemplateFilenames = fs.readdirSync(GEAR_HOME_PATH);
     gearTemplates = gearTemplateFilenames.map(gf => getTemplate(GEAR_HOME_PATH, gf));
 }
 
-export function updateUniformTemplates() {
+function updateUniformTemplates() {
     var uniformTemplateFilenames = fs.readdirSync(UNIFORM_HOME_PATH);
     uniformTemplates = uniformTemplateFilenames.map(uf => getTemplate(UNIFORM_HOME_PATH, uf));
 }
 
-export function updateGroupTemplates() {
-    groupTemplates = <GroupTemplate[]>JSON.parse(fs.readFileSync(GROUPS_JSON_PATH, 'UTF-8'));
-}
 
-export function updateVehicleClassnameTemplates() {
-    vehicleClassnameTemplates = <VehicleClassnameTemplate[]>JSON.parse(fs.readFileSync(VEHICLE_CLASSNAMES_JSON_PATH, 'UTF-8'));
+
+export function getFactionRolePrefixById(id: string): string {
+    return getFactionById(id).rolePrefix;
 }
 
 export function getFactions(): Faction[] {
@@ -192,8 +186,8 @@ export function addFactionsToHull3Config(ast: Parser.Node, factions: FactionRequ
     Ast.select(ast, 'Hull3')[0].fields.push(node);
 }
 
-updateFactions();
-updateGearTemplates();
-updateUniformTemplates();
-updateGroupTemplates();
-updateVehicleClassnameTemplates();
+export function init() {
+    updateFactions();
+    updateGearTemplates();
+    updateUniformTemplates();
+}

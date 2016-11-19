@@ -1,8 +1,4 @@
-*.js
-/src/js
 /workingDir
 /node_modules
-/src/ts/client/typings
-/src/ts/server/typings
-/src/resources/server/addon
+/release
 .vscode
