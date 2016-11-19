@@ -1,13 +1,11 @@
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
-import * as Settings from './Settings';
 import * as fs from 'fs-extra';
 import * as cp from 'child_process';
 import * as mime from'mime';
 import * as _ from 'lodash';
 
-pullAddons();
-
+import * as Settings from './Settings';
 import * as Hull3 from './Hull3';
 import * as Admiral from './Admiral';
 import * as Mission from './Mission';
@@ -119,16 +117,20 @@ function removeMissionWorkingDir(missionWorkingDir: string) {
 }
 
 function pullAddons() {
-    var addonPaths = [Settings.PATH.Hull3.HOME, Settings.PATH.Admiral.HOME, Settings.PATH.ArkInhouse.HOME];
-    _.each(addonPaths, a => {
-        console.log(`Pulling addon '${a}.'`);
-        var path = `${Settings.PATH.SERVER_RESOURCES_HOME}/${a}`;
+    var addons = [Settings.PATH.Hull3, Settings.PATH.Admiral, Settings.PATH.ArkInhouse];
+    fs.mkdirpSync(Settings.PATH.SERVER_ADDON_HOME);
+    _.each(addons, a => {
+        console.log(`Pulling addon '${a.CLONE_URL}'.`);
+        let addonPath = `${Settings.PATH.SERVER_ADDON_HOME}/${a.HOME}`;
+        if (!fs.lstatSync(addonPath).isDirectory) {
+            cp.execSync(`git clone ${a.CLONE_URL}`, { cwd: Settings.PATH.SERVER_ADDON_HOME });
+        }
         if (process.platform === 'linux') {
-            cp.execSync(`(git reset --hard HEAD; git pull)`, { cwd: path });
+            cp.execSync(`(git reset --hard HEAD; git pull)`, { cwd: addonPath });
         } else {
-            cp.execSync(`git reset --hard HEAD`, { cwd: path });
-            cp.execSync(`git pull`, { cwd: path });
-            cp.execSync(`git status > asd.txt`, { cwd: path });
+            cp.execSync(`git reset --hard HEAD`, { cwd: addonPath });
+            cp.execSync(`git pull`, { cwd: addonPath });
+            cp.execSync(`git status > asd.txt`, { cwd: addonPath });
         }
     })
 }
@@ -143,7 +145,11 @@ export function start() {
 
     registerRoutes(app);
 
+    pullAddons();
+
     Admiral.init();
+    Hull3.init();
+    Mission.init();
 
     var server = app.listen(Settings.PORT, () => {
         console.log(`Shipyard is listening in port ${server.address().port}.`);

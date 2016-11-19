@@ -7,8 +7,8 @@ import {Template} from '../common/Common';
 import {Config, Request, UnitTemplate, ZoneTemplate} from '../common/Admiral';
 export {Config, Request, UnitTemplate, ZoneTemplate} from '../common/Admiral';
 
-var UNIT_TEMPLATE_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Admiral.HOME}/admiral/unit_templates.h`,
-    ZONE_TEMPLATE_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Admiral.HOME}/admiral/zone_templates.h`;
+var UNIT_TEMPLATE_PATH = `${Settings.PATH.SERVER_ADDON_HOME}/${Settings.PATH.Admiral.HOME}/admiral/unit_templates.h`,
+    ZONE_TEMPLATE_PATH = `${Settings.PATH.SERVER_ADDON_HOME}/${Settings.PATH.Admiral.HOME}/admiral/zone_templates.h`;
 
 var unitTemplates: UnitTemplate[] = [],
     zoneTemplates: ZoneTemplate[] = [];

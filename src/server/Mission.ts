@@ -12,7 +12,7 @@ import {parseFile} from './Common'
 import {MissionType, Terrain, Faction, Addons, Mission, Config, GeneratedMission, getMissionTypeNames, stringToMissionType, missionTypeToGameType, missionTypeToMissionNamePrefix} from '../common/Mission';
 export {MissionType, Terrain, Faction, Addons, Mission, Config, GeneratedMission, getMissionTypeNames, stringToMissionType, missionTypeToGameType, missionTypeToMissionNamePrefix} from '../common/Mission';
 
-const terrains: Terrain[] = require("./resources/vehicle-classnames.json"); 
+const terrains: Terrain[] = require("./resources/terrains.json");
 
 var missionIdCounter: number = 0,
     POSITION_X_SHIFT = 350;
@@ -105,7 +105,7 @@ function tryAddAddonIncludes(descriptionExt: string, mission: Mission): string {
 
 function tryAddAdmiral(mission: Mission, missionDir: string) {
     if (!mission.addons.Admiral.isEnabled) { return; }
-    fs.copySync(`${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Admiral.HOME}/${Settings.PATH.Admiral.SAMPLE_MISSION_HOME}/admiral`, `${missionDir}/admiral`);
+    fs.copySync(`${Settings.PATH.SERVER_ADDON_HOME}/${Settings.PATH.Admiral.HOME}/${Settings.PATH.Admiral.SAMPLE_MISSION_HOME}/admiral`, `${missionDir}/admiral`);
     var admiralAst = parseFile(`${missionDir}/admiral/admiral.h`);
     Admiral.replaceTemplates(admiralAst, mission.addons.Admiral);
     fs.writeFileSync(`${missionDir}/admiral/admiral.h`, PrettyPrinter.create('    ').print(admiralAst), 'UTF-8');
@@ -124,6 +124,8 @@ class Navy {
     fs.createFileSync(file);
     fs.writeFileSync(file, content, 'UTF-8');
 }
+
+
 
 export function getTerrains(): Terrain[] {
     return terrains
@@ -191,4 +193,6 @@ export function generateMission(mission: Mission): GeneratedMission {
     }
 }
 
-cleanWorkingDir();
+export function init() {
+    cleanWorkingDir();
+}

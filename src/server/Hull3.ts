@@ -11,12 +11,10 @@ export {GearTemplate, UniformTemplate, GroupTemplate, VehicleClassnameTemplate, 
 const groupTemplates: GroupTemplate[] = require("./resources/groups.json");
 const vehicleClassnameTemplates: VehicleClassnameTemplate[] = require("./resources/vehicle-classnames.json");
 
-var SAMPLE_MISSION_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.SAMPLE_MISSION_HOME}`,
-    FACTION_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.FACTION}`,
-    GEAR_HOME_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.GEAR_HOME}`,
-    UNIFORM_HOME_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.UNIFORM_HOME}`,
-    GROUPS_JSON_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/groups.json`,
-    VEHICLE_CLASSNAMES_JSON_PATH = `${Settings.PATH.SERVER_RESOURCES_HOME}/vehicle-classnames.json`;
+var SAMPLE_MISSION_PATH = `${Settings.PATH.SERVER_ADDON_HOME}/${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.SAMPLE_MISSION_HOME}`,
+    FACTION_PATH = `${Settings.PATH.SERVER_ADDON_HOME}/${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.FACTION}`,
+    GEAR_HOME_PATH = `${Settings.PATH.SERVER_ADDON_HOME}/${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.GEAR_HOME}`,
+    UNIFORM_HOME_PATH = `${Settings.PATH.SERVER_ADDON_HOME}/${Settings.PATH.Hull3.HOME}/${Settings.PATH.Hull3.UNIFORM_HOME}`;
 
 var factions: Faction[] = [],
     gearTemplates: GearTemplate[] = [],
