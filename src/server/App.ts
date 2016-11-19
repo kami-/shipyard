@@ -122,7 +122,9 @@ function pullAddons() {
     _.each(addons, a => {
         console.log(`Pulling addon '${a.CLONE_URL}'.`);
         let addonPath = `${Settings.PATH.SERVER_ADDON_HOME}/${a.HOME}`;
-        if (!fs.lstatSync(addonPath).isDirectory) {
+        try {
+            fs.accessSync(addonPath);
+        } catch (e) {
             cp.execSync(`git clone ${a.CLONE_URL}`, { cwd: Settings.PATH.SERVER_ADDON_HOME });
         }
         if (process.platform === 'linux') {
