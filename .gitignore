@@ -1,4 +1,6 @@
+.vscode
 /workingDir
 /node_modules
-/release
-.vscode
+release/*
+!release/run.ps1
+!release/run.sh
