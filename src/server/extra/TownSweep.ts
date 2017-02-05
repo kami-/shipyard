@@ -7,7 +7,7 @@ import * as Settings from '../Settings'
 
 import {Ast, Lexer, Parser, PrettyPrinter} from 'config-parser';
 
-const TS_HOME = `${Settings.PATH.SERVER_RESOURCES_HOME}/${Settings.PATH.ArkInhouse.HOME}/town_sweep`;
+const TS_HOME = `${Settings.PATH.SERVER_ADDON_HOME}/${Settings.PATH.ArkInhouse.HOME}/town_sweep`;
 
 function removeRolePrefix(vehicle: Parser.Node) {
     var despription = Ast.select(vehicle, 'Attributes.description')[0];
