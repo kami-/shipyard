@@ -1,4 +1,5 @@
-var CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require("path");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -8,23 +9,20 @@ module.exports = {
     },
 
     output: {
-        path: "../../release/resources/client",
+        path: path.resolve(__dirname, "../../release/resources/client"),
         filename: "js/[name].js"
     },
 
     devtool: "source-map",
 
     resolve: {
-        extensions: ["", ".ts", ".js"]
+        extensions: [".ts", ".js"]
     },
 
     module: {
-        loaders: [
-            { test: /\.ts?$/, loader: "ts-loader" }
-        ],
-
-        preLoaders: [
-            { test: /\.js$/, loader: "source-map-loader" }
+        rules: [
+            { test: /\.js$/, enforce: "pre", use: "source-map-loader" },
+            { test: /\.ts?$/, use: "ts-loader" }
         ]
     },
 

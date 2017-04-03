@@ -1,5 +1,5 @@
-var nodeExternals = require('webpack-node-externals');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require("path");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -7,24 +7,20 @@ module.exports = {
     },
 
     output: {
-        path: "../../release",
+        path: path.resolve(__dirname, "../../release"),
         filename: "[name].js"
     },
 
     target: 'node',
-    externals: [nodeExternals({
-        modulesDir: "../../node_modules",
-        whitelist: ["config-parser", "fs-extra", "express", "body-parser", "mime", "lodash"]
-    })],
 
     resolve: {
-        extensions: ["", ".ts", ".js"]
+        extensions: [".ts", ".js"],
+        modules: ["node_modules"]
     },
 
     module: {
-        loaders: [
-            { test: /\.ts?$/, loader: "ts-loader" },
-            { test: /\.json?$/, loader: "json-loader" }
+        rules: [
+            { test: /\.ts?$/, use: "ts-loader" }
         ]
     },
 
