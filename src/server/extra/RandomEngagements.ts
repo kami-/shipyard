@@ -77,9 +77,14 @@ function updateMissionSqm(missionSqmPath: string): Parser.Node {
     _.each(hmgGroups, g => {
         _.remove(Ast.select(g, 'Entities')[0].fields, u => {
             var description = Ast.select(u, 'Attributes.description')[0];
-            return description && description.value.indexOf('Assistant') >= 0;
+            return description
+                && description.value.indexOf('HMG') >= 0
+                && description.value.indexOf('Assistant') >= 0;
         });
+        Ast.select(g, 'Entities.items')[0].value = Ast.select(g, 'Entities.Item*').length;
+        Ast.select(g, 'Entities.Item2')[0].fieldName = "Item1";
     });
+    Ast.select(ast, 'Mission.Entities.items')[0].value = Ast.select(ast, 'Mission.Entities.Item*').length;
     return ast;
 }
 
