@@ -54,6 +54,7 @@ function updateMissionSqm(missionSqmPath: string) {
         var dataType = Ast.select(n, 'dataType')[0];
         return dataType && dataType.value != 'Group'
     });
+    Ast.select(ast, 'Mission.Entities.items')[0].value = Ast.select(ast, 'Mission.Entities.Item*').length;
     var groupItems = Ast.select(ast, 'Mission.Entities.Item*').filter(e => Ast.select(e, 'dataType')[0].value == 'Group');
     _.each(groupItems, g => {
         _.chain(Ast.select(g, 'Entities.Item*'))
