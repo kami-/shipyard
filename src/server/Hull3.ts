@@ -34,6 +34,10 @@ function getFactionById(id: string): Faction {
     return _.find<Faction>(factions, f => f.id == id);
 }
 
+function getGroupTemplateById(id: string): GroupTemplate {
+    return _.find<GroupTemplate>(groupTemplates, f => f.id == id);
+}
+
 function factionNodeToFaction(node: Parser.Node): Faction {
     return {
         id: node.fieldName,
@@ -77,7 +81,9 @@ function removeUnselectedGroups(ast: Parser.Node, factionId: string, rolePrefix:
                 removableItemIds.push(Ast.select(groupItems[i], 'id')[0].value);
                 break;
             }
-            description.value = (<string>description.value).replace(`Group.${groupId};`, rolePrefix);
+            var groupTemplate = getGroupTemplateById(groupId);
+            var newDescription = (<string>description.value).replace(`Group.${groupId};`, rolePrefix);
+            description.value = groupTemplate ? newDescription + '@' + getGroupTemplateById(groupId).name : newDescription;;
             init.value = (<string>init.value).replace('["faction", "FACTION"]', `["faction", "${factionId}"]`);
             shiftPosition(entitiesItems[j], xShift);
         }
