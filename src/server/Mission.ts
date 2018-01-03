@@ -132,6 +132,16 @@ class Navy {
     fs.writeFileSync(file, content, 'UTF-8');
 }
 
+function tryAddForcedWeather(missionAst: Parser.Node) {
+    const intelNode = Ast.select(missionAst, "Mission.Intel")[0];
+    ["windForced", "wavesForced"].forEach(fieldName => {
+        const fieldExists = intelNode.fields.filter(f => f.fieldName === fieldName).length > 0;
+        if (!fieldExists) {
+            intelNode.fields.push({ type: Parser.NodeType.NUMBER_FIELD, fieldName: fieldName, value: 1 });
+        }
+    });
+}
+
 
 
 export function getTerrains(): Terrain[] {
@@ -182,6 +192,7 @@ export function generateMission(mission: Mission): GeneratedMission {
     Ast.select(missionAst, 'ScenarioData.Header.maxPlayers')[0].value = maxPlayers;
     Ast.select(missionAst, 'Mission.Intel.briefingName')[0].value = fullMissionName;
     Ast.select(missionAst, 'Mission.Intel.overviewText')[0].value = mission.overviewText;
+    tryAddForcedWeather(missionAst);
 
     fs.copySync(Hull3.getSampleMissionPath(), missionDir);
     fs.writeFileSync(`${missionDir}/mission.sqm`, PrettyPrinter.create('\t').print(missionAst), 'UTF-8');
