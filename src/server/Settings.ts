@@ -24,7 +24,7 @@ export var PATH = {
     },
     ArkInhouse: {
         CLONE_URL: 'https://github.com/Cyruz143/ark_inhouse.git',
-        HOME: 'ark_inhouse',
+        HOME: 'ark_inhouse/addons',
     },
     SERVER_RESOURCES_HOME: 'resources/server',
     SERVER_ADDON_HOME: 'resources/server/addon',
