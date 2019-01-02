@@ -23,6 +23,7 @@
     { "id": "FDF_Isle1_a", "name": "Podagorsk" },
     { "id": "prei_khmaoch_luong", "name": "Prei Khmaoch Luong" },
     { "id": "ProvingGrounds_PMC", "name": "Proving Grounds" },
+    { "id": "WL_Rosche", "name": "Rosche" },
     { "id": "ruha", "name": "Ruha" },
     { "id": "Sara", "name": "Sahrani" },
     { "id": "Shapur_BAF", "name": "Shapur" },
@@ -33,3 +34,4 @@
     { "id": "VR", "name": "Virtual Reality" },
     { "id": "Zargabad", "name": "Zargabad" }
 ]
+
