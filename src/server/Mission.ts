@@ -104,9 +104,6 @@ function tryAddAddonIncludes(descriptionExt: string, mission: Mission): string {
     if (mission.addons.Admiral.isEnabled) {
         includes += '#include "admiral\\admiral.h"\n';
     }
-    if (mission.addons.Navy) {
-        includes += '#include "navy\\navy.h"\n';
-    }
     return includes += descriptionExt;
 }
 
@@ -116,20 +113,6 @@ function tryAddAdmiral(mission: Mission, missionDir: string) {
     var admiralAst = parseFile(`${missionDir}/admiral/admiral.h`);
     Admiral.replaceTemplates(admiralAst, mission.addons.Admiral);
     fs.writeFileSync(`${missionDir}/admiral/admiral.h`, PrettyPrinter.create('    ').print(admiralAst), 'UTF-8');
-}
-
-function tryAddNavy(mission: Mission, missionDir: string) {
-    if (!mission.addons.Navy) { return; }
-    var content = `
-class Navy {
-    class Settings {
-        isEnabled = 1;
-    };
-};
-    `;
-    var file = `${missionDir}/navy/navy.h`;
-    fs.createFileSync(file);
-    fs.writeFileSync(file, content, 'UTF-8');
 }
 
 function tryAddForcedWeather(missionAst: Parser.Node) {

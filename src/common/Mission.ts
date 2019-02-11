@@ -24,7 +24,6 @@ export interface Faction {
 
 export interface Addons {
     Admiral: Admiral.Request;
-    Navy: boolean;
     plank: boolean;
 }
 
