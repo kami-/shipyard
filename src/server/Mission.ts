@@ -96,6 +96,8 @@ function generateDescriptionExt(missionDir: string, mission: Mission, missionTyp
         .replace(/gameType = [^;]*;/g, `gameType = ${missionTypeToGameType(missionType)};`)
         .replace(/maxPlayers = [^;]*;/g, `maxPlayers = ${hcMaxPlayers.toString()};`);
     descriptionExt = tryAddAddonIncludes(descriptionExt, mission);
+    descriptionExt = addAcexKillTracker(descriptionExt);
+
     fs.writeFileSync(`${missionDir}/description.ext`, descriptionExt, 'UTF-8');
 }
 
@@ -108,6 +110,19 @@ function tryAddAddonIncludes(descriptionExt: string, mission: Mission): string {
         includes += '#include "navy\\navy.h"\n';
     }
     return includes += descriptionExt;
+}
+
+function addAcexKillTracker(descriptionExt: string) {
+    const content = `
+
+class CfgDebriefingSections {
+    class acex_killTracker {
+        title = "Acex Killed Events";
+        variable = "acex_killTracker_outputText";
+    };
+};
+    `;
+    return descriptionExt + content;
 }
 
 function tryAddAdmiral(mission: Mission, missionDir: string) {
