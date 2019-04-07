@@ -198,7 +198,6 @@ export function generateMission(mission: Mission): GeneratedMission {
     generateHull3Header(missionDir, mission);
     generateDescriptionExt(missionDir, mission, missionType, maxPlayers);
     tryAddAdmiral(mission, missionDir);
-    tryAddNavy(mission, missionDir);
 
     return {
         missionId: missionId,
