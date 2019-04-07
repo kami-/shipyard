@@ -73,7 +73,7 @@ function registerRoutes(app: express.Express) {
 
 function generateMission(request, response) {
     var mission = request.body;
-    mission.briefingName = mission.briefingName.replace(/[^a-z0-9_]*/g, '');
+    mission.briefingName = mission.briefingName.toLowerCase().replace(/[^a-z0-9_]*/g, '');
     var generatedMission = Mission.generateMission(mission);
     var missionZipName = zipMission(generatedMission.missionDir, generatedMission.missionDirName);
     response.json({ id: generatedMission.missionId, zip: missionZipName, downloadName: generatedMission.downloadMissionName });
