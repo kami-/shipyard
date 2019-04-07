@@ -50,7 +50,6 @@ function defaultMission(terrainId: string): Mission.Mission {
                 cqcUnitTemplateId: 'Base',
                 cqcZoneTemplateId: 'Cqc'
             },
-            Navy: false,
             plank: false
         }
     };
