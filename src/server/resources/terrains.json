@@ -13,8 +13,10 @@
     { "id": "eden", "name": "Everon" },
     { "id": "fallujah", "name": "Fallujah" },
     { "id": "hellanmaa", "name": "Hellanmaa" },
+    { "id": "hellanmaaw", "name": "Hellanmaa Winter" },
     { "id": "IslaDuala3", "name": "Isla Duala" },
     { "id": "tem_kujari", "name": "Kujari" },
+    { "id": "Enoch", "name": "Livonia" },
     { "id": "cain", "name": "Kolujev" },
     { "id": "abel", "name": "Malden" },
     { "id": "Malden", "name": "Malden 2035" },
@@ -33,6 +35,7 @@
     { "id": "Takistan", "name": "Takistan" },
     { "id": "Tanoa", "name": "Tanoa" },
     { "id": "utes", "name": "Utes" },
+    { "id": "vt7", "name": "Virolahti" },
     { "id": "VR", "name": "Virtual Reality" },
     { "id": "Zargabad", "name": "Zargabad" }
 ]
