@@ -12,9 +12,11 @@ import * as Mission from './Mission';
 import * as TownSweep from './extra/TownSweep';
 import * as RandomEngagements from './extra/RandomEngagements';
 
+const ROOT_DIR = process.cwd();
+
 function registerRoutes(app: express.Express) {
     app.get(Settings.CONTEXT_PATH, (request, response) => {
-        response.sendFile(Settings.PATH.CLIENT_RESOURCES_HOME + '/index.html');
+        response.sendFile(Settings.PATH.CLIENT_RESOURCES_HOME + '/index.html', { root: ROOT_DIR });
     });
 
     app.route(Settings.CONTEXT_PATH + '/mission/generate').post((request, response) => {
