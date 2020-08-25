@@ -37,8 +37,8 @@
     { "id": "utes", "name": "Utes" },
     { "id": "vt7", "name": "Virolahti" },
     { "id": "VR", "name": "Virtual Reality" },
-    { "id": "gm_weferlingen_summer", "name": "Weferlingen Summer" }
-    { "id": "gm_weferlingen_winter", "name": "Weferlingen Winter" }
+    { "id": "gm_weferlingen_summer", "name": "Weferlingen Summer" },
+    { "id": "gm_weferlingen_winter", "name": "Weferlingen Winter" },
     { "id": "Zargabad", "name": "Zargabad" }
 ]
 
