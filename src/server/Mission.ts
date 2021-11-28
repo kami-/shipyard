@@ -113,10 +113,9 @@ function addAcexKillTracker(descriptionExt: string) {
     const content = `
 
 class CfgDebriefingSections {
-    class acex_killTracker {
-        title = "Acex Killed Events";
-        variable = "acex_killTracker_outputText";
-    };
+    #if __has_include("\z\ace\addons\killtracker\killtracker.inc")
+        #include "\z\ace\addons\killtracker\killtracker.inc"
+    #endif
 };
     `;
     return descriptionExt + content;
